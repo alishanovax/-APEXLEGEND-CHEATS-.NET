@@ -19,8 +19,11 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
   Object.entries(CHECKOUT_SLUGS).map(([product, slug]) => [slug, product as CheckoutProduct]),
 ) as Record<string, CheckoutProduct>;
 
-/** Internal checkout path shown to users (hides external URL on hover). */
+/** Checkout destination for CTAs (R6 uses Zadeyo go link; utilities keep /go/ redirects). */
 export function checkoutPath(product: CheckoutProduct = 'r6'): string {
+  if (product === 'r6') {
+    return CHECKOUT.r6;
+  }
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 

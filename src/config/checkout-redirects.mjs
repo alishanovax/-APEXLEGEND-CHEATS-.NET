@@ -1,6 +1,6 @@
-/** Primary Zadeyo affiliate checkout (product page with aff). */
+/** Primary Zadeyo affiliate checkout (go link + product path). */
 export const R6_CHECKOUT_URL =
-  'https://zadeyo.com/products/rainbow-six-siege-cheats?aff=ALISHA';
+  'https://zadeyo.com/go/ALISHA?to=%2Fproducts%2Frainbow-six-siege';
 
 export const CHECKOUT_URLS = {
   r6: R6_CHECKOUT_URL,

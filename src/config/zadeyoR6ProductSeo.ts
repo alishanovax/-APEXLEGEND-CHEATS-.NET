@@ -3,7 +3,7 @@
  * Apply the same fields in Zadeyo admin (this repo does not deploy zadeyo.com).
  */
 export const ZADEYO_R6_CHECKOUT_URL =
-  'https://zadeyo.com/products/rainbow-six-siege-cheats?aff=ALISHA';
+  'https://zadeyo.com/go/ALISHA?to=%2Fproducts%2Frainbow-six-siege';
 
 export const ZADEYO_R6_PRODUCT_SEO = {
   title: 'Rainbow Six Siege Cheats – Monthly and lifetime access',
