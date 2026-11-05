@@ -26,6 +26,23 @@ const content = t.legalPages.about;
     ]),
   ]}
 >
+  <style slot="head" is:inline>
+    @media (max-width: 639px) {
+      :root {
+        --about-rbp: phone;
+      }
+    }
+    @media (min-width: 640px) and (max-width: 1023px) {
+      :root {
+        --about-rbp: tablet;
+      }
+    }
+    @media (min-width: 1024px) {
+      :root {
+        --about-rbp: desktop;
+      }
+    }
+  </style>
   <LegalPage
     title={content.title}
     description={content.description}

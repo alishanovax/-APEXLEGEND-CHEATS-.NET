@@ -19,6 +19,7 @@ const legalLinks = [
 const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const onPrivacyPage = normalizedPath === '/privacy';
 const onHomePage = normalizedPath === '/';
+const onAboutPage = normalizedPath === '/about';
 
 ---
 
@@ -58,7 +59,9 @@ const onHomePage = normalizedPath === '/';
                   ? 'Privacy questions — shop support'
                   : onHomePage && link.href === '/support/'
                     ? 'Homepage loader and checkout support'
-                    : link.label}
+                    : onAboutPage && link.href === '/support/'
+                      ? 'About page — loader and checkout support'
+                      : link.label}
               </a>
             </li>
           ))}
