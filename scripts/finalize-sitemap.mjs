@@ -199,3 +199,16 @@ for (const w of written) {
 }
 console.log('  sitemap.xml / sitemap-index.xml → index');
 console.log('  sitemap-all.xml → combined urlset');
+
+const robotsTxt = `User-agent: *
+Allow: /
+
+Disallow: /go/
+
+Sitemap: ${SITE}/sitemap.xml
+${written.map((w) => `Sitemap: ${SITE}/${w.name}`).join('\n')}
+
+# RSS: ${SITE}/rss.xml
+`;
+fs.writeFileSync(path.join(dist, 'robots.txt'), robotsTxt, 'utf8');
+console.log('  robots.txt → synced with sitemap index');

@@ -42,7 +42,7 @@ const {
   jsonLd,
 } = Astro.props;
 
-const canonical = canonicalUrl(Astro.url.pathname);
+const canonical = canonicalUrl(Astro.url.pathname, Astro.url.origin);
 const faviconQuery = `?v=${FAVICON_VERSION}`;
 const ogImageUrl = absoluteAssetUrl(ogImage);
 const robotsContent = noindex
@@ -75,6 +75,7 @@ const robotsContent = noindex
     <meta name="theme-color" content="#2d6ee2" />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="en" href={canonical} />
+    <link rel="alternate" hreflang="en-US" href={canonical} />
     <link rel="alternate" hreflang="x-default" href={canonical} />
     <link
       rel="alternate"

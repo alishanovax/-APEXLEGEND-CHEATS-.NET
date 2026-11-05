@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { title, description, logoAlt, jsonLd } = Astro.props;
-const canonical = canonicalUrl(Astro.url.pathname);
+const canonical = canonicalUrl(Astro.url.pathname, Astro.url.origin);
 
 const navLinks = [
   { href: '/', label: 'r6hacks.org home' },

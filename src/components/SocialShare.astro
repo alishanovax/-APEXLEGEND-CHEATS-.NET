@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { title = 'R6 Hacks', class: className } = Astro.props;
-const pageUrl = canonicalUrl(Astro.url.pathname);
+const pageUrl = canonicalUrl(Astro.url.pathname, Astro.url.origin);
 const encodedUrl = encodeURIComponent(pageUrl);
 const encodedText = encodeURIComponent(title);
 ---

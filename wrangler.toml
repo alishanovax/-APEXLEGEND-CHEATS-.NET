@@ -9,4 +9,5 @@ command = "npm run build"
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"
-html_handling = "auto-trailing-slash"
+# auto-trailing-slash breaks serving raw .xml assets (sitemap/rss) on Workers.
+html_handling = "none"

@@ -27,11 +27,12 @@ export function getOrganizationSameAs(): string[] {
 
 export const INDEXNOW_KEY = import.meta.env.INDEXNOW_KEY as string | undefined;
 
-export function canonicalUrl(pathname: string): string {
+export function canonicalUrl(pathname: string, origin?: string): string {
   let path = pathname || '/';
   if (!path.startsWith('/')) path = `/${path}`;
   if (path !== '/' && !path.endsWith('/')) path = `${path}/`;
-  return `${SITE_ORIGIN}${path}`;
+  const base = (origin ?? SITE_ORIGIN).replace(/\/$/, '');
+  return `${base}${path}`;
 }
 
 export function absoluteAssetUrl(path: string): string {
@@ -40,7 +41,11 @@ export function absoluteAssetUrl(path: string): string {
   return `${SITE_ORIGIN}${normalized}`;
 }
 
-export function resolvePageSeo(pathname: string): { title: string; description: string } {
+export function resolvePageSeo(pathname: string): {
+  title: string;
+  description: string;
+  h1?: string;
+} {
   const entry = getPageSeoEntry(pathname);
   if (entry) return entry;
   return { title: t.site.title, description: t.site.description };

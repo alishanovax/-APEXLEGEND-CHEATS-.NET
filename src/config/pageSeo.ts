@@ -6,11 +6,13 @@
 export interface PageSeoEntry {
   title: string;
   description: string;
+  /** Optional on-page H1 override (SEO-only routes). */
+  h1?: string;
 }
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'R6 Hacks',
+    title: 'R6 Hacks – Check status before you queue after BattlEye',
     description:
       'R6 hacks for Rainbow Six Siege on PC — aimbot, player ESP, gadget ESP, config profiles, and installation guides. Tiers and checkout on r6hacks.org.',
   },
@@ -57,15 +59,17 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/blog/': {
     title: 'Rainbow Six Siege Hack Blogs | Aimbot, wall ESP & BattlEye',
     description:
-      'Read Rainbow Six Siege hack guides on aimbot setup, wall ESP, Lite vs Pro, training grounds practice and BattlEye patch-day checks.',
+      'Blogs: Read Rainbow Six Siege hack guides on aimbot setup, wall ESP, Lite vs Pro, training grounds practice and BattlEye patch-day checks.',
+    h1: 'Latest Rainbow Six Siege hack guides — aimbot, wall ESP & BattlEye',
   },
   '/forum/': {
-    title: 'R6 Hacks Forum – configs, status and setup questions',
+    title: 'Forum – configs, status and setup questions',
     description:
-      'Forum for aimbot configs, wall ESP setup, BattlEye status and product questions before you buy R6 hacks on PC. Answers from r6hacks.org guides.',
+      'Forum for loader setup, aimbot configs, BattlEye status and product questions. Answers from r6hacks.org guides.',
+    h1: 'Forum — configs, status and setup questions for loader help',
   },
   '/faq/': {
-    title: 'Faq – R6 Hacks tiers, bans, setup and loader help',
+    title: 'FAQ – R6 tiers, bans, setup and BattlEye loader help',
     description:
       'FAQ on Lite, Pro and Elite tiers, aimbot, wall ESP, radar, HWID spoofer, Operator loadout tools, bans and loader setup at r6hacks.org.',
   },
@@ -75,9 +79,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Terms for buying R6 hacks on r6hacks.org — license use, delivery, refunds and account risk when you checkout R6 trainer products.',
   },
   '/privacy/': {
-    title: 'R6 Hacks – privacy, analytics, cookies and checkout',
+    title: 'Privacy – analytics, cookies and checkout at r6hacks.org',
     description:
-      'How the r6 hacks shop at r6hacks.org uses analytics, cookies and contact data for checkout referrals and support tickets.',
+      'Privacy: How the r6hacks.org shop uses analytics, cookies and contact data for checkout referrals and support tickets.',
   },
   '/about/': {
     title: 'Aimbot Esp – We publish tier comparisons, setup guides and',

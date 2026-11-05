@@ -4,10 +4,10 @@ import { normalizeSeoPath } from './pageSeo';
 const LOGO_ALT_BY_PATH: Record<string, string> = {
   '/products/r6/': 'Rainbow Six Siege – R6 Hacks shop logo',
   '/about/': 'Aimbot Esp – logo',
-  '/blog/': 'Blogs – logo',
+  '/blog/': 'Rainbow Six Siege guides – logo',
   '/faq/': 'Faq – logo',
-  '/forum/': 'R6 Hacks – Forum – logo',
-  '/privacy/': 'R6 Hacks Shop – logo',
+  '/forum/': 'Forum – logo',
+  '/privacy/': 'Privacy – logo',
   '/support/': 'Support – logo',
   '/terms/': 'Terms – logo',
   '/products/r6/utilities/': 'Utilities – R6 Hacks logo',
