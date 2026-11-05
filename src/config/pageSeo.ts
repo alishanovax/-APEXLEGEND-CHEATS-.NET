@@ -63,9 +63,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     h1: 'Latest Rainbow Six Siege hack blogs — aimbot, wall ESP & BattlEye',
   },
   '/forum/': {
-    title: 'Forum – configs, status and setup questions',
+    title: 'Forum – Most discussed 20 discussions All topics General',
     description:
-      'Forum for loader setup, aimbot configs, BattlEye status and product questions. Answers from r6hacks.org guides.',
+      'Forum for loader setup, aimbot configs, BattlEye status and product questions. Answers from r6hacks.org guides and community discussions.',
     h1: 'Forum — configs, status and setup questions for loader help',
   },
   '/faq/': {

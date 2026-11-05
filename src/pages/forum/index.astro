@@ -6,7 +6,10 @@ import Icon from '../../components/icons/Icon.astro';
 import { forumCategories, forumPosts } from '../../data/forum';
 import { blogPosts, getBlogPostTimestamp } from '../../data/blog';
 import { resolvePageSeo } from '../../config/seo';
+import { footerLogoAltForPath } from '../../config/seoLogoAlt';
 import { breadcrumbSchema, collectionPageSchema } from '../../utils/schema';
+
+const forumLogoAlt = footerLogoAltForPath('/forum/');
 
 const seo = resolvePageSeo('/forum/');
 const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Forum', path: '/forum/' }];
@@ -22,6 +25,23 @@ const sourceTimestamp = (path?: string) => {
   collectionPageSchema({ name: 'R6 Hacks Community Forum', description: seo.description, url: '/forum/' }),
   breadcrumbSchema(breadcrumbs),
 ]}>
+  <style slot="head" is:inline>
+    @media (max-width: 639px) {
+      :root {
+        --forum-rbp: phone;
+      }
+    }
+    @media (min-width: 640px) and (max-width: 1023px) {
+      :root {
+        --forum-rbp: tablet;
+      }
+    }
+    @media (min-width: 1024px) {
+      :root {
+        --forum-rbp: desktop;
+      }
+    }
+  </style>
   <section class="forum-page py-8 md:py-12">
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
@@ -33,7 +53,7 @@ const sourceTimestamp = (path?: string) => {
           <p class="forum-hero__lede">Forum discussions by topic</p>
           <p class="forum-hero__copy">Practical answers on loader setup, aimbot configs, patch updates, and weapon loadouts.</p>
         </div>
-        <a class="forum-create" href="/blog/"><Icon name="messageCircle" size={17} /> Explore the guides</a>
+        <a class="forum-create" href="/blog/"><Icon name="messageCircle" size={17} /> R6 hack guides from the blog</a>
       </header>
 
       <div class="forum-layout">
@@ -86,10 +106,12 @@ const sourceTimestamp = (path?: string) => {
                     {post.flair && <span class={`forum-flair tone-${post.categoryTone}`}>{post.flair}</span>}
                     <a class="forum-post-comments" href={`/forum/${post.slug}/#comments`}>
                       <Icon name="messageCircle" size={15} />
-                      {post.commentsCount === 1 ? '1 comment' : `${post.commentsCount} comments`}
+                      {post.commentsCount === 1
+                        ? `1 comment on ${post.slug}`
+                        : `${post.commentsCount} comments on ${post.slug}`}
                     </a>
                     <a class="forum-post-read" href={`/forum/${post.slug}/`}>
-                      Read discussion <Icon name="arrowRight" size={14} />
+                      Open {post.slug.replace(/-/g, ' ')} thread <Icon name="arrowRight" size={14} />
                     </a>
                   </div>
                 </div>
@@ -111,30 +133,30 @@ const sourceTimestamp = (path?: string) => {
             <div class="forum-about__content">
               <div class="forum-about__title">
                 <span class="forum-community-avatar forum-community-avatar--brand" aria-hidden="true">
-                  <img src="/logo.svg" alt="" width="34" height="34" />
+                  <img src="/logo.svg" alt={forumLogoAlt} width="34" height="34" />
                 </span>
                 <p id="forum-about-heading" class="forum-about__community-name">R6 Hacks Community</p>
               </div>
               <p>A home for Rainbow Six Siege players to trade ideas, learn together, and celebrate the game.</p>
               <div class="forum-stats"><span><b>{forumPosts.length}</b> guide discussions</span><span><b>{forumCategories.length}</b> topics</span></div>
-              <a class="forum-join" href="/blog/">Explore all guides</a>
+              <a class="forum-join" href="/blog/">Browse every R6 setup guide</a>
             </div>
           </section>
           <section class="forum-side-card" id="communities">
             <div class="forum-side-card__banner" aria-hidden="true"></div>
             <h2 class="forum-side-heading">Communities</h2>
             <ul class="forum-community-list">
-              {forumCategories.map((category, index) => (
-                <li><a href={`/forum/?category=${categoryKey(category.name)}`}><span class={`forum-community-avatar tone-${category.tone}`} aria-hidden="true"><Icon name={category.icon} size={15} /></span><span><b>{category.name}</b><small>Browse related Q&amp;A</small></span><Icon name="chevronRight" size={15} /></a></li>
+              {forumCategories.map((category) => (
+                <li><a href={`/forum/?category=${categoryKey(category.name)}`}><span class={`forum-community-avatar tone-${category.tone}`} aria-hidden="true"><Icon name={category.icon} size={15} /></span><span><b>{category.name}</b><small>Forum Q&amp;A — {categoryKey(category.name)}</small></span><Icon name="chevronRight" size={15} /></a></li>
               ))}
             </ul>
-            <a class="forum-text-link" href="#communities">Browse all communities <Icon name="arrowRight" size={14} /></a>
+            <a class="forum-text-link" href="#communities">Jump to forum communities list <Icon name="arrowRight" size={14} /></a>
           </section>
           <section class="forum-side-card forum-rules">
             <div class="forum-side-card__banner" aria-hidden="true"></div>
             <h2 class="forum-side-heading">Community guidelines</h2>
             <ol><li>Keep it friendly and constructive</li><li>Stay on topic and add context</li><li>Mark spoilers and sensitive content</li></ol>
-            <a href="#community-guidelines">Read the full guidelines <Icon name="arrowRight" size={14} /></a>
+            <a href="#community-guidelines">Forum community guidelines (full) <Icon name="arrowRight" size={14} /></a>
           </section>
           <p class="forum-sidebar-foot">
             <a href="/about/">About</a>
