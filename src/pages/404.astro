@@ -19,15 +19,15 @@ import { ROUTES } from '../utils/path';
       <p class="mt-4 text-muted-foreground">
         That URL does not exist or may have moved. Head back to the homepage or browse hack tiers and products.
       </p>
-      <div class="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
-        <Button as="a" href={ROUTES.home} variant="primary" size="md" class="justify-center">
+      <div class="not-found__actions mx-auto mt-8 flex w-full max-w-sm flex-col gap-3">
+        <Button as="a" href={ROUTES.home} variant="primary" size="md" class="w-full justify-center">
           Back to home
           <Icon name="arrowRight" size={17} />
         </Button>
-        <Button as="a" href={ROUTES.products} variant="outline" size="md" class="justify-center">
+        <Button as="a" href={ROUTES.products} variant="outline" size="md" class="w-full justify-center">
           View products
         </Button>
-        <Button as="a" href={ROUTES.productsElite} variant="outline" size="md" class="justify-center">
+        <Button as="a" href={ROUTES.productsElite} variant="outline" size="md" class="w-full justify-center">
           View Elite hacks
         </Button>
       </div>
