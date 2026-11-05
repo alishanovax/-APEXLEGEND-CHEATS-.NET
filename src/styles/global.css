@@ -362,6 +362,15 @@ html.dark .icon-app.text-primary {
   top: 1rem;
 }
 
+.not-found-actions {
+  max-width: 20rem;
+  margin-inline: auto;
+}
+
+.not-found-actions a[data-slot='button'] {
+  min-height: 2.75rem;
+}
+
 /* Navbar (desktop + mobile sheet): primary on hover only — not when .is-active */
 a.nav-link[data-nav-link].is-active {
   color: var(--muted-foreground);
