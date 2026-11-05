@@ -34,8 +34,12 @@ const navLinks = [
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={canonical} />
+    <link rel="alternate" hreflang="en-US" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
     {jsonLd && <JsonLd data={jsonLd} />}
     <link rel="icon" type="image/svg+xml" href={`/favicon.svg?v=${FAVICON_VERSION}`} />
+    <slot name="head" />
   </head>
   <body class="min-h-screen bg-background text-foreground">
     <header class="border-b border-border bg-muted/20">
@@ -58,7 +62,11 @@ const navLinks = [
       <SocialShare title={title} class="mt-10 border-t border-border pt-6" />
     </main>
     <footer class="border-t border-border py-8 text-center text-sm text-muted-foreground">
-      <p>Partner checkout on ZADEYO · <a href="/privacy/" class="hover:text-primary">Privacy</a> · <a href="/terms/" class="hover:text-primary">Terms</a></p>
+      <p>
+        Partner checkout on ZADEYO ·{' '}
+        <a href="/privacy/" class="hover:text-primary">Checkout privacy policy</a> ·{' '}
+        <a href="/terms/" class="hover:text-primary">Checkout terms of use</a>
+      </p>
     </footer>
   </body>
 </html>

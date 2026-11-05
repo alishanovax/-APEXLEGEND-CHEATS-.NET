@@ -1,5 +1,6 @@
-/** Primary Zadeyo affiliate checkout (Try Now / /go/r6/). */
-export const R6_CHECKOUT_URL = 'https://zadeyo.com/go/ALISHA?to=%2Fproducts%2Frainbow-six-siege';
+/** Primary Zadeyo affiliate checkout (product page with aff). */
+export const R6_CHECKOUT_URL =
+  'https://zadeyo.com/products/rainbow-six-siege-cheats?aff=ALISHA';
 
 export const CHECKOUT_URLS = {
   r6: R6_CHECKOUT_URL,
@@ -10,16 +11,6 @@ export const CHECKOUT_URLS = {
 
 /** Checkout paths → external product URLs (used by Node serve + Astro middleware). */
 export const CHECKOUT_PATH_REDIRECTS = new Map([
-  ['/go/r6', CHECKOUT_URLS.r6],
-  ['/go/r6/', CHECKOUT_URLS.r6],
-  ['/go/mw4', CHECKOUT_URLS.r6],
-  ['/go/mw4/', CHECKOUT_URLS.r6],
-  ['/go/borderlands', CHECKOUT_URLS.r6],
-  ['/go/borderlands/', CHECKOUT_URLS.r6],
-  ['/go/bodycam', CHECKOUT_URLS.r6],
-  ['/go/bodycam/', CHECKOUT_URLS.r6],
-  ['/go/fortnite', CHECKOUT_URLS.r6],
-  ['/go/fortnite/', CHECKOUT_URLS.r6],
   ['/go/skin-changer', CHECKOUT_URLS.skinChanger],
   ['/go/skin-changer/', CHECKOUT_URLS.skinChanger],
   ['/go/hwid-spoofer', CHECKOUT_URLS.hwidSpoofer],
