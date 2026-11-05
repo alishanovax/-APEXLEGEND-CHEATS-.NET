@@ -14,10 +14,21 @@ interface Props {
   keywordSubheading?: string;
   /** When set, section titles render as h3 under the keyword h2 (privacy outline). */
   sectionHeadingLevel?: 'h2' | 'h3';
+  /** Optional unique CTA anchor text (SEO / internal links). */
+  supportCtaLabel?: string;
+  homeCtaLabel?: string;
 }
 
-const { title, description, breadcrumbLabel, sections, keywordSubheading, sectionHeadingLevel = 'h2' } =
-  Astro.props;
+const {
+  title,
+  description,
+  breadcrumbLabel,
+  sections,
+  keywordSubheading,
+  sectionHeadingLevel = 'h2',
+  supportCtaLabel = 'Contact support',
+  homeCtaLabel = 'Back to home',
+} = Astro.props;
 ---
 
 <article class="py-8 md:py-12">
@@ -50,10 +61,10 @@ const { title, description, breadcrumbLabel, sections, keywordSubheading, sectio
 
     <div class="mt-12 flex flex-wrap justify-center gap-3 border-t border-border pt-8">
       <Button as="a" href={ROUTES.support} variant="primary" size="sm">
-        Contact support
+        {supportCtaLabel}
         <Icon name="mail" size={16} />
       </Button>
-      <Button as="a" href={ROUTES.home} variant="outline" size="sm">Back to home</Button>
+      <Button as="a" href={ROUTES.home} variant="outline" size="sm">{homeCtaLabel}</Button>
     </div>
   </div>
 </article>

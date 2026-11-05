@@ -1,34 +1,36 @@
 /** Blog index topic filters + Starwind sort select. */
 
 function initBlogIndexFilters(root: HTMLElement) {
-  if (root.dataset.blogFiltersBound === 'true') return;
-  root.dataset.blogFiltersBound = 'true';
+  if (root.dataset.indexFiltersBound === 'true') return;
+  root.dataset.indexFiltersBound = 'true';
 
   const grid = root.querySelector<HTMLElement>('#blog-grid');
   const emptyEl = root.querySelector<HTMLElement>('#blog-empty');
-  const sortRoot = root.querySelector<HTMLElement>('#blog-sort-select');
+  const sortRoot =
+    root.querySelector<HTMLElement>('#index-sort-select') ??
+    root.querySelector<HTMLElement>('#blog-sort-select');
   if (!grid) return;
 
   const emptyMessage =
     root.getAttribute('data-empty-message') ?? 'No articles match this filter.';
 
   const filters = [
-    ...root.querySelectorAll<HTMLButtonElement>('[data-blog-filter]'),
+    ...root.querySelectorAll<HTMLButtonElement>('[data-index-filter]'),
   ];
   if (!filters.length) return;
 
-  const featuredWrap = root.querySelector<HTMLElement>('[data-blog-featured]');
-  const featuredCard = featuredWrap?.querySelector<HTMLElement>('[data-blog-card]');
+  const featuredWrap = root.querySelector<HTMLElement>('[data-index-featured]');
+  const featuredCard = featuredWrap?.querySelector<HTMLElement>('[data-article-card]');
   const sortSelect = sortRoot?.querySelector<HTMLElement>('[data-sw-select]');
   const sortInput = sortRoot?.querySelector<HTMLInputElement>('[data-sw-select-input]');
 
   let currentSort = sortInput?.value || sortSelect?.getAttribute('data-value') || 'newest';
 
-  const gridCards = () => [...grid.querySelectorAll<HTMLElement>('[data-blog-card]')];
+  const gridCards = () => [...grid.querySelectorAll<HTMLElement>('[data-article-card]')];
 
   const activeTag = () =>
     filters.find((btn) => btn.getAttribute('aria-pressed') === 'true')?.getAttribute(
-      'data-blog-filter',
+      'data-index-filter',
     ) ?? 'all';
 
   const compareCards = (a: HTMLElement, b: HTMLElement, sort: string) => {
@@ -117,7 +119,7 @@ function initBlogIndexFilters(root: HTMLElement) {
 
 export function setupBlogIndexFilters() {
   const run = () => {
-    document.querySelectorAll<HTMLElement>('[data-blog-index]').forEach((root) => {
+    document.querySelectorAll<HTMLElement>('[data-index-list]').forEach((root) => {
       if (!document.contains(root)) return;
       initBlogIndexFilters(root);
     });

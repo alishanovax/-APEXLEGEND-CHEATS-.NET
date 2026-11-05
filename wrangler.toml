@@ -1,5 +1,6 @@
 # Static Astro site — do not auto-add @astrojs/cloudflare (keeps output in dist/).
 name = "r6hacks-org"
+main = "worker/canonical-host.mjs"
 compatibility_date = "2025-10-11"
 
 # Cloudflare CI runs `npx wrangler deploy` only; this produces dist/ before upload.
@@ -8,5 +9,6 @@ command = "npm run build"
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"
 not_found_handling = "404-page"
 html_handling = "auto-trailing-slash"

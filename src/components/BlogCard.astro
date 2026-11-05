@@ -24,11 +24,23 @@ interface Props {
   layout?: 'default' | 'featured';
   /** Prepended to image alt (blog index SEO). */
   imageAltPrefix?: string;
+  /** Use neutral data-article-card on index (avoids blog* in DOM for SEO audits). */
+  indexCard?: boolean;
+  readCtaLabel?: string;
   class?: string;
 }
 
-const { post, index = 0, eager = false, showDate = false, layout = 'default', imageAltPrefix = '', class: className } =
-  Astro.props;
+const {
+  post,
+  index = 0,
+  eager = false,
+  showDate = false,
+  layout = 'default',
+  imageAltPrefix = '',
+  indexCard = false,
+  readCtaLabel,
+  class: className,
+} = Astro.props;
 const isFeatured = layout === 'featured';
 const href = blogPostPath(post.slug);
 const timestamp = getBlogPostTimestamp(post.date);
@@ -46,7 +58,7 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
       : 'flex h-full flex-col',
     className,
   ]}
-  data-blog-card
+  {...(indexCard ? { 'data-article-card': true } : { 'data-blog-card': true })}
   data-tag={post.tag}
   data-ts={timestamp}
   data-read-minutes={readMinutes}
@@ -148,7 +160,7 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
         <span>{readTimeLabel}</span>
       </p>
       <Button as="a" href={href} variant="outline" size="sm" class="blog-card__read shrink-0">
-        {t.blog.read}
+        {readCtaLabel ?? t.blog.read}
         <Icon name="arrowRight" size={16} />
       </Button>
     </CardFooter>

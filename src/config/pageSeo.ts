@@ -60,7 +60,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     title: 'Rainbow Six Siege Hack Blogs | Aimbot, wall ESP & BattlEye',
     description:
       'Blogs: Read Rainbow Six Siege hack guides on aimbot setup, wall ESP, Lite vs Pro, training grounds practice and BattlEye patch-day checks.',
-    h1: 'Latest Rainbow Six Siege hack guides — aimbot, wall ESP & BattlEye',
+    h1: 'Latest Rainbow Six Siege hack blogs — aimbot, wall ESP & BattlEye',
   },
   '/forum/': {
     title: 'Forum – configs, status and setup questions',

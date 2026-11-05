@@ -38,8 +38,8 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
   description={seo.description}
   jsonLd={[
     collectionPageSchema({
-      name: t.blog.title,
-      description: t.blog.subtitle,
+      name: 'Rainbow Six Siege hack guides',
+      description: t.blog.subtitle.replace(/\bblogs\b/gi, 'articles'),
       url: '/blog/',
     }),
     breadcrumbSchema(breadcrumbs),
@@ -56,14 +56,16 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
   <section
     class="border-y border-border bg-muted/20 py-12 md:py-16"
     aria-labelledby="blog-latest-title"
-    data-blog-index
+    data-index-list
     data-empty-message={t.blog.emptyFilter}
   >
     <div class="mx-auto max-w-6xl px-5">
       <header class="section-header max-w-2xl">
-        <p class="section-header__eyebrow">{t.blog.eyebrow}</p>
+        <p class="section-header__eyebrow">Hack guides</p>
         <h1 id="blog-latest-title" class="section-header__title">{seo.h1 ?? t.blog.latestTitle}</h1>
-        <p class="section-header__subtitle">{t.blog.latestSubtitle}</p>
+        <p class="section-header__subtitle">
+          Filter by topic or sort to find aimbot, ESP, wall ESP and patch-day articles.
+        </p>
       </header>
 
       <div class="mt-8 flex flex-col gap-4 lg:mt-10 lg:flex-row lg:items-end lg:justify-between lg:gap-6">
@@ -71,12 +73,12 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
           class="flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           role="toolbar"
           aria-label="Filter articles by topic"
-          data-blog-filters
+          data-index-filters
         >
           <button
             type="button"
             class="blog-filter inline-flex shrink-0 items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium shadow-xs hover:bg-muted"
-            data-blog-filter="all"
+            data-index-filter="all"
             aria-pressed="true"
           >
             <span class="flex size-7 items-center justify-center rounded-full bg-muted text-primary" aria-hidden="true">
@@ -89,7 +91,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
               <button
                 type="button"
                 class="blog-filter inline-flex shrink-0 items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium shadow-xs hover:bg-muted"
-                data-blog-filter={tag}
+                data-index-filter={tag}
                 aria-pressed="false"
               >
                 <span
@@ -104,20 +106,34 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
           }
         </div>
 
-        <BlogSortSelect />
+        <BlogSortSelect id="index-sort-select" />
       </div>
 
       {
         featured && (
-          <div id="blog-featured" class="mt-10" data-blog-featured>
-            <BlogCard post={featured} index={0} eager showDate layout="featured" />
+          <div id="blog-featured" class="mt-10" data-index-featured>
+            <BlogCard
+              post={featured}
+              index={0}
+              eager
+              showDate
+              layout="featured"
+              indexCard
+              readCtaLabel={`Read featured: ${featured.title}`}
+            />
           </div>
         )
       }
 
       <div id="blog-grid" class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10">
         {gridPosts.map((post, index) => (
-          <BlogCard post={post} index={index} showDate />
+          <BlogCard
+            post={post}
+            index={index}
+            showDate
+            indexCard
+            readCtaLabel={`Open guide: ${post.title}`}
+          />
         ))}
       </div>
 
@@ -128,7 +144,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
       <div class="mt-12 flex justify-start lg:justify-center">
         <Button as="a" href={ROUTES.home} variant="outline">
           <Icon name="chevronLeft" size={16} />
-          Back to home
+          Blog hub: return to homepage
         </Button>
       </div>
     </div>
