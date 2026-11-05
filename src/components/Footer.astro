@@ -16,6 +16,8 @@ const legalLinks = [
   { href: '/terms/', label: t.footer.terms },
 ];
 
+const onPrivacyPage = Astro.url.pathname.replace(/\/$/, '') === '/privacy';
+
 ---
 
 <footer class="border-t border-border bg-muted/30 py-16">
@@ -50,7 +52,9 @@ const legalLinks = [
           {resourceLinks.map((link) => (
             <li>
               <a href={link.href} class="text-sm text-muted-foreground hover:text-primary" aria-label={link.ariaLabel}>
-                {link.label}
+                {onPrivacyPage && link.href === '/support/'
+                  ? 'Privacy questions — shop support'
+                  : link.label}
               </a>
             </li>
           ))}

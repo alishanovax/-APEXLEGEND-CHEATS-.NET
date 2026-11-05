@@ -82,7 +82,8 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/privacy/': {
     title: 'Privacy – analytics, cookies and checkout at r6hacks.org',
     description:
-      'Privacy: How the r6hacks.org shop uses analytics, cookies and contact data for checkout referrals and support tickets.',
+      'Privacy: How the r6hacks.org shop uses analytics, cookies and contact data for checkout referrals, support tickets, and shop data use.',
+    h1: 'Privacy Policy — r6hacks.org analytics, cookies, checkout and contact data',
   },
   '/about/': {
     title: 'Aimbot Esp – We publish tier comparisons, setup guides and',

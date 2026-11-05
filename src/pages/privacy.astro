@@ -24,12 +24,31 @@ const seo = resolvePageSeo('/privacy/');
     ]),
   ]}
 >
+  <style slot="head" is:inline>
+    @media (max-width: 639px) {
+      :root {
+        --privacy-rbp: phone;
+      }
+    }
+    @media (min-width: 640px) and (max-width: 1023px) {
+      :root {
+        --privacy-rbp: tablet;
+      }
+    }
+    @media (min-width: 1024px) {
+      :root {
+        --privacy-rbp: desktop;
+      }
+    }
+  </style>
   <LegalPage
-    title={content.title}
+    title={seo.h1 ?? content.title}
     description={content.description}
     breadcrumbLabel="Privacy Policy"
     keywordSubheading="Privacy — analytics, cookies and checkout data"
     sectionHeadingLevel="h3"
     sections={content.sections}
+    supportCtaLabel="Privacy: email support about your data"
+    homeCtaLabel="Privacy policy: back to r6hacks.org home"
   />
 </BaseLayout>
