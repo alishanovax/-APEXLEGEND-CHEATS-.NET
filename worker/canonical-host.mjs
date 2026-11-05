@@ -35,10 +35,12 @@ function indexHtmlCandidates(pathname) {
 }
 
 async function fetchAsset(request, env) {
+  const { pathname } = new URL(request.url);
   let response = await env.ASSETS.fetch(request);
   if (response.status === 200) return response;
 
-  const { pathname } = new URL(request.url);
+  if (isSitemapOrFeedPath(pathname)) return response;
+
   for (const candidate of indexHtmlCandidates(pathname)) {
     const indexUrl = new URL(request.url);
     indexUrl.pathname = candidate;

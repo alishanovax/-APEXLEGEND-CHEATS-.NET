@@ -16,16 +16,16 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
     title: 'Apex Legends – Check status before you queue after Easy',
     description:
-      'Apex Legends cheats for Apex Legends on PC — aimbot, player ESP, item ESP, config profiles, and installation guides.',
+      'Apex Legends cheats for Apex Legends on PC — aimbot, player ESP, item ESP, config profiles, and installation guides at apexlegendcheats.net.',
     h1: 'Apex Legends Cheats',
     h1Accent:
       'Check status before you queue after Easy Anti-Cheat — Apex Legends PC, Aimbot, ESP, Item ESP & Configs',
   },
   '/products/apex/': {
-    title: 'Apex Legends – Buy PC hacks shop and tiers',
+    title: 'Apex – UGC recovery and Legend loadout tools checkout at',
     description:
-      'Apex Legends shop: Apex Legends cheats for PC — Elite aimbot, wall ESP, HWID spoofer, UGC recovery and Legend loadout tools checkout at apexlegendcheats.',
-    h1: 'Buy Apex Legends — Elite, HWID spoofer, Legend loadout tools PC cheats shop tiers',
+      'Apex shop: Apex Legends PC cheats — Elite aimbot, wall ESP, HWID spoofer, UGC recovery checkout at apexlegendcheats.net.',
+    h1: 'Buy PC hacks — Apex Legends Elite, HWID spoofer, Legend loadout tools cheats shop tiers',
   },
   '/products/apex/lite/': {
     title: 'Apex Lite Cheats | Player ESP, Radar & Loot Timers',
@@ -63,7 +63,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Compare Apex Legends cheat utilities: HWID spoofer after hardware bans, UGC for EA/Easy Anti-Cheat appeals, and local operator loadout tools.',
   },
   '/blog/': {
-    title: 'Apex Legends Cheat Blogs | Aimbot, wall ESP & Easy Anti-Cheat',
+    title: 'Wall Esp – Read Apex Legends cheat guides on aimbot setup',
     description:
       'Read Apex Legends cheat guides on aimbot setup, wall ESP, Lite vs Pro, Firing Range practice and Easy Anti-Cheat patch-day checks.',
     h1: 'Latest Apex Legends cheat guide blogs — aimbot, wall ESP & Easy Anti-Cheat',
@@ -86,7 +86,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Terms for buying Apex Legends cheats on apexlegendcheats.net — license use, delivery, refunds and account risk when you checkout Apex Legends cheat products.',
   },
   '/privacy/': {
-    title: 'Analytics Cookies – cookies and contact data for checkout',
+    title: 'Analytics Cookies – and contact data for checkout',
     description:
       'Privacy: How the apexlegendcheats.net shop uses analytics, cookies and contact data for checkout referrals, support tickets, and shop data use.',
     h1: 'Privacy Policy — apexlegendcheats.net analytics, cookies, checkout and contact data',

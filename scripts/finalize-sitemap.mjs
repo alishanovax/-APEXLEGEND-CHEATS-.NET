@@ -4,6 +4,7 @@ import { resolveDistDir } from './dist-dir.mjs';
 
 const SITE = 'https://apexlegendcheats.net';
 const dist = resolveDistDir();
+const publicDir = path.join(path.dirname(dist), 'public');
 
 function loadUrlsetXml(dir) {
   const zero = path.join(dir, 'sitemap-0.xml');
@@ -177,7 +178,11 @@ for (const child of childFiles) {
     .map((u) => formatLastmod(u.lastmod))
     .sort()
     .at(-1) ?? today;
-  fs.writeFileSync(path.join(dist, child.name), renderUrlset(urls), 'utf8');
+  const xml = renderUrlset(urls);
+  fs.writeFileSync(path.join(dist, child.name), xml, 'utf8');
+  if (fs.existsSync(publicDir)) {
+    fs.writeFileSync(path.join(publicDir, child.name), xml, 'utf8');
+  }
   written.push({ name: child.name, lastmod, count: urls.length });
 }
 
@@ -188,10 +193,18 @@ fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
 
 // Keep a combined urlset for IndexNow + tools that expect one file of <url> entries.
 const allUrls = childFiles.flatMap((c) => byBucket[c.key]);
-fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), renderUrlset(allUrls), 'utf8');
+const combinedXml = renderUrlset(allUrls);
+fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), combinedXml, 'utf8');
 
 // Point IndexNow at the combined urlset (not the index).
-fs.writeFileSync(path.join(dist, 'sitemap-all.xml'), renderUrlset(allUrls), 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap-all.xml'), combinedXml, 'utf8');
+
+if (fs.existsSync(publicDir)) {
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), indexXml, 'utf8');
+  fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), indexXml, 'utf8');
+  fs.writeFileSync(path.join(publicDir, 'sitemap-0.xml'), combinedXml, 'utf8');
+  fs.writeFileSync(path.join(publicDir, 'sitemap-all.xml'), combinedXml, 'utf8');
+}
 
 console.log(`Sitemap finalized: ${total} URLs`);
 for (const w of written) {
@@ -211,4 +224,7 @@ ${written.map((w) => `Sitemap: ${SITE}/${w.name}`).join('\n')}
 # RSS: ${SITE}/rss.xml
 `;
 fs.writeFileSync(path.join(dist, 'robots.txt'), robotsTxt, 'utf8');
+if (fs.existsSync(publicDir)) {
+  fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt, 'utf8');
+}
 console.log('  robots.txt → synced with sitemap index');
