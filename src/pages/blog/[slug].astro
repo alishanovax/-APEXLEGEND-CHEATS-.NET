@@ -37,8 +37,11 @@ if (!post) {
 }
 
 const postPath = `/blog/${post.slug}/`;
-const blogCrumbLabel =
-  post.slug === 'r6-practice-lobby' ? 'R6 practice guides (blog hub)' : 'Blog';
+const blogCrumbLabels: Record<string, string> = {
+  'r6-practice-lobby': 'R6 practice guides (blog hub)',
+  'r6-stream-proof': 'Stream-proof guides (blog hub)',
+};
+const blogCrumbLabel = blogCrumbLabels[post.slug] ?? 'Blog';
 const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: blogCrumbLabel, path: '/blog/' },
@@ -186,7 +189,9 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     buyLabel={
                       post.slug === 'r6-practice-lobby'
                         ? 'Checkout after Shooting Range drills (CTA)'
-                        : undefined
+                        : post.slug === 'r6-stream-proof'
+                          ? 'Buy stream-proof tier (inline CTA)'
+                          : undefined
                     }
                   />
                 );

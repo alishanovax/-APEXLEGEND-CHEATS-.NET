@@ -22,6 +22,7 @@ const onHomePage = normalizedPath === '/';
 const onAboutPage = normalizedPath === '/about';
 const onBlogPage = normalizedPath === '/blog';
 const onPracticeLobbyPost = normalizedPath === '/blog/r6-practice-lobby';
+const onStreamProofPost = normalizedPath === '/blog/r6-stream-proof';
 
 ---
 
@@ -67,7 +68,9 @@ const onPracticeLobbyPost = normalizedPath === '/blog/r6-practice-lobby';
                         ? 'Blog index — setup and loader support'
                         : onPracticeLobbyPost && link.href === '/support/'
                           ? 'Practice lobby guide — loader support'
-                          : link.label}
+                          : onStreamProofPost && link.href === '/support/'
+                            ? 'Stream-proof guide — capture support'
+                            : link.label}
               </a>
             </li>
           ))}
