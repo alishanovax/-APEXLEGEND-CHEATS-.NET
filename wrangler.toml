@@ -2,6 +2,10 @@
 name = "r6hacks-org"
 compatibility_date = "2025-10-11"
 
+# Cloudflare CI runs `npx wrangler deploy` only; this produces dist/ before upload.
+[build]
+command = "npm run build"
+
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"
