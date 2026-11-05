@@ -22,10 +22,36 @@ function isSitemapOrFeedPath(pathname) {
   );
 }
 
+/** Astro output is `…/index.html`; html_handling=none does not map `/` or `/blog/`. */
+function hasFileExtension(pathname) {
+  return /\.[a-z0-9]+$/i.test(pathname);
+}
+
+function indexHtmlCandidates(pathname) {
+  if (hasFileExtension(pathname)) return [];
+  if (!pathname || pathname === '/') return ['/index.html'];
+  if (pathname.endsWith('/')) return [`${pathname}index.html`];
+  return [`${pathname}/index.html`, `${pathname}.html`];
+}
+
+async function fetchAsset(request, env) {
+  let response = await env.ASSETS.fetch(request);
+  if (response.status === 200) return response;
+
+  const { pathname } = new URL(request.url);
+  for (const candidate of indexHtmlCandidates(pathname)) {
+    const indexUrl = new URL(request.url);
+    indexUrl.pathname = candidate;
+    const indexResponse = await env.ASSETS.fetch(new Request(indexUrl, request));
+    if (indexResponse.status === 200) return indexResponse;
+  }
+  return response;
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    const response = await env.ASSETS.fetch(request);
+    const response = await fetchAsset(request, env);
 
     if (response.status === 200 && isSitemapOrFeedPath(url.pathname)) {
       const headers = new Headers(response.headers);
