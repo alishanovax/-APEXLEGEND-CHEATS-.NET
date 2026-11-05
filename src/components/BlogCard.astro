@@ -65,6 +65,7 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
 >
   <a
     href={href}
+    data-card-cover
     class:list={[
       'blog-card__media relative block aspect-video overflow-hidden focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-card',
       isFeatured && 'blog-featured__media lg:aspect-auto lg:min-h-[16rem] lg:self-stretch',
@@ -159,10 +160,19 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
         <Icon name="clock" size={14} class="blog-card__footer-icon" aria-hidden="true" />
         <span>{readTimeLabel}</span>
       </p>
-      <Button as="a" href={href} variant="outline" size="sm" class="blog-card__read">
-        {readCtaLabel ?? t.blog.read}
-        <Icon name="arrowRight" size={16} />
-      </Button>
+      {
+        indexCard ? (
+          <a href={href} class="article-card__read">
+            {readCtaLabel ?? t.blog.read}
+            <Icon name="arrowRight" size={16} />
+          </a>
+        ) : (
+          <Button as="a" href={href} variant="outline" size="sm" class="blog-card__read">
+            {readCtaLabel ?? t.blog.read}
+            <Icon name="arrowRight" size={16} />
+          </Button>
+        )
+      }
     </CardFooter>
   </div>
 </Card>

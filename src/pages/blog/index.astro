@@ -94,7 +94,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
         >
           <button
             type="button"
-            class="blog-filter inline-flex shrink-0 items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium shadow-xs hover:bg-muted"
+            class="article-filter inline-flex shrink-0 items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium shadow-xs hover:bg-muted"
             data-index-filter="all"
             aria-pressed="true"
           >
@@ -107,7 +107,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
             tags.map((tag) => (
               <button
                 type="button"
-                class="blog-filter inline-flex shrink-0 items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium shadow-xs hover:bg-muted"
+                class="article-filter inline-flex shrink-0 items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium shadow-xs hover:bg-muted"
                 data-index-filter={tag}
                 aria-pressed="false"
               >
@@ -167,7 +167,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
       <div class="mt-12 flex justify-start lg:justify-center">
         <Button as="a" href={ROUTES.home} variant="outline">
           <Icon name="chevronLeft" size={16} />
-          Blog hub: return to homepage
+          Return to homepage
         </Button>
       </div>
     </div>

@@ -151,7 +151,8 @@ const robotsContent = noindex
     <main id="main-content">
       <slot />
       {
-        Astro.url.pathname !== '/' && (
+        Astro.url.pathname !== '/' &&
+          Astro.url.pathname.replace(/\/$/, '') !== '/blog' && (
           <div class="mx-auto max-w-6xl px-5 pb-8">
             <SocialShare title={title} class="border-t border-border pt-6" />
           </div>

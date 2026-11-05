@@ -25,6 +25,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     title: 'Rainbow Six Siege – Buy R6 PC hacks shop and tiers',
     description:
       'Rainbow Six Siege shop: R6 hacks for PC — Elite aimbot, wall ESP, HWID spoofer, UGC recovery and Operator loadout tools checkout at r6hacks.org.',
+    h1: 'Buy Rainbow Six Siege — Elite, HWID spoofer, Operator loadout tools PC hacks shop tiers',
   },
   '/products/r6/lite/': {
     title: 'R6 Lite Hacks | Player ESP, Radar & Loot Timers',
@@ -64,7 +65,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/blog/': {
     title: 'Rainbow Six Siege Hack Blogs | Aimbot, wall ESP & BattlEye',
     description:
-      'Blogs: Read Rainbow Six Siege hack guides on aimbot setup, wall ESP, Lite vs Pro, training grounds practice and BattlEye patch-day checks.',
+      'Read Rainbow Six Siege hack guides on aimbot setup, wall ESP, Lite vs Pro, training grounds practice and BattlEye patch-day checks.',
     h1: 'Latest Rainbow Six Siege hack guide blogs — aimbot, wall ESP & BattlEye',
   },
   '/forum/': {

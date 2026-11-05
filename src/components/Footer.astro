@@ -24,7 +24,9 @@ const onBlogPage = normalizedPath === '/blog';
 const onFaqPage = normalizedPath === '/faq';
 const onPracticeLobbyPost = normalizedPath === '/blog/r6-practice-lobby';
 const onStreamProofPost = normalizedPath === '/blog/r6-stream-proof';
+const onRadarPost = normalizedPath === '/blog/r6-radar';
 const onForumPage = normalizedPath === '/forum';
+const onProductsR6Hub = normalizedPath === '/products/r6';
 
 ---
 
@@ -60,7 +62,15 @@ const onForumPage = normalizedPath === '/forum';
           {resourceLinks.map((link) => (
             <li>
               <a href={link.href} class="text-sm text-muted-foreground hover:text-primary" aria-label={link.ariaLabel}>
-                {onForumPage && link.href === '/blog/'
+                {onProductsR6Hub && link.href === '/blog/'
+                  ? 'R6 catalog hub — patch setup guides'
+                  : onProductsR6Hub && link.href === '/support/'
+                    ? 'R6 catalog — loader and checkout support'
+                    : onProductsR6Hub && link.href === '/products/r6/elite/'
+                      ? 'Elite tier listing from catalog hub'
+                      : onProductsR6Hub && link.href === '/products/r6/'
+                        ? 'R6 product catalog (you are here)'
+                        : onForumPage && link.href === '/blog/'
                   ? 'Forum sidebar — R6 setup guides'
                   : onPrivacyPage && link.href === '/support/'
                   ? 'Privacy questions — shop support'
@@ -76,9 +86,17 @@ const onForumPage = normalizedPath === '/forum';
                           ? 'Practice lobby guide — loader support'
                           : onStreamProofPost && link.href === '/support/'
                             ? 'Stream-proof guide — capture support'
-                            : onForumPage && link.href === '/support/'
-                              ? 'Forum page — loader and checkout support'
-                              : link.label}
+                            : onRadarPost && link.href === '/support/'
+                              ? 'Radar hack guide — loader support'
+                              : onRadarPost && link.href === '/blog/'
+                                ? 'Radar article hub — more setup guides'
+                                : onRadarPost && link.href === '/products/r6/elite/'
+                                  ? 'Elite tier from radar guide sidebar'
+                                  : onRadarPost && link.href === '/products/r6/'
+                                    ? 'R6 shop linked from radar guide'
+                                    : onForumPage && link.href === '/support/'
+                                      ? 'Forum page — loader and checkout support'
+                                      : link.label}
               </a>
             </li>
           ))}

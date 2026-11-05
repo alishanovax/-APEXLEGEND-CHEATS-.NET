@@ -57,7 +57,8 @@
   color: color-mix(in oklch, var(--border) 70%, var(--muted-foreground));
 }
 
-.blog-card__read {
+.blog-card__read,
+.article-card__read {
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -68,6 +69,27 @@
   white-space: normal;
   text-wrap: balance;
   text-align: center;
+}
+
+.article-card__read {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: transparent;
+  padding-inline: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.article-card__read:hover {
+  background: var(--muted);
+  color: var(--primary);
 }
 
 .blog-featured {

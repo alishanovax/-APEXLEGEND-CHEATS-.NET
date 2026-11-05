@@ -15,6 +15,9 @@ const breadcrumbs = [
   { name: 'Products', path: productHub.path },
 ];
 
+const tierProducts = productPages.filter((product) => product.kind === 'tier');
+const utilityProducts = productPages.filter((product) => product.kind === 'utility');
+
 function cardIcon(product: (typeof productPages)[number]) {
   if (product.kind === 'tier') {
     return cheatTierIcons[product.name] ?? 'crosshair';
@@ -48,37 +51,76 @@ function cardLabel(product: (typeof productPages)[number]) {
     ),
   ]}
 >
+  <style slot="head" is:inline>
+    @media (max-width: 639px) {
+      :root {
+        --products-r6-rbp: phone;
+      }
+    }
+    @media (min-width: 640px) and (max-width: 1023px) {
+      :root {
+        --products-r6-rbp: tablet;
+      }
+    }
+    @media (min-width: 1024px) {
+      :root {
+        --products-r6-rbp: desktop;
+      }
+    }
+  </style>
   <section class="py-8 md:py-12">
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
 
       <div class="mt-6 max-w-3xl space-y-3">
-        <h1 class="text-3xl font-bold normal-case md:text-4xl">
-          Buy Rainbow Six Siege — Elite, HWID spoofer, Operator loadout tools PC hacks shop
-        </h1>
+        <h1 class="text-3xl font-bold normal-case md:text-4xl">{seo.h1}</h1>
         <p class="text-lg text-muted-foreground">
           Rainbow Six Siege shop: R6 hacks for PC — Elite aimbot &amp; wall ESP, HWID spoofer, UGC recovery and Loadout
           Changer. Instant delivery after checkout.
         </p>
       </div>
 
-      <div class="mt-10 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {productPages.map((product) => (
-          <CatalogCard
-            label={cardLabel(product)}
-            title={product.title}
-            href={productPath(product.slug)}
-            buyUrl={product.buyUrl}
-            features={product.features}
-            more={product.more}
-            icon={cardIcon(product)}
-            badge={product.badge}
-            variant={product.variant}
-            buyLabel="Buy now"
-            viewLabel="View details"
-          />
-        ))}
-      </div>
+      <section class="mt-10" aria-labelledby="r6-tier-products-heading">
+        <h2 id="r6-tier-products-heading" class="text-xl font-semibold">Lite, Pro and Elite hack tiers</h2>
+        <div class="mt-6 grid min-w-0 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 [&>*]:min-w-0">
+          {tierProducts.map((product) => (
+            <CatalogCard
+              label={cardLabel(product)}
+              title={product.title}
+              href={productPath(product.slug)}
+              buyUrl={product.buyUrl}
+              features={product.features}
+              more={product.more}
+              icon={cardIcon(product)}
+              badge={product.badge}
+              variant={product.variant}
+              buyLabel={`Buy ${product.slug} tier now`}
+              viewLabel={`Open ${product.slug} tier page`}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section class="mt-12" aria-labelledby="r6-utility-products-heading">
+        <h2 id="r6-utility-products-heading" class="text-xl font-semibold">HWID spoofer, UGC and loadout utilities</h2>
+        <div class="mt-6 grid min-w-0 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 [&>*]:min-w-0">
+          {utilityProducts.map((product) => (
+            <CatalogCard
+              label={cardLabel(product)}
+              title={product.title}
+              href={productPath(product.slug)}
+              buyUrl={product.buyUrl}
+              features={product.features}
+              more={product.more}
+              icon={cardIcon(product)}
+              badge={product.badge}
+              variant={product.variant}
+              buyLabel={`Buy ${product.slug} utility now`}
+              viewLabel={`Open ${product.slug} utility page`}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   </section>
 </BaseLayout>
