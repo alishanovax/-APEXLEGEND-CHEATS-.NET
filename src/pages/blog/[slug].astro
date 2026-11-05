@@ -37,9 +37,11 @@ if (!post) {
 }
 
 const postPath = `/blog/${post.slug}/`;
+const blogCrumbLabel =
+  post.slug === 'r6-practice-lobby' ? 'R6 practice guides (blog hub)' : 'Blog';
 const breadcrumbs = [
   { name: 'Home', path: '/' },
-  { name: 'Blog', path: '/blog/' },
+  { name: blogCrumbLabel, path: '/blog/' },
   { name: post.title, path: postPath },
 ];
 
@@ -181,6 +183,11 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     title={block.title}
                     html={linkify(block.text)}
                     href={resolveCheckoutHref(block.href)}
+                    buyLabel={
+                      post.slug === 'r6-practice-lobby'
+                        ? 'Checkout after Shooting Range drills (CTA)'
+                        : undefined
+                    }
                   />
                 );
               }

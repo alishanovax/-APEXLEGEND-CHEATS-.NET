@@ -21,6 +21,7 @@ const onPrivacyPage = normalizedPath === '/privacy';
 const onHomePage = normalizedPath === '/';
 const onAboutPage = normalizedPath === '/about';
 const onBlogPage = normalizedPath === '/blog';
+const onPracticeLobbyPost = normalizedPath === '/blog/r6-practice-lobby';
 
 ---
 
@@ -64,7 +65,9 @@ const onBlogPage = normalizedPath === '/blog';
                       ? 'About page — loader and checkout support'
                       : onBlogPage && link.href === '/support/'
                         ? 'Blog index — setup and loader support'
-                        : link.label}
+                        : onPracticeLobbyPost && link.href === '/support/'
+                          ? 'Practice lobby guide — loader support'
+                          : link.label}
               </a>
             </li>
           ))}

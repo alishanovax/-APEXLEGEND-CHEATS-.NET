@@ -6,9 +6,10 @@ interface Props {
   title: string;
   html: string;
   href: string;
+  buyLabel?: string;
 }
 
-const { title, html, href } = Astro.props;
+const { title, html, href, buyLabel = 'Buy now' } = Astro.props;
 ---
 
 <aside class="blog-post-cta not-prose my-8" aria-label={title}>
@@ -19,7 +20,7 @@ const { title, html, href } = Astro.props;
     <p class="blog-post-cta__title">{title}</p>
     <div class="blog-post-cta__text" set:html={html} />
     <Button as="a" href={href} variant="primary" size="sm" class="blog-post-cta__btn justify-start">
-      Buy now
+      {buyLabel}
       <Icon name="arrowRight" size={16} />
     </Button>
   </div>
