@@ -11,6 +11,8 @@ export const CHECKOUT_URLS = {
 
 /** Checkout paths → external product URLs (used by Node serve + Astro middleware). */
 export const CHECKOUT_PATH_REDIRECTS = new Map([
+  ['/go/r6', CHECKOUT_URLS.r6],
+  ['/go/r6/', CHECKOUT_URLS.r6],
   ['/go/skin-changer', CHECKOUT_URLS.skinChanger],
   ['/go/skin-changer/', CHECKOUT_URLS.skinChanger],
   ['/go/hwid-spoofer', CHECKOUT_URLS.hwidSpoofer],

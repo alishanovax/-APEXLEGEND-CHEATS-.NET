@@ -19,39 +19,29 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
   Object.entries(CHECKOUT_SLUGS).map(([product, slug]) => [slug, product as CheckoutProduct]),
 ) as Record<string, CheckoutProduct>;
 
-/** Checkout destination for CTAs (R6 uses Zadeyo go link; utilities keep /go/ redirects). */
-export function checkoutPath(product: CheckoutProduct = 'r6'): string {
-  if (product === 'r6') {
-    return CHECKOUT.r6;
-  }
-  return `/go/${CHECKOUT_SLUGS[product]}/`;
+/** All Buy now / checkout CTAs use the same Zadeyo go link. */
+export function checkoutPath(_product: CheckoutProduct = 'r6'): string {
+  return CHECKOUT.r6;
 }
 
 /** Default product checkout redirect (replaces legacy Discord CTAs). */
 export const PRIMARY_CHECKOUT_PATH = checkoutPath('r6');
 
-/** Map internal product slugs to checkout redirect paths. */
-export function checkoutForSlug(slug: string): string {
-  switch (slug) {
-    case 'unlock-all':
-      return checkoutPath('skinChanger');
-    case 'hwid-spoofer':
-      return checkoutPath('hwidSpoofer');
-    case 'ugc':
-    case 'account-recovery':
-      return checkoutPath('ugc');
-    case 'lite':
-    case 'pro':
-    case 'elite':
-    default:
-      return checkoutPath('r6');
-  }
+/** Map internal product slugs to checkout (single Zadeyo destination). */
+export function checkoutForSlug(_slug: string): string {
+  return CHECKOUT.r6;
 }
 
 /** Resolve blog CTA or legacy href values to internal checkout paths. */
+const GO_CHECKOUT_PATH = /^\/go\/[\w-]+\/?$/i;
+
 export function resolveCheckoutHref(href: string): string {
   if (!href.startsWith('http')) {
-    return href.startsWith('/') ? href : `/${href}`;
+    const normalized = href.startsWith('/') ? href : `/${href}`;
+    if (GO_CHECKOUT_PATH.test(normalized)) {
+      return CHECKOUT.r6;
+    }
+    return normalized;
   }
 
   for (const [product, url] of Object.entries(CHECKOUT) as [CheckoutProduct, string][]) {
