@@ -24,18 +24,18 @@ const purchaseUrl = checkoutPath('r6');
     <div
       class="pointer-events-auto relative flex h-14 w-full max-w-6xl items-center justify-between gap-3 rounded-2xl border border-border/40 bg-background/35 px-4 text-foreground shadow-md shadow-black/5 backdrop-blur-2xl supports-[backdrop-filter]:bg-background/25 dark:border-white/10 dark:bg-background/20 dark:shadow-black/25 sm:px-5 lg:h-[3.75rem]"
     >
-      <SiteBrandMark compact class="shrink-0" />
+      <SiteBrandMark compact class="shrink-0 self-center" />
 
       <nav
         id="primary-navigation"
-        class="nav-primary absolute left-1/2 top-[calc(100%+0.5rem)] z-50 hidden w-[min(calc(100vw-2rem),20rem)] -translate-x-1/2 flex-col gap-1 rounded-xl border border-border bg-background p-3 shadow-lg lg:top-auto lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
+        class="nav-primary absolute left-1/2 top-[calc(100%+0.5rem)] z-50 hidden w-[min(calc(100vw-2rem),20rem)] -translate-x-1/2 flex-col gap-1 rounded-xl border border-border bg-background p-3 shadow-lg lg:inset-y-0 lg:top-0 lg:bottom-0 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
         aria-label="Primary"
         data-mobile-nav-panel
       >
         {t.nav.map((link) => (
           <a
             href={link.href}
-            class="nav-link inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground lg:px-0 lg:py-0 lg:text-foreground lg:hover:bg-transparent lg:hover:text-primary"
+            class="nav-link inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium leading-none text-muted-foreground transition-colors hover:bg-muted hover:text-foreground lg:px-0 lg:py-0 lg:text-foreground lg:hover:bg-transparent lg:hover:text-primary"
             data-nav-link
             {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
           >
@@ -49,8 +49,8 @@ const purchaseUrl = checkoutPath('r6');
         ))}
       </nav>
 
-      <div class="flex items-center gap-2">
-        <div class="hidden items-center sm:flex">
+      <div class="flex shrink-0 items-center gap-2 self-center">
+        <div class="hidden items-center gap-2 sm:flex">
           <SlideRevealButton href={purchaseUrl} class="hidden lg:inline-flex" ariaLabel={t.ui.checkoutAria}>
             {t.ui.browseCheats}
           </SlideRevealButton>

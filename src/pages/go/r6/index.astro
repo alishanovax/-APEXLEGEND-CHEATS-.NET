@@ -5,16 +5,20 @@ import {
   ZADEYO_R6_PRODUCT_SEO,
 } from '../../../config/zadeyoR6ProductSeo';
 import { productSchema } from '../../../utils/schema';
+import { PRIMARY_CHEAT_IMAGE } from '../../../config/siteImages';
 import { Button } from '@/components/starwind/button';
 
 const seo = ZADEYO_R6_PRODUCT_SEO;
 const capsuleAlt = 'Rainbow Six Siege Steam library capsule art';
+const headingFor = (key: (typeof seo.bodySections)[number]['headingKey']) => seo[key];
 ---
 
 <CheckoutBridgeLayout
   title={seo.title}
   description={seo.description}
   logoAlt={seo.logoAlt}
+  ogImage={PRIMARY_CHEAT_IMAGE}
+  ogImageAlt="Rainbow Six Siege PC ranked match — R6 Hacks checkout preview"
   jsonLd={[
     productSchema({
       name: seo.h1,
@@ -47,7 +51,7 @@ const capsuleAlt = 'Rainbow Six Siege Steam library capsule art';
       <h1 class="text-3xl font-bold leading-tight md:text-4xl">{seo.h1}</h1>
       <p class="text-lg leading-relaxed text-muted-foreground">{seo.intro}</p>
       <Button as="a" href={ZADEYO_R6_CHECKOUT_URL} variant="primary" size="lg" class="mt-2">
-        Open ZADEYO monthly and lifetime checkout
+        Open ZADEYO secure checkout
       </Button>
     </header>
 
@@ -94,6 +98,19 @@ const capsuleAlt = 'Rainbow Six Siege Steam library capsule art';
         Windows 10 and 11 supported. HVCI ON, Core Isolation ON, TPM ON, Secure Boot ON. Cloud DMA is required for full functionality on supported builds.
       </p>
     </section>
+
+    {
+      seo.bodySections.map((block) => (
+        <section class="mt-8 space-y-3" aria-labelledby={`go-r6-${block.id}`}>
+          <h2 id={`go-r6-${block.id}`} class="text-xl font-semibold">
+            {headingFor(block.headingKey)}
+          </h2>
+          {block.paragraphs.map((paragraph) => (
+            <p class="text-muted-foreground">{paragraph}</p>
+          ))}
+        </section>
+      ))
+    }
 
     <section class="mt-8 space-y-3" aria-labelledby="checkout-help-title">
       <h2 id="checkout-help-title" class="text-lg font-semibold">Before you buy</h2>

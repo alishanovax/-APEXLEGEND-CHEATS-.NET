@@ -55,7 +55,7 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
     'blog-card group/card gap-0 overflow-visible border border-border py-0 pt-0 shadow-xs ring-0 ring-transparent hover:shadow-md has-data-[slot=card-footer]:pb-0',
     isFeatured
       ? 'blog-featured mt-8 md:mt-10 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch'
-      : 'flex h-full flex-col',
+      : 'flex h-full min-w-0 flex-col',
     className,
   ]}
   {...(indexCard ? { 'data-article-card': true } : { 'data-blog-card': true })}
@@ -159,7 +159,7 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
         <Icon name="clock" size={14} class="blog-card__footer-icon" aria-hidden="true" />
         <span>{readTimeLabel}</span>
       </p>
-      <Button as="a" href={href} variant="outline" size="sm" class="blog-card__read shrink-0">
+      <Button as="a" href={href} variant="outline" size="sm" class="blog-card__read">
         {readCtaLabel ?? t.blog.read}
         <Icon name="arrowRight" size={16} />
       </Button>

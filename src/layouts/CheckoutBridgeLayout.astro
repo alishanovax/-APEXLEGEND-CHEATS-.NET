@@ -1,6 +1,12 @@
 ---
 import '@/styles/starwind.css';
-import { canonicalUrl } from '../config/seo';
+import {
+  absoluteAssetUrl,
+  canonicalUrl,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_HEIGHT,
+  DEFAULT_OG_IMAGE_WIDTH,
+} from '../config/seo';
 import { FAVICON_VERSION } from '../config/site';
 import SocialShare from '../components/SocialShare.astro';
 import JsonLd from '../components/JsonLd.astro';
@@ -9,11 +15,15 @@ interface Props {
   title: string;
   description: string;
   logoAlt?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, logoAlt, jsonLd } = Astro.props;
+const { title, description, logoAlt, ogImage, ogImageAlt, jsonLd } = Astro.props;
 const canonical = canonicalUrl(Astro.url.pathname, Astro.url.origin);
+const ogImageUrl = absoluteAssetUrl(ogImage ?? DEFAULT_OG_IMAGE);
+const shareImageAlt = ogImageAlt ?? title;
 
 const navLinks = [
   { href: '/', label: 'r6hacks.org home' },
@@ -33,6 +43,20 @@ const navLinks = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content={shareImageAlt} />
+    <meta property="og:image:width" content={String(DEFAULT_OG_IMAGE_WIDTH)} />
+    <meta property="og:image:height" content={String(DEFAULT_OG_IMAGE_HEIGHT)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={shareImageAlt} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="en" href={canonical} />
     <link rel="alternate" hreflang="en-US" href={canonical} />
