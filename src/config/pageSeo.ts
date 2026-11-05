@@ -8,6 +8,8 @@ export interface PageSeoEntry {
   description: string;
   /** Optional on-page H1 override (SEO-only routes). */
   h1?: string;
+  /** Optional second H1 line (homepage hero accent). */
+  h1Accent?: string;
 }
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
@@ -15,6 +17,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     title: 'R6 Hacks – Check status before you queue after BattlEye',
     description:
       'R6 hacks for Rainbow Six Siege on PC — aimbot, player ESP, gadget ESP, config profiles, and installation guides. Tiers and checkout on r6hacks.org.',
+    h1: 'R6 Hacks',
+    h1Accent:
+      'Check status before you queue after BattlEye — Rainbow Six Siege PC, Aimbot, ESP, Gadget ESP & Configs',
   },
   '/products/r6/': {
     title: 'Rainbow Six Siege – Buy R6 PC hacks shop and tiers',

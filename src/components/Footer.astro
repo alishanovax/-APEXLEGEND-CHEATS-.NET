@@ -16,7 +16,9 @@ const legalLinks = [
   { href: '/terms/', label: t.footer.terms },
 ];
 
-const onPrivacyPage = Astro.url.pathname.replace(/\/$/, '') === '/privacy';
+const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const onPrivacyPage = normalizedPath === '/privacy';
+const onHomePage = normalizedPath === '/';
 
 ---
 
@@ -54,7 +56,9 @@ const onPrivacyPage = Astro.url.pathname.replace(/\/$/, '') === '/privacy';
               <a href={link.href} class="text-sm text-muted-foreground hover:text-primary" aria-label={link.ariaLabel}>
                 {onPrivacyPage && link.href === '/support/'
                   ? 'Privacy questions — shop support'
-                  : link.label}
+                  : onHomePage && link.href === '/support/'
+                    ? 'Homepage loader and checkout support'
+                    : link.label}
               </a>
             </li>
           ))}

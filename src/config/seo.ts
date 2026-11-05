@@ -45,6 +45,7 @@ export function resolvePageSeo(pathname: string): {
   title: string;
   description: string;
   h1?: string;
+  h1Accent?: string;
 } {
   const entry = getPageSeoEntry(pathname);
   if (entry) return entry;

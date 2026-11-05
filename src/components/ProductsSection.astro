@@ -18,9 +18,11 @@ interface Props {
   maxProducts?: number;
   /** Static grid on homepage — skips carousel DOM and JS. */
   useCarousel?: boolean;
+  /** Unique buy/view anchor text per product card (homepage SEO). */
+  uniqueCardAnchors?: boolean;
 }
 
-const { maxProducts, useCarousel = true } = Astro.props;
+const { maxProducts, useCarousel = true, uniqueCardAnchors = false } = Astro.props;
 const s = t.products;
 const products = maxProducts ? productPages.slice(0, maxProducts) : productPages;
 
@@ -96,8 +98,8 @@ function cardLabel(product: (typeof productPages)[number]) {
                 icon={cardIcon(product)}
                 badge={product.badge}
                 variant={product.variant}
-                buyLabel="Buy now"
-                viewLabel="View details"
+                buyLabel={uniqueCardAnchors ? `Buy ${product.slug} tier` : 'Buy now'}
+                viewLabel={uniqueCardAnchors ? `View ${product.slug} product page` : 'View details'}
                 maxFeatures={5}
               />
             ))
