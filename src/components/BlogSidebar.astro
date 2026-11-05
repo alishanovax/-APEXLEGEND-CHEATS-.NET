@@ -58,12 +58,22 @@ const streamProofProductLinks: { label: string; href: string; icon: IconName }[]
   { label: 'UGC appeals (stream)', href: productPath('ugc'), icon: 'sidebarUgc' },
 ];
 
+const practiceLobbyProductLinks: { label: string; href: string; icon: IconName }[] = [
+  { label: 'Practice hub — R6 products', href: ROUTES.products, icon: 'sidebarHub' },
+  { label: 'Elite tier (post-drill ranked)', href: ROUTES.productsElite, icon: 'sidebarElite' },
+  { label: 'Loadout tools (practice sidebar)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+  { label: 'HWID spoofer (practice guide)', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+  { label: 'UGC workspace (practice)', href: productPath('ugc'), icon: 'sidebarUgc' },
+];
+
 const productLinks =
   post.slug === 'battleye-fix'
     ? eacGuideProductLinks
     : post.slug === 'r6-stream-proof'
       ? streamProofProductLinks
-      : defaultProductLinks;
+      : post.slug === 'r6-practice-lobby'
+        ? practiceLobbyProductLinks
+        : defaultProductLinks;
 ---
 
 <aside
@@ -155,7 +165,9 @@ const productLinks =
             ? 'Start R6 checkout'
             : post.slug === 'r6-stream-proof'
               ? 'Checkout stream-proof tier'
-              : 'Buy R6 Hacks'
+              : post.slug === 'r6-practice-lobby'
+                ? 'Checkout after range drills'
+                : 'Buy R6 Hacks'
         }
       </span>
       <Icon name="arrowRight" size={16} class="shrink-0" />

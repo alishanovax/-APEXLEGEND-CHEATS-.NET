@@ -13,7 +13,7 @@ const blogPostsData: BlogPostFull[] = [
     body: [
       { type: 'p', text: "Shooting Range islands and bot lobbies are the safest place to tune aimbot, ESP and wall ESP before ranked matchmaking. The Shooting Range never carries into live playlists—private modules on r6hacks.org are a separate path for Steam matchmaking." },
       { type: 'h2', text: "Shooting Range vs Ranked tools" },
-      { type: 'p', text: "Shooting Range maps let you drill AR spray, SMG tracking and shotgun timing with unlimited resets. Ranked and Multiplayer need external aimbot and ESP modules updated every EAC patch. Explore tiers at [R6 Hacks](/products/r6/) after you finish practice." },
+      { type: 'p', text: "Shooting Range maps let you drill AR spray, SMG tracking and shotgun timing with unlimited resets. Ranked and Multiplayer need external aimbot and ESP modules updated every EAC patch. Explore tiers at [Rainbow Six hack shop after practice](/products/r6/) when drills feel consistent." },
       { type: 'h2', text: "Aimbot practice workflow" },
       { type: 'p', text: "Load a Pro ranked preset with high smoothness and moderate FOV. Spend ten minutes on a Shooting Range aim trainer: AR mid-range, SMG close, shotgun push. Lower smoothness only after tracking looks human—see [Weapon aimbot guide](/blog/r6-aimbot-combat/) and [aimbot for ranked](/blog/r6-aimbot-ranked/)." },
       { type: 'h2', text: "ESP and weapon ESP drills" },

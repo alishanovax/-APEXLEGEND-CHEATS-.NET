@@ -195,7 +195,9 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                   ? 'Checkout after BattlEye fix'
                   : post.slug === 'r6-stream-proof'
                     ? 'Buy stream-proof R6 tier'
-                    : 'Buy R6 Hacks'
+                    : post.slug === 'r6-practice-lobby'
+                      ? 'Checkout after Shooting Range drills'
+                      : 'Buy R6 Hacks'
               }
               <Icon name="arrowRight" size={17} />
             </Button>
@@ -205,7 +207,9 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                   ? 'Open R6 product catalog'
                   : post.slug === 'r6-stream-proof'
                     ? 'Open stream-safe product hub'
-                    : 'View products'
+                    : post.slug === 'r6-practice-lobby'
+                      ? 'Compare Lite and Pro tiers'
+                      : 'View products'
               }
             </Button>
             <Button as="a" href={ROUTES.blog} variant="outline">
@@ -214,7 +218,9 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                   ? 'Browse patch-day guides'
                   : post.slug === 'r6-stream-proof'
                     ? 'More OBS setup guides'
-                    : 'More articles'
+                    : post.slug === 'r6-practice-lobby'
+                      ? 'More Shooting Range guides'
+                      : 'More articles'
               }
               <Icon name="arrowRight" size={17} />
             </Button>
