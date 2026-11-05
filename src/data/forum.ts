@@ -68,7 +68,7 @@ const additionalGuidePosts: ForumPost[] = [
   guideDiscussion({
     slug: 'map-overlay-setup', title: 'How should I set up the map overlay for the first time?', upvotes: 58,
     excerpt: 'Start with the basic display options, confirm the overlay in a practice session, then adjust one setting at a time.',
-    category: 'Guides & Builds', categoryTone: 'blue', sourceTitle: 'Rainbow Six Siege wall ESP setup guide', sourcePath: '/blog/r6-esp-setup/',
+    category: 'Guides & Builds', categoryTone: 'blue',     sourceTitle: 'Wall ESP overlay setup walkthrough (ESP guide)', sourcePath: '/blog/r6-esp-setup/',
     answer: 'Use the setup guide to enable the overlay, choose readable colors, and check that the indicators do not cover important parts of the game interface.',
     detail: 'Test your layout in a bot lobby before relying on it in a live match. A simple configuration is easier to understand than turning on every option immediately.',
     tip: 'If the screen feels crowded, reduce the number of indicators before changing their size or position.',

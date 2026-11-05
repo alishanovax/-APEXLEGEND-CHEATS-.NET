@@ -40,7 +40,7 @@ const postPath = `/blog/${post.slug}/`;
 const blogCrumbLabels: Record<string, string> = {
   'r6-practice-lobby': 'R6 practice guides (blog hub)',
   'r6-stream-proof': 'Stream-proof guides (blog hub)',
-  'r6-radar': 'Radar hack guides (hub)',
+  'r6-radar': 'Radar hack guides (blog hub)',
 };
 const blogCrumbLabel = blogCrumbLabels[post.slug] ?? 'Blog';
 const breadcrumbs = [
@@ -192,9 +192,7 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                         ? 'Checkout after Shooting Range drills (CTA)'
                         : post.slug === 'r6-stream-proof'
                           ? 'Buy stream-proof tier (inline CTA)'
-                          : post.slug === 'r6-radar'
-                            ? 'Buy Lite radar tier (inline CTA)'
-                            : undefined
+                          : undefined
                     }
                   />
                 );
@@ -227,7 +225,7 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     : post.slug === 'r6-practice-lobby'
                       ? 'Compare Lite and Pro tiers'
                       : post.slug === 'r6-radar'
-                        ? 'Open R6 Lite product page (radar)'
+                        ? 'Open R6 product catalog (radar)'
                         : 'View products'
               }
             </Button>
@@ -240,7 +238,7 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     : post.slug === 'r6-practice-lobby'
                       ? 'More Shooting Range guides'
                       : post.slug === 'r6-radar'
-                        ? 'More radar hack guides'
+                        ? 'More radar and ESP guides'
                         : 'More articles'
               }
               <Icon name="arrowRight" size={17} />

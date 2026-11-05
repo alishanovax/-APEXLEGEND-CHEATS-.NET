@@ -66,6 +66,14 @@ const practiceLobbyProductLinks: { label: string; href: string; icon: IconName }
   { label: 'UGC workspace (practice)', href: productPath('ugc'), icon: 'sidebarUgc' },
 ];
 
+const radarGuideProductLinks: { label: string; href: string; icon: IconName }[] = [
+  { label: 'R6 shop (radar sidebar)', href: ROUTES.products, icon: 'sidebarHub' },
+  { label: 'Elite tier (radar + aimbot)', href: ROUTES.productsElite, icon: 'sidebarElite' },
+  { label: 'Loadout tools (radar guide)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+  { label: 'HWID spoofer (radar setup)', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+  { label: 'UGC appeals (radar)', href: productPath('ugc'), icon: 'sidebarUgc' },
+];
+
 const productLinks =
   post.slug === 'battleye-fix'
     ? eacGuideProductLinks
@@ -73,7 +81,9 @@ const productLinks =
       ? streamProofProductLinks
       : post.slug === 'r6-practice-lobby'
         ? practiceLobbyProductLinks
-        : defaultProductLinks;
+        : post.slug === 'r6-radar'
+          ? radarGuideProductLinks
+          : defaultProductLinks;
 ---
 
 <aside
@@ -167,7 +177,9 @@ const productLinks =
               ? 'Checkout stream-proof tier'
               : post.slug === 'r6-practice-lobby'
                 ? 'Checkout after range drills'
-                : 'Buy R6 Hacks'
+                : post.slug === 'r6-radar'
+                  ? 'Checkout Lite radar tier'
+                  : 'Buy R6 Hacks'
         }
       </span>
       <Icon name="arrowRight" size={16} class="shrink-0" />
