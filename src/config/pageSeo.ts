@@ -72,6 +72,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     title: 'FAQ – R6 tiers, bans, setup and BattlEye loader help',
     description:
       'FAQ on Lite, Pro and Elite tiers, aimbot, wall ESP, radar, HWID spoofer, Operator loadout tools, bans and loader setup at r6hacks.org.',
+    h1: 'FAQ — R6 Hacks tiers, bans, BattlEye setup, loader help and checkout',
   },
   '/terms/': {
     title: 'Terms – org — license use, delivery, refunds and account',

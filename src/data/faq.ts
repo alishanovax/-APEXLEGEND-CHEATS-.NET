@@ -32,10 +32,10 @@ function link(text: string, href: string): string {
 function expandFaqAnswer(answer: string, faqId: string): string {
   if (!answer.includes('{{')) return answer;
   const slots: Record<string, string> = {
-    ELITE: link(`Elite R6 checkout — ${faqId}`, productPath('elite')),
-    LITE: link(`Lite wall ESP shop — ${faqId}`, ROUTES.products),
-    PRO: link(`Pro aimbot scripts shop — ${faqId}`, ROUTES.products),
-    PRODUCTS_HUB: link(`R6 products hub — ${faqId}`, ROUTES.products),
+    ELITE: link(`Elite tier checkout (${faqId})`, productPath('elite')),
+    LITE: link(`Lite ESP tier (${faqId})`, productPath('lite')),
+    PRO: link(`Pro aimbot tier (${faqId})`, productPath('pro')),
+    PRODUCTS_HUB: link(`Full R6 catalog (${faqId})`, ROUTES.products),
     HWID: link(`HWID spoofer utility — ${faqId}`, productPath('hwid-spoofer')),
     UGC: link(`UGC appeal tools — ${faqId}`, productPath('ugc')),
     SKIN: link(`Operator loadout tools pack — ${faqId}`, productPath('unlock-all')),
