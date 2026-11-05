@@ -22,7 +22,7 @@ import { ROUTES } from '../../utils/path';
 const seo = resolvePageSeo('/blog/');
 const breadcrumbs = [
   { name: 'Home', path: '/' },
-  { name: 'Guides', path: '/blog/' },
+  { name: 'Blog', path: '/blog/' },
 ];
 
 const featured = getFeaturedBlogPost();
@@ -167,7 +167,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
       <div class="mt-12 flex justify-start lg:justify-center">
         <Button as="a" href={ROUTES.home} variant="outline">
           <Icon name="chevronLeft" size={16} />
-          Guide hub: return to homepage
+          Blog hub: return to homepage
         </Button>
       </div>
     </div>
