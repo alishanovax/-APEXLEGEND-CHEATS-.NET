@@ -29,7 +29,7 @@ export function websiteSchema() {
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
     description:
-      'Apex Legends cheats with aimbot, ESP, and radar hack, Legend loadout tools and ranked-safe tiers for PC.',
+      'Apex Legends cheats with aimbot, ESP, and radar cheat, Legend loadout tools and ranked-safe tiers for PC.',
   };
 }
 
@@ -184,7 +184,7 @@ export function productSchema(input: {
   };
 }
 
-/** @deprecated Prefer productSchema for product/hack detail pages. */
+/** @deprecated Prefer productSchema for product/cheat detail pages. */
 export function softwareApplicationSchema(input: {
   name: string;
   description: string;

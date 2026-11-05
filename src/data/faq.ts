@@ -100,7 +100,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqProductsPage',
     q: 'Where are products and utilities listed?',
-    a: `{{PRODUCTS_HUB}} lists hack tiers, {{HWID}}, {{UGC}}, and {{SKIN}} with feature lists and checkout via our partner.`,
+    a: `{{PRODUCTS_HUB}} lists cheat tiers, {{HWID}}, {{UGC}}, and {{SKIN}} with feature lists and checkout via our partner.`,
   },
   {
     id: 'what-is-esp',
@@ -122,7 +122,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhichTierEsp',
     q: 'Which tier do I need for wall ESP only?',
-    a: `{{LITE}} is awareness only: player ESP, chest locator, loot timers and radar hack. {{PRO}} adds aimbot. {{ELITE}} adds bots, kill steal and Legend loadout tools.`,
+    a: `{{LITE}} is awareness only: player ESP, chest locator, loot timers and radar cheat. {{PRO}} adds aimbot. {{ELITE}} adds bots, kill steal and Legend loadout tools.`,
     scopes: ['lite'],
   },
   {
@@ -138,7 +138,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqRankTiers',
     q: 'How do you rank Lite vs Pro vs Elite?',
-    a: `Map awareness only → {{LITE}}. Ranked gunfights with aimbot → {{PRO}}. Full bot suite and priority patches → {{ELITE}}. Compare on each hack page or the {{FAQ_PAGE}}.`,
+    a: `Map awareness only → {{LITE}}. Ranked gunfights with aimbot → {{PRO}}. Full bot suite and priority patches → {{ELITE}}. Compare on each cheat page or the {{FAQ_PAGE}}.`,
   },
   {
     id: 'elite-slots',
@@ -167,7 +167,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'safety',
     icon: 'faqEspSafer',
     q: 'Is wall ESP safer than aimbot?',
-    a: a('ESP is quieter in replay than obvious bot patterns, but it is still a hack. Easy Anti-Cheat does not ignore overlays because you left aimbot off.'),
+    a: a('ESP is quieter in replay than obvious bot patterns, but it is still a cheat. Easy Anti-Cheat does not ignore overlays because you left aimbot off.'),
   },
   {
     id: 'hwid-when',
@@ -201,11 +201,11 @@ const rawSiteFaqs: SiteFaqItem[] = [
     a: `Apex Legends Cheats runs external with cloud config sync—no files injected into the Apex Legends directory. Easy Anti-Cheat risk still applies. See {{PRODUCTS_HUB}}.`,
   },
   {
-    id: 'blog-vs-hacks',
+    id: 'blog-vs-cheats',
     topic: 'blog',
     icon: 'faqBlogVsCheats',
-    q: 'Are blog hack codes the same as ranked hacks?',
-    a: `No. Blog articles about Steam console commands apply only in custom lobbies with hacks enabled. Ranked Apex Legends cheats are separate products—see {{LITE}}, {{PRO}} and {{ELITE}}.`,
+    q: 'Are blog cheat codes the same as ranked cheats?',
+    a: `No. Blog articles about Steam console commands apply only in custom lobbies with cheats enabled. Ranked Apex Legends cheats are separate products—see {{LITE}}, {{PRO}} and {{ELITE}}.`,
   },
   {
     id: 'blog-setup',
@@ -219,7 +219,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqComparePlans',
     q: 'Where do I compare plans side by side?',
-    a: `Each hack tier page includes a compare table. The {{FAQ_PAGE}} collects product, hack and blog answers in one place.`,
+    a: `Each cheat tier page includes a compare table. The {{FAQ_PAGE}} collects product, cheat and blog answers in one place.`,
   },
   {
     id: 'who-lite',
@@ -267,10 +267,10 @@ const rawSiteFaqs: SiteFaqItem[] = [
     a: `Yes—{{LITE}}, {{PRO}} and {{ELITE}} include Ranked and ranked presets in the portal. Tune distance caps and script delay before your first queue.`,
   },
   {
-    id: 'zoom-hack',
+    id: 'zoom-cheat',
     topic: 'esp',
     icon: 'faqZoomHack',
-    q: 'Which tier includes radar hack?',
+    q: 'Which tier includes radar cheat?',
     a: `Radar ships on {{LITE}} and carries through {{PRO}} and {{ELITE}}. Mini-radar helps zone awareness without guessing rotates.`,
     scopes: ['lite'],
   },
@@ -283,7 +283,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     scopes: ['elite'],
   },
   {
-    id: 'private-hacks',
+    id: 'private-cheats',
     topic: 'safety',
     icon: 'faqPrivateCheats',
     q: 'What are private Apex Legends cheats?',
@@ -294,7 +294,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'all',
     icon: 'faqMore',
     q: 'Where is the full FAQ?',
-    a: `This site includes landing FAQs and per-page sections. See the {{FAQ_PAGE}} for all product, hack and blog answers—or read {{BLOG}} for deep guides.`,
+    a: `This site includes landing FAQs and per-page sections. See the {{FAQ_PAGE}} for all product, cheat and blog answers—or read {{BLOG}} for deep guides.`,
   },
 ];
 
@@ -314,7 +314,7 @@ export function getAllFaqs(): SiteFaqItem[] {
 export const SITE_FAQ_SECTION_COPY = {
   eyebrow: 'All topics',
   title: 'Apex Legends cheats FAQ',
-  subtitle: 'Filter by hack plans, wall ESP, aimbot, products, setup and guides.',
+  subtitle: 'Filter by cheat plans, wall ESP, aimbot, products, setup and guides.',
 } as const;
 
 export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
@@ -329,7 +329,7 @@ export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
 
 /** Section copy when FAQ list is scoped to the current page (not /faq/). */
 export const CONTEXTUAL_FAQ_SECTION_COPY = {
-  eyebrow: 'Hack FAQ',
+  eyebrow: 'Cheat FAQ',
   title: 'Apex Legends cheats questions',
   subtitle: 'Straight answers on aimbot, ESP, bans and setup — see the full FAQ for every topic.',
 } as const;
@@ -373,8 +373,8 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       id: 'blog-guide-start',
       topic: 'blog',
       icon: 'faqBlogGuideStart',
-      q: 'Should I use console hack codes in ranked?',
-      a: a('No. Firing Range lobby hack codes only work in custom games with hacks enabled. Ranked requires separate Apex Legends cheats from apexlegendcheats.net tiers.'),
+      q: 'Should I use console cheat codes in ranked?',
+      a: a('No. Firing Range lobby cheat codes only work in custom games with cheats enabled. Ranked requires separate Apex Legends cheats from apexlegendcheats.net tiers.'),
     },
     {
       id: 'blog-guide-tier',
@@ -446,7 +446,7 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
   const topicFaqs = blogTopicFaqs[tag] ?? [];
   const slugHints: SiteFaqItem[] = [];
 
-  if (slug.includes('map-hack') || slug.includes('esp') || slug.includes('ward')) {
+  if (slug.includes('map-cheat') || slug.includes('esp') || slug.includes('ward')) {
     slugHints.push({
       id: 'blog-slug-esp',
       topic: 'esp',

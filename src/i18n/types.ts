@@ -143,7 +143,7 @@ export interface Translations {
     subtitle: string;
     items: string[];
   };
-  hacks: {
+  cheats: {
     eyebrow: string;
     title: string;
     subtitle: string;

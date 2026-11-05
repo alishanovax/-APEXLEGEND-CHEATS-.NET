@@ -40,7 +40,7 @@ const postPath = `/blog/${post.slug}/`;
 const blogCrumbLabels: Record<string, string> = {
   'apex-firing-range-practice': 'Apex Firing Range guides (blog hub)',
   'apex-stream-proof': 'Stream-proof guides (blog hub)',
-  'apex-radar': 'Radar hack guides (blog hub)',
+  'apex-radar': 'Radar cheat guides (blog hub)',
 };
 const blogCrumbLabel = blogCrumbLabels[post.slug] ?? 'Blog';
 const breadcrumbs = [
@@ -127,7 +127,7 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                   ? `${post.title} — Easy Anti-Cheat verification troubleshooting on PC`
                   : post.slug === 'apex-stream-proof'
                     ? `${post.title} — hide wall ESP and script overlays on stream`
-                    : `${post.title} — Apex Legends hack gameplay screenshot`
+                    : `${post.title} — Apex Legends cheat gameplay screenshot`
               }
               width={960}
               height={540}
@@ -211,7 +211,7 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     : post.slug === 'apex-firing-range-practice'
                       ? 'Checkout after Firing Range drills'
                       : post.slug === 'apex-radar'
-                        ? 'Buy Lite radar hack tier'
+                        ? 'Buy Lite radar cheat tier'
                         : 'Buy Apex Legends Cheats'
               }
               <Icon name="arrowRight" size={17} />

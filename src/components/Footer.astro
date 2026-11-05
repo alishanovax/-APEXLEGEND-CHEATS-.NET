@@ -5,7 +5,7 @@ import SiteBrandMark from './SiteBrandMark.astro';
 
 const resourceLinks = [
   { href: '/blog/', label: 'Blog archive', ariaLabel: 'Blog' },
-  { href: '/products/apex/elite/', label: 'Elite hacks', ariaLabel: 'Elite hacks' },
+  { href: '/products/apex/elite/', label: 'Elite cheats', ariaLabel: 'Elite cheats' },
   { href: '/products/apex/', label: 'Products & utilities', ariaLabel: 'Products' },
   { href: '/support/', label: t.footer.support },
 ];
@@ -87,7 +87,7 @@ const onProductsApexHub = normalizedPath === '/products/apex';
                           : onStreamProofPost && link.href === '/support/'
                             ? 'Stream-proof guide — capture support'
                             : onRadarPost && link.href === '/support/'
-                              ? 'Radar hack guide — loader support'
+                              ? 'Radar cheat guide — loader support'
                               : onRadarPost && link.href === '/blog/'
                                 ? 'Radar article hub — more setup guides'
                                 : onRadarPost && link.href === '/products/apex/elite/'

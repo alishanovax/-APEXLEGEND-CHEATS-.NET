@@ -9,7 +9,7 @@ export const ZADEYO_APEX_PRODUCT_SEO = {
   title: 'Apex Legends Cheats – Monthly and long-term PC access',
   description:
     'Apex Legends PC cheats with player ESP, aimbot, radar, and recoil control. Compare tiers on apexlegendcheats.net, then checkout on ZADEYO when status is online.',
-  h1: 'Apex Legends Cheats — ESP, aimbot, wallhack & ranked presets',
+  h1: 'Apex Legends Cheats — ESP, aimbot, wall ESP & ranked presets',
   h2ProductDetails: 'Product details',
   h2Features: 'Features',
   h2SystemRequirements: 'System requirements',

@@ -8,7 +8,7 @@ export const featureIcons: Record<string, IconName> = {
   'Utility Suite': 'featureUtilitySuite',
   'Loot Assist': 'compareAutoFarm',
   'Stream Proof': 'streamProof',
-  'Radar Hack': 'compareZoomHack',
+  'Radar Cheat': 'compareZoomHack',
   'Cloud Config & Updates': 'compareCloudBackup',
 };
 

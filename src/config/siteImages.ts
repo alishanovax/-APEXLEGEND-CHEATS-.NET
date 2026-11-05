@@ -31,7 +31,7 @@ export const SITE_CHEAT_IMAGES: SiteCheatImage[] = [
   },
   {
     src: APEX_MEDIA[4],
-    alt: 'Apex Legends hack interface showing aimbot and ESP settings on PC',
+    alt: 'Apex Legends cheat interface showing aimbot and ESP settings on PC',
   },
 ];
 

@@ -14,38 +14,38 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Apex Legends Cheats – Check status before you queue after Easy Anti-Cheat',
+    title: 'Apex Legends – Check status before you queue after Easy',
     description:
-      'Apex Legends cheats for Apex Legends on PC — aimbot, player ESP, item ESP, config profiles, and installation guides. Tiers and checkout on apexlegendcheats.net.',
+      'Apex Legends cheats for Apex Legends on PC — aimbot, player ESP, item ESP, config profiles, and installation guides.',
     h1: 'Apex Legends Cheats',
     h1Accent:
       'Check status before you queue after Easy Anti-Cheat — Apex Legends PC, Aimbot, ESP, Item ESP & Configs',
   },
   '/products/apex/': {
-    title: 'Apex Legends – Buy Apex Legends PC hacks shop and tiers',
+    title: 'Apex Legends – Buy PC hacks shop and tiers',
     description:
-      'Apex Legends shop: Apex Legends cheats for PC — Elite aimbot, wall ESP, HWID spoofer, UGC recovery and Legend loadout tools checkout at apexlegendcheats.net.',
-    h1: 'Buy Apex Legends — Elite, HWID spoofer, Legend loadout tools PC hacks shop tiers',
+      'Apex Legends shop: Apex Legends cheats for PC — Elite aimbot, wall ESP, HWID spoofer, UGC recovery and Legend loadout tools checkout at apexlegendcheats.',
+    h1: 'Buy Apex Legends — Elite, HWID spoofer, Legend loadout tools PC cheats shop tiers',
   },
   '/products/apex/lite/': {
-    title: 'Apex Lite Hacks | Player ESP, Radar & Loot Timers',
+    title: 'Apex Lite Cheats | Player ESP, Radar & Loot Timers',
     description:
-      'Apex Lite hacks for PC — player ESP, chest markers, loot timers and radar without aimbot. Stream-proof overlay and ranked presets on apexlegendcheats.net.',
+      'Apex Lite cheats for PC — player ESP, chest markers, loot timers and radar without aimbot. Stream-proof overlay and ranked presets on apexlegendcheats.net.',
   },
   '/products/apex/pro/': {
-    title: 'Apex Pro Hacks | Aimbot, Smooth Aim & Wall ESP',
+    title: 'Apex Pro Cheats | Aimbot, Smooth Aim & Wall ESP',
     description:
-      'Apex Pro hacks include Lite ESP plus Aimbot, Smooth Aim, Sticky Aim and bone priority — ranked-safe defaults and portal presets for Apex Legends on PC.',
+      'Apex Pro cheats include Lite ESP plus Aimbot, Smooth Aim, Sticky Aim and bone priority — ranked-safe defaults and portal presets for Apex Legends on PC.',
   },
   '/products/apex/elite/': {
-    title: 'Elite Apex Legends Hacks | Aimbot, ESP & Loot Assist',
+    title: 'Elite Apex Legends Cheats | Aimbot, ESP & Loot Assist',
     description:
       'Elite tier ships item ESP, triggerbot, full wall ESP, operator loadout tools and priority patch updates for Apex Legends on PC.',
   },
   '/products/apex/hwid-spoofer/': {
     title: 'HWID Spoofer for Apex Legends | Hardware Ban Bypass',
     description:
-      'Buy a Apex Legends HWID spoofer for PC hardware bans — disk/MAC tools, compatibility scan and post-spoof checks before you launch hacks again.',
+      'Buy a Apex Legends HWID spoofer for PC hardware bans — disk/MAC tools, compatibility scan and post-spoof checks before you launch cheats again.',
   },
   '/products/apex/ugc/': {
     title: 'UGC Tools | Apex Legends Easy Anti-Cheat & EA Ban Appeals',
@@ -60,13 +60,13 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/products/apex/utilities/': {
     title: 'Utilities – and local Legend loadout tools / Pack',
     description:
-      'Compare Apex Legends hack utilities: HWID spoofer after hardware bans, UGC for EA/Easy Anti-Cheat appeals, and local operator loadout tools.',
+      'Compare Apex Legends cheat utilities: HWID spoofer after hardware bans, UGC for EA/Easy Anti-Cheat appeals, and local operator loadout tools.',
   },
   '/blog/': {
-    title: 'Apex Legends Hack Blogs | Aimbot, wall ESP & Easy Anti-Cheat',
+    title: 'Apex Legends Cheat Blogs | Aimbot, wall ESP & Easy Anti-Cheat',
     description:
-      'Read Apex Legends hack guides on aimbot setup, wall ESP, Lite vs Pro, Firing Range practice and Easy Anti-Cheat patch-day checks.',
-    h1: 'Latest Apex Legends hack guide blogs — aimbot, wall ESP & Easy Anti-Cheat',
+      'Read Apex Legends cheat guides on aimbot setup, wall ESP, Lite vs Pro, Firing Range practice and Easy Anti-Cheat patch-day checks.',
+    h1: 'Latest Apex Legends cheat guide blogs — aimbot, wall ESP & Easy Anti-Cheat',
   },
   '/forum/': {
     title: 'Forum – Most discussed 20 discussions All topics General',
@@ -75,7 +75,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     h1: 'Forum — most discussed topics, general discussions and loader setup help',
   },
   '/faq/': {
-    title: 'FAQ – Apex tiers, bans, setup and Easy Anti-Cheat loader help',
+    title: 'Faq – Apex tiers, bans, setup and Easy Anti-Cheat loader',
     description:
       'FAQ on Lite, Pro and Elite tiers, aimbot, wall ESP, radar, HWID spoofer, Legend loadout tools, bans and loader setup at apexlegendcheats.net.',
     h1: 'FAQ — Apex Legends Cheats tiers, bans, Easy Anti-Cheat setup, loader help and checkout',
@@ -86,7 +86,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Terms for buying Apex Legends cheats on apexlegendcheats.net — license use, delivery, refunds and account risk when you checkout Apex Legends cheat products.',
   },
   '/privacy/': {
-    title: 'Privacy – analytics, cookies and checkout at apexlegendcheats.net',
+    title: 'Analytics Cookies – cookies and contact data for checkout',
     description:
       'Privacy: How the apexlegendcheats.net shop uses analytics, cookies and contact data for checkout referrals, support tickets, and shop data use.',
     h1: 'Privacy Policy — apexlegendcheats.net analytics, cookies, checkout and contact data',
@@ -124,7 +124,7 @@ export const BLOG_POST_SEO: Record<string, Partial<PageSeoEntry>> = {
   'apex-radar': {
     title: 'Guide – FOV awareness and safe distance caps for Team',
     description:
-      'Radar Hack: Apex Legends cheats guide: Mini-radar, FOV awareness and safe distance caps for Battle Royale and Ranked on apexlegendcheats.net.',
+      'Radar Cheat: Apex Legends cheats guide: Mini-radar, FOV awareness and safe distance caps for Battle Royale and Ranked on apexlegendcheats.net.',
   },
   'apex-stream-proof': {
     title: 'Stream Proof – Hide wall ESP and script overlays from OBS',
@@ -149,7 +149,7 @@ export const BLOG_POST_PAGE_H1: Record<string, string> = {
     'Stream-Proof Overlay Setup — hide wall ESP and script overlays from OBS (Apex Legends cheats)',
   'apex-firing-range-practice': 'Firing Range Practice: Aim Drills Before Ranked (Apex Legends cheats)',
   'apex-radar':
-    'Apex Legends Radar hack Guide — FOV awareness, safe distance caps for Team',
+    'Apex Legends Radar cheat Guide — FOV awareness, safe distance caps for Team',
 };
 
 export function getBlogPostSeo(slug: string, fallback: PageSeoEntry): PageSeoEntry {

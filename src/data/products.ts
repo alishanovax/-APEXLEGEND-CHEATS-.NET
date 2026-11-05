@@ -127,7 +127,7 @@ const sharedGoodToKnow =
   'Apex Legends and Easy Anti-Cheat receive frequent updates. Confirm module availability on the live status panel at apexlegendcheats.net before you purchase or launch. Overlay behavior may differ in lobbies, replays and spectator mode after patches.';
 
 const sharedLimitations =
-  'Third-party software in Apex Legends can violate the game terms of service and lead to anti-hack action. You use this software at your own risk. Compatibility and availability can change after game, anti-hack, or Windows updates without notice.';
+  'Third-party software in Apex Legends can violate the game terms of service and lead to anti-cheat action. You use this software at your own risk. Compatibility and availability can change after game, anti-cheat, or Windows updates without notice.';
 
 const apexSystemRequirements: SystemRequirement[] = [
   { icon: 'reqWindows', text: 'Windows 10 or Windows 11 (64-bit) with HVCI, Core Isolation, TPM and Secure Boot enabled.' },
@@ -185,7 +185,7 @@ function slide(...keys: GalleryKey[]): ProductSlide[] {
 }
 
 const productDetailGalleryCaptions = [
-  { caption: 'Updates & anti-hack', captionDesc: 'Stay aligned with Apex Legends patch and security news.' },
+  { caption: 'Updates & anti-cheat', captionDesc: 'Stay aligned with Apex Legends patch and security news.' },
   { caption: 'Multiplayer gameplay', captionDesc: 'In-match view on a compact map with full HUD.' },
   { caption: 'Quick Match perspective', captionDesc: 'First-person combat with kill feed and minimap.' },
 ] as const;
@@ -216,7 +216,7 @@ const tierAbout: Record<string, ProductPage['about']> = {
     { type: 'h2', text: 'Ranked-safe by design' },
     {
       type: 'p',
-      text: 'Lite skips Aimbot and bot modules entirely. Your gameplay looks natural while ESP, radar hack and loot timers keep you informed. Stream-proof mode hides overlays from OBS capture for content creators.',
+      text: 'Lite skips Aimbot and bot modules entirely. Your gameplay looks natural while ESP, radar cheat and loot timers keep you informed. Stream-proof mode hides overlays from OBS capture for content creators.',
     },
   ],
   pro: [
@@ -248,7 +248,7 @@ const tierBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Included modules' },
     {
       type: 'p',
-      text: 'Player ESP with distance and name tags, chest and reboot-van locator, loot spawn timers, radar hack, and stream-safe overlay hiding. Config presets for Battle Royale and Ranked ship in the portal—load before your first queue.',
+      text: 'Player ESP with distance and name tags, chest and reboot-van locator, loot spawn timers, radar cheat, and stream-safe overlay hiding. Config presets for Battle Royale and Ranked ship in the portal—load before your first queue.',
     },
     { type: 'h2', text: 'Upgrade path' },
     {
@@ -292,7 +292,7 @@ const utilityBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Full workflow' },
     {
       type: 'p',
-      text: 'Restore point, driver cleanup, spoof application, cold reboot, identifier verification, then conservative hack profile before ranked. Full checklist ships in the portal and in our HWID blog guide.',
+      text: 'Restore point, driver cleanup, spoof application, cold reboot, identifier verification, then conservative cheat profile before ranked. Full checklist ships in the portal and in our HWID blog guide.',
     },
   ],
   'ugc': [
@@ -340,7 +340,7 @@ const productContent: Record<
       'Distance readouts',
       'Team color filter',
       'Loot spawn timers',
-      'Radar hack',
+      'Radar cheat',
       'Ranked preset config',
       'Ranked preset config',
       'Cloud config backup',
@@ -409,7 +409,7 @@ const productContent: Record<
       'Private slot access',
     ],
     overview: {
-      title: 'Elite: full hack + extras',
+      title: 'Elite: full cheat + extras',
       paragraphs: [
         'Elite includes Lite and Pro modules, plus loot assist, Triggerbot, Recoil control, Legend loadout tools, full wall ESP and faster patch priority.',
         'Elite slots are limited. Discord support helps you set safer profiles before ranked matchmaking. Check the status banner on apexlegendcheats.net before you buy Elite access.',
@@ -444,7 +444,7 @@ const productContent: Record<
       title: 'HWID Spoofer for Apex Legends PC bans',
       paragraphs: [
         'Use the HWID Spoofer when Easy Anti-Cheat flags your PC hardware but the EA account is still fine. Includes disk and MAC tools, a restore-point checklist, a compatibility scan and post-spoof checks.',
-        'Use it when new accounts die on one PC but work on another. It does not fix account-only Easy Anti-Cheat bans. After spoofing, use a safer hack profile before ranked matchmaking.',
+        'Use it when new accounts die on one PC but work on another. It does not fix account-only Easy Anti-Cheat bans. After spoofing, use a safer cheat profile before ranked matchmaking.',
       ],
     },
   },
@@ -508,22 +508,22 @@ const productContent: Record<
 };
 
 function buildTierPages(): ProductPage[] {
-  return t.hacks.items.map((hack) => {
-    const slug = slugFromHref(hack.href);
+  return t.cheats.items.map((cheat) => {
+    const slug = slugFromHref(cheat.href);
     const content = productContent[slug];
-    const displayName = hack.name === 'Lite' ? 'Apex Lite' : hack.name === 'Pro' ? 'Apex Pro' : 'Apex Elite';
+    const displayName = cheat.name === 'Lite' ? 'Apex Lite' : cheat.name === 'Pro' ? 'Apex Pro' : 'Apex Elite';
     return {
       slug,
       kind: 'tier',
-      badge: hack.badge,
-      tier: hack.tier,
-      name: hack.name,
-      title: hack.title,
-      subtitle: hack.desc,
-      desc: hack.desc,
-      features: hack.features,
-      more: hack.more,
-      variant: hack.variant,
+      badge: cheat.badge,
+      tier: cheat.tier,
+      name: cheat.name,
+      title: cheat.title,
+      subtitle: cheat.desc,
+      desc: cheat.desc,
+      features: cheat.features,
+      more: cheat.more,
+      variant: cheat.variant,
       buyUrl: checkoutForSlug(slug),
       images: content.images,
       overview: content.overview,
@@ -598,6 +598,6 @@ export const productHub = {
   path: productBase,
   title: t.products.title,
   subtitle: t.products.subtitle,
-  description: 'Apex Elite hacks with aimbot and ESP, plus HWID spoofer, UGC recovery and Legend loadout tools for PC.',
+  description: 'Apex Elite cheats with aimbot and ESP, plus HWID spoofer, UGC recovery and Legend loadout tools for PC.',
   buyUrl: checkoutPath('apex'),
 };

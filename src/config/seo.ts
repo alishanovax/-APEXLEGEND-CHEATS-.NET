@@ -63,7 +63,7 @@ export function pageTitle(keyword: string, brand = t.site.name): string {
 /** Keep meta descriptions blunt about Apex Legends cheats for SERP snippets. */
 export function cheatMetaDescription(text: string): string {
   const trimmed = text.trim();
-  if (/mw4\s*hack/i.test(trimmed)) return trimmed;
+  if (/mw4\s*cheat/i.test(trimmed)) return trimmed;
   return `Apex Legends cheats guide: ${trimmed}`;
 }
 

@@ -33,7 +33,7 @@ function applyCopy(text) {
   next = next.replace(/\bhacks\b/g, 'cheats');
   next = next.replace(/\bHack\b/g, 'Cheat');
   next = next.replace(/\bhack\b/g, 'cheat');
-  // Fix accidental doubles
+  next = next.replace(/\banti-cheat action\b/g, 'anti-cheat action');
   next = next.replace(/\bcheats cheats\b/gi, 'cheats');
   next = next.replace(/\bcheat cheat\b/gi, 'cheat');
   return next;
@@ -46,6 +46,11 @@ const skipFiles = new Set([
   path.join(root, 'scripts', 'rebrand-mw4.mjs'),
   path.join(root, 'src', 'components', 'icons', 'types.ts'),
   path.join(root, 'src', 'components', 'icons', 'registry.ts'),
+  path.join(root, 'src', 'config', 'slug-redirects.mjs'),
+  path.join(root, 'src', 'utils', 'path.ts'),
+  path.join(root, 'astro.config.mjs'),
+  path.join(root, 'public', '_redirects'),
+  path.join(root, 'src', 'data', 'sectionIcons.ts'),
 ]);
 
 let changed = 0;

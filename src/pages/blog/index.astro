@@ -18,6 +18,7 @@ import { blogTagIcons } from '../../data/sectionIcons';
 import type { IconName } from '../../components/icons/types';
 import { Button } from '@/components/starwind/button';
 import { ROUTES } from '../../utils/path';
+import SocialShare from '../../components/SocialShare.astro';
 
 const seo = resolvePageSeo('/blog/');
 const breadcrumbs = [
@@ -38,7 +39,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
   description={seo.description}
   jsonLd={[
     collectionPageSchema({
-      name: 'Apex Legends hack guides',
+      name: 'Apex Legends cheat guides',
       description: t.blog.subtitle.replace(/\bblogs\b/gi, 'articles'),
       url: '/blog/',
     }),
@@ -78,12 +79,14 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
   >
     <div class="mx-auto max-w-6xl px-5">
       <header class="section-header max-w-2xl">
-        <p class="section-header__eyebrow">Hack guides</p>
+        <p class="section-header__eyebrow">Cheat guides</p>
         <h1 id="blog-latest-title" class="section-header__title">{seo.h1 ?? t.blog.latestTitle}</h1>
         <p class="section-header__subtitle">
           Filter by topic or sort to find aimbot, ESP, wall ESP and patch-day articles.
         </p>
       </header>
+
+      <SocialShare title={seo.title} class="mt-6" />
 
       <div class="mt-8 flex flex-col gap-4 lg:mt-10 lg:flex-row lg:items-end lg:justify-between lg:gap-6">
         <div

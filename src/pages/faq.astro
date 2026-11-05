@@ -22,7 +22,7 @@ const faqs = getAllFaqs();
     webPageSchema({
       name: 'FAQ — Apex Legends Cheats & Products',
       description:
-        'Answers about Apex Legends hack tiers, wall ESP, aimbot, HWID tools, blog guides and checkout at apexlegendcheats.net.',
+        'Answers about Apex Legends cheat tiers, wall ESP, aimbot, HWID tools, blog guides and checkout at apexlegendcheats.net.',
       url: '/faq/',
     }),
     faqPageSchema(faqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') }))),

@@ -35,7 +35,7 @@ export function buildRssFeed(): string {
   <channel>
     <title>Apex Legends Cheats Blog</title>
     <link>${SITE_ORIGIN}/blog/</link>
-    <description>Apex Legends hack guides, patch notes, and setup walkthroughs from apexlegendcheats.net.</description>
+    <description>Apex Legends cheat guides, patch notes, and setup walkthroughs from apexlegendcheats.net.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${feedUrl}" rel="self" type="application/rss+xml" />

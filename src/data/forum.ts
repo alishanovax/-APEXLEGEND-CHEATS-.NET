@@ -76,7 +76,7 @@ const additionalGuidePosts: ForumPost[] = [
   guideDiscussion({
     slug: 'camera-zoom', title: 'What camera zoom settings are comfortable to play with?', upvotes: 44,
     excerpt: 'The zoom guide focuses on finding a view that improves map context without making your player hard to control.',
-    category: 'Guides & Builds', categoryTone: 'blue', sourceTitle: 'Apex Legends radar hack guide', sourcePath: '/blog/apex-radar/',
+    category: 'Guides & Builds', categoryTone: 'blue', sourceTitle: 'Apex Legends radar cheat guide', sourcePath: '/blog/apex-radar/',
     answer: 'There is no single ideal zoom value for every player. The guide recommends adjusting gradually and checking that you can still track your player, spell ranges, and nearby fights.',
     detail: 'Keep a quick reset to the default camera view available so you can compare the wider view and return to familiar framing.',
     tip: 'Change one step at a time and play a short practice session before settling on a new camera distance.',
@@ -132,7 +132,7 @@ const additionalGuidePosts: ForumPost[] = [
   guideDiscussion({
     slug: 'external-loader', title: 'What does “external loader” mean?', upvotes: 46,
     excerpt: 'The external software guide explains the term and outlines the general setup described on the site.',
-    category: 'General', categoryTone: 'purple', sourceTitle: 'Apex Legends external hack guide', sourcePath: '/blog/apex-external-loader/',
+    category: 'General', categoryTone: 'purple', sourceTitle: 'Apex Legends external cheat guide', sourcePath: '/blog/apex-external-loader/',
     answer: 'The article uses “external” to describe software that runs separately from the Apex Legends process and presents its interface as an overlay.',
     detail: 'It discusses the architecture at a high level and explains setup, patch updates, and the differences described between external and internal tools.',
     tip: 'Check compatibility and current status information whenever Apex Legends receives an update.',
@@ -174,10 +174,10 @@ const additionalGuidePosts: ForumPost[] = [
 export const forumPosts: ForumPost[] = [
   {
     slug: 'lobby-codes-ranked', category: 'General', categoryTone: 'purple',
-    title: 'Can I use Apex Legends hack codes in ranked matchmaking?',
-    excerpt: 'Quick answer from the practice lobby guide: built-in lobby commands only work in custom matches with hacks enabled.',
+    title: 'Can I use Apex Legends cheat codes in ranked matchmaking?',
+    excerpt: 'Quick answer from the practice lobby guide: built-in lobby commands only work in custom matches with cheats enabled.',
     author: 'guide_team', age: '2 hours ago', commentsCount: 3, upvotes: 128, flair: 'Guide Q&A',
-    sourceTitle: 'Apex Legends hack codes guide: console commands for practice lobbies', sourcePath: '/blog/apex-firing-range-practice/',
+    sourceTitle: 'Apex Legends cheat codes guide: console commands for practice lobbies', sourcePath: '/blog/apex-firing-range-practice/',
     body: ['No. Firing Range islands and bot lobbies are for practice only. They do not carry into Ranked matchmaking or Ranked.', 'Use Firing Range to learn aimbot smoothness, ESP ranges, and loadouts. The guide also explains the difference between practice drills and third-party Apex Legends cheats.'],
     comments: [
       { author: 'mid_or_feed', age: '1 hour ago', score: 24, body: 'Correct: load a Firing Range aim map or bot lobby before touching ranked-season presets.' },
@@ -190,8 +190,8 @@ export const forumPosts: ForumPost[] = [
     title: 'How do I turn on the Apex Legends developer console?',
     excerpt: 'Open Settings → Options → Advanced and enable the console. Here is the quick setup from our walkthrough.',
     author: 'guide_team', age: '4 hours ago', commentsCount: 2, upvotes: 86, flair: 'Guide Q&A',
-    sourceTitle: 'How to use hack codes in Apex Legends', sourcePath: '/blog/apex-cheat-setup/',
-    body: ['Open Settings, choose Options, then open Advanced Options and enable the developer console. In a custom lobby, press the console key (usually tilde) and enter the command. You also need the host to enable hacks in the lobby settings.', 'If a command does nothing, first confirm hacks are enabled for that lobby and check the command syntax.'],
+    sourceTitle: 'How to use cheat codes in Apex Legends', sourcePath: '/blog/apex-cheat-setup/',
+    body: ['Open Settings, choose Options, then open Advanced Options and enable the developer console. In a custom lobby, press the console key (usually tilde) and enter the command. You also need the host to enable cheats in the lobby settings.', 'If a command does nothing, first confirm cheats are enabled for that lobby and check the command syntax.'],
     comments: [
       { author: 'pos4_roamer', age: '3 hours ago', score: 17, body: 'You can also bind the console key in the hotkey settings if tilde is unavailable on your keyboard layout.' },
       { author: 'carry_curious', age: '2 hours ago', score: 9, body: 'Commands need the right lobby permissions; spectators may not be able to use economy commands.' },

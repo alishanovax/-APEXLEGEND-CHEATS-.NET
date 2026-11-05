@@ -27,7 +27,7 @@ export const en: Translations = {
     h1Accent: 'Apex Legends PC — Aimbot, ESP, Item ESP & Configs',
     subtitle:
       'Apex Legends cheats for PC ranked and unranked play — configurable aimbot FOV, Legend ESP, attacker and defender item ESP, skeleton and box overlays, and save/load config profiles. Check status before you queue after Easy Anti-Cheat updates.',
-    ctaPrimary: 'Buy hacks',
+    ctaPrimary: 'Buy cheats',
     ctaDiscord: 'Join Discord',
     modesLabel: 'Game modes',
     modes: ['Ranked', 'Unranked', 'Quick Match', 'Firing Range'],
@@ -39,7 +39,7 @@ export const en: Translations = {
     ],
   },
   features: {
-    eyebrow: 'Hack features',
+    eyebrow: 'Cheat features',
     title: 'Apex Legends cheat modules',
     subtitle:
       'Aimbot, player ESP, item ESP, and config tools aligned with the Apex Legends PC product listing — for ranked, unranked, and quick match playlists.',
@@ -67,7 +67,7 @@ export const en: Translations = {
           'Snaplines with position and thickness',
           'Player name, head circle, feet circle',
         ],
-        tags: ['apex ESP', 'player ESP', 'wallhack'],
+        tags: ['apex ESP', 'player ESP', 'wall ESP'],
         bento: 'sm:col-span-2 lg:col-span-8 lg:col-start-1 lg:row-start-2',
       },
       {
@@ -132,7 +132,7 @@ export const en: Translations = {
         subtitle: 'Where players use Apex Legends cheats',
         desc: 'Most buyers queue ranked or unranked bomb and secure area modes. Use conservative defaults in higher MMR lobbies.',
         bullets: ['Ranked bomb', 'Unranked bomb', 'Quick match', 'Training grounds'],
-        tags: ['Apex Legends hacks', 'ranked', 'bomb'],
+        tags: ['Apex Legends cheats', 'ranked', 'bomb'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-6',
       },
       {
@@ -146,10 +146,10 @@ export const en: Translations = {
     ],
   },
   whyUs: {
-    eyebrow: 'Why our hacks',
+    eyebrow: 'Why our cheats',
     title: 'Apex Legends cheats that stay online',
     subtitle:
-      'Most hack shops go down after Easy Anti-Cheat patches and leave you with bots. We ship loader updates fast, keep aimbot defaults safe for ranked play, and answer on Discord 24/7.',
+      'Most cheat shops go down after Easy Anti-Cheat patches and leave you with bots. We ship loader updates fast, keep aimbot defaults safe for ranked play, and answer on Discord 24/7.',
     usLabel: 'Apex Legends Cheats',
     otherLabel: 'Typical shop',
     rows: [
@@ -198,11 +198,11 @@ export const en: Translations = {
   },
   setup: {
     eyebrow: 'Setup',
-    titleLead: 'Buy hacks. Play in',
+    titleLead: 'Buy cheats. Play in',
     titleHighlight: 'three steps',
     intro:
-      'Buy your Apex Legends hack, download the loader, load a preset, then open Apex Legends. Discord help is there if you get stuck.',
-    ctaPrimary: 'Buy hacks',
+      'Buy your Apex Legends cheat, download the loader, load a preset, then open Apex Legends. Discord help is there if you get stuck.',
+    ctaPrimary: 'Buy cheats',
     ctaSecondary: 'Setup FAQ',
     ctaPrimaryHref: productBase,
     ctaSecondaryHref: '/faq/',
@@ -230,10 +230,10 @@ export const en: Translations = {
     subtitle: 'Check the status banner after Apex Legends updates before you launch.',
     items: ['Windows 10 & 11', 'EA Connect', 'Apex Legends client', 'Auto updater', 'Config cloud sync', 'Discord support', 'HWID reset', 'External loader'],
   },
-  hacks: {
-    eyebrow: 'Elite hack',
-    title: 'Apex Elite hacks',
-    subtitle: 'Full Apex Legends hack suite — aimbot, wall ESP, loot assist, Legend loadout tools, and faster patch priority.',
+  cheats: {
+    eyebrow: 'Elite cheat',
+    title: 'Apex Elite cheats',
+    subtitle: 'Full Apex Legends cheat suite — aimbot, wall ESP, loot assist, Legend loadout tools, and faster patch priority.',
     viewAll: 'View Elite details',
     explore: 'Explore',
     items: [
@@ -241,8 +241,8 @@ export const en: Translations = {
         badge: 'Available',
         tier: 'Starter',
         name: 'Lite',
-        title: 'Apex Lite Hacks — player ESP, radar and loot timers',
-        desc: 'Buy Apex Lite hacks for player ESP, chest markers, loot timers and radar — no aimbot, stream-proof overlay for ranked awareness.',
+        title: 'Apex Lite Cheats — player ESP, radar and loot timers',
+        desc: 'Buy Apex Lite cheats for player ESP, chest markers, loot timers and radar — no aimbot, stream-proof overlay for ranked awareness.',
         features: ['Player ESP & boxes', 'Chest & loot locator', 'Mini-radar overlay', 'Loot spawn timers'],
         more: 10,
         href: `${productBase}lite/`,
@@ -252,8 +252,8 @@ export const en: Translations = {
         badge: 'Popular',
         tier: 'Ranked',
         name: 'Pro',
-        title: 'Apex Pro Hacks — aimbot, smooth aim and wall ESP',
-        desc: 'Buy Apex Pro hacks with everything in Lite plus Aimbot, Smooth Aim, Sticky Aim, bone priority and ranked-safe presets.',
+        title: 'Apex Pro Cheats — aimbot, smooth aim and wall ESP',
+        desc: 'Buy Apex Pro cheats with everything in Lite plus Aimbot, Smooth Aim, Sticky Aim, bone priority and ranked-safe presets.',
         features: ['All Lite ESP modules', 'Aimbot & Smooth Aim', 'Sticky Aim & Prediction', 'Bone Priority'],
         more: 11,
         href: `${productBase}pro/`,
@@ -263,8 +263,8 @@ export const en: Translations = {
         badge: 'Limited slots',
         tier: 'Private',
         name: 'Elite',
-        title: 'Elite Apex Legends Hacks — aimbot, loot assist and ESP',
-        desc: 'Buy Apex Elite hacks with loot assist, Triggerbot, Recoil control, full wall ESP, Legend loadout tools and direct Discord support.',
+        title: 'Elite Apex Legends Cheats — aimbot, loot assist and ESP',
+        desc: 'Buy Apex Elite cheats with loot assist, Triggerbot, Recoil control, full wall ESP, Legend loadout tools and direct Discord support.',
         features: ['Loot Assist', 'Triggerbot', 'Recoil control', 'Full wall ESP', 'Legend loadout tools', 'Priority patch queue'],
         more: 42,
         href: `${productBase}elite/`,
@@ -274,10 +274,10 @@ export const en: Translations = {
   },
   products: {
     eyebrow: 'Shop',
-    title: 'Buy Apex Legends — PC hacks shop',
+    title: 'Buy Apex Legends — PC cheats shop',
     subtitle:
       'Buy Apex Legends for Elite aimbot and ESP, HWID spoofer, UGC recovery and Legend loadout tools — pick what you need and checkout in minutes.',
-    viewAll: 'View all hacks',
+    viewAll: 'View all cheats',
     get: 'Buy',
     explore: 'Explore',
     items: [
@@ -286,7 +286,7 @@ export const en: Translations = {
         category: 'System utility',
         title: 'Apex Legends HWID Spoofer — hardware ban bypass',
         subtitle: 'Clean slate for your PC',
-        desc: 'Buy a Apex Legends HWID spoofer for disk serials, MAC addresses and GPU IDs—run the portal guide before launching hacks again.',
+        desc: 'Buy a Apex Legends HWID spoofer for disk serials, MAC addresses and GPU IDs—run the portal guide before launching cheats again.',
         features: ['Spoofer & cleanup tools', 'Serial profile rotation', 'Compatibility scan', 'Post-spoof verification'],
         more: 9,
         href: `${productBase}hwid-spoofer/`,
@@ -314,10 +314,10 @@ export const en: Translations = {
     ],
   },
   blog: {
-    eyebrow: 'Hack blogs',
-    title: 'Apex Legends hack blogs',
+    eyebrow: 'Cheat blogs',
+    title: 'Apex Legends cheat blogs',
     subtitle: 'Aimbot setup, wall ESP config, Firing Range practice tips and Easy Anti-Cheat patch-day checks.',
-    latestTitle: 'Latest Apex Legends hack blogs — aimbot and wall ESP guides',
+    latestTitle: 'Latest Apex Legends cheat blogs — aimbot and wall ESP guides',
     latestSubtitle: 'Filter by topic or sort to find aimbot, ESP, wall ESP and patch-day blogs.',
     filterAll: 'All articles',
     sortLabel: 'Sort by',
@@ -361,7 +361,7 @@ export const en: Translations = {
         title: 'Apex Legends cheats features: aimbot, bots, wall ESP and more',
         slug: 'apex-cheat-features',
         image: cheatImageForSlug('apex-cheat-features'),
-        desc: 'Complete guide to our Apex Legends cheats—Aimbot, Loot Assist, Legend loadout tools, radar hacks, wall ESP and Recoil control.',
+        desc: 'Complete guide to our Apex Legends cheats—Aimbot, Loot Assist, Legend loadout tools, radar cheats, wall ESP and Recoil control.',
         date: 'Sep 8, 2026',
         readTime: '12 min read',
       },
@@ -394,7 +394,7 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'Buy Apex Legends Aimbot Hacks for ranked play',
+        title: 'Buy Apex Legends Aimbot Cheats for ranked play',
         slug: 'apex-aimbot-ranked',
         image: cheatImageForSlug('apex-aimbot-ranked'),
         desc: 'Aimbot, Prediction and Hotkey macros configs for climbing ranked with Pro tier Apex Legends cheats.',
@@ -403,7 +403,7 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'Apex Legends wall ESP hacks setup for ranked play',
+        title: 'Apex Legends wall ESP cheats setup for ranked play',
         slug: 'apex-esp-setup',
         image: cheatImageForSlug('apex-esp-setup'),
         desc: 'Enemy position tracking, weapon ESP, smoke alerts and vision detector tuning for Lite and Elite tiers.',
@@ -412,7 +412,7 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'Apex Legends radar hacks guide',
+        title: 'Apex Legends radar cheats guide',
         slug: 'apex-radar',
         image: cheatImageForSlug('apex-radar'),
         desc: 'Mini-radar, FOV awareness and safe distance caps for Battle Royale and Ranked.',
@@ -421,7 +421,7 @@ export const en: Translations = {
       },
       {
         tag: 'Guides',
-        title: 'Apex Legends Legend loadout tools hacks / Loadout Pack guide',
+        title: 'Apex Legends Legend loadout tools cheats / Loadout Pack guide',
         slug: 'apex-loadouts',
         image: cheatImageForSlug('apex-loadouts'),
         desc: 'Preview skins, wraps and exclusive sets locally with our Loadout Pack Legend loadout tools module.',
@@ -457,7 +457,7 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'Apex Legends aimbot hacks guide: AR, SMG and Shotgun',
+        title: 'Apex Legends aimbot cheats guide: AR, SMG and Shotgun',
         slug: 'apex-aimbot-combat',
         image: cheatImageForSlug('apex-aimbot-combat'),
         desc: 'Per-weapon aimbot profiles for Pro tier—AR spray, SMG tracking and shotgun push settings for ranked play.',
@@ -466,7 +466,7 @@ export const en: Translations = {
       },
       {
         tag: 'Troubleshooting',
-        title: 'Easy Anti-Cheat connection issues on Apex Legends — hacks and appeal fixes',
+        title: 'Easy Anti-Cheat connection issues on Apex Legends — cheats and appeal fixes',
         slug: 'eac-troubleshooting',
         image: cheatImageForSlug('eac-troubleshooting'),
         desc: 'Fix verification errors, file integrity checks and when to use UGC appeal workflows after Easy Anti-Cheat issues.',
@@ -475,7 +475,7 @@ export const en: Translations = {
       },
       {
         tag: 'Guides',
-        title: 'Apex Legends external hack guide',
+        title: 'Apex Legends external cheat guide',
         slug: 'apex-external-loader',
         image: cheatImageForSlug('apex-external-loader'),
         desc: 'Why external Apex Legends cheats matter, how the external loader works on PC and what makes private software safer than free tools.',
@@ -484,7 +484,7 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'Stream-proof Apex Legends hacks overlay setup',
+        title: 'Stream-proof Apex Legends cheats overlay setup',
         slug: 'apex-stream-proof',
         image: cheatImageForSlug('apex-stream-proof'),
         desc: 'Hide wall ESP and script overlays from OBS, Game Bar and capture cards—test workflow for content creators.',
@@ -494,9 +494,9 @@ export const en: Translations = {
     ],
   },
   toolkit: {
-    eyebrow: 'Hack menu',
-    title: 'Apex Legends hack menu, organized',
-    subtitle: 'Every hack module is grouped so you can tune aimbot and ESP mid-match without digging through chaos.',
+    eyebrow: 'Cheat menu',
+    title: 'Apex Legends cheat menu, organized',
+    subtitle: 'Every cheat module is grouped so you can tune aimbot and ESP mid-match without digging through chaos.',
     items: [
       { num: '01', label: 'Aimbot', title: 'Tracking that adapts per weapon', desc: 'Smoothness, FOV, Sticky Aim and Bone Priority in one aimbot tab.' },
       { num: '02', label: 'ESP', title: 'Wall ESP that stays readable', desc: 'Boxes, skeletons, distance, health and team color filters.' },
@@ -510,9 +510,9 @@ export const en: Translations = {
     eyebrow: 'How it works',
     badge: '4 steps',
     titleBefore: 'From buy to',
-    titleHighlight: 'in-game hacks.',
+    titleHighlight: 'in-game cheats.',
     subtitle: 'Buy Apex Legends cheats, download the loader, turn on modules, save your config for next match.',
-    ctaLabel: 'Buy hacks',
+    ctaLabel: 'Buy cheats',
     ctaHref: productBase,
     ctaSecondary: 'Setup FAQ',
     ctaSecondaryHref: '/faq/',
@@ -589,7 +589,7 @@ export const en: Translations = {
   faq: {
     eyebrow: 'FAQ',
     title: 'Apex Legends cheats FAQ',
-    subtitle: 'Compatibility, bans, hack tiers and setup — straight answers before you buy.',
+    subtitle: 'Compatibility, bans, cheat tiers and setup — straight answers before you buy.',
     items: [
       {
         num: '01',
@@ -619,7 +619,7 @@ export const en: Translations = {
       {
         num: '06',
         q: 'Where are products and utilities listed?',
-        a: 'Hacks tiers, HWID Spoofer, UGC and Legend loadout tools live at apexlegendcheats.net/products/apex with feature lists and checkout via our partner.',
+        a: 'Cheats tiers, HWID Spoofer, UGC and Legend loadout tools live at apexlegendcheats.net/products/apex with feature lists and checkout via our partner.',
       },
     ],
   },
@@ -628,7 +628,7 @@ export const en: Translations = {
     explore: 'Explore',
     exploreLinks: [
       { href: '/', label: 'Feature overview', ariaLabel: 'Features', scrollTarget: 'features' },
-      { href: '/products/apex/elite/', label: 'Elite Apex Legends cheats', ariaLabel: 'Elite hacks' },
+      { href: '/products/apex/elite/', label: 'Elite Apex Legends cheats', ariaLabel: 'Elite cheats' },
       { href: '/products/apex/', label: 'All products & utilities', ariaLabel: 'Products' },
       { href: '/blog/', label: 'Read patch guides', ariaLabel: 'Blog' },
       { href: '/faq/', label: 'Pre-purchase FAQ', ariaLabel: 'FAQ' },
@@ -722,7 +722,7 @@ export const en: Translations = {
         {
           heading: 'What you purchase',
           paragraphs: [
-            'We sell Apex Legends hack tiers (Lite, Pro, Elite) and tools (HWID Spoofer, UGC, Legend loadout tools / Loadout Pack) through a portal and Windows loader for Steam.',
+            'We sell Apex Legends cheat tiers (Lite, Pro, Elite) and tools (HWID Spoofer, UGC, Legend loadout tools / Loadout Pack) through a portal and Windows loader for Steam.',
             'Product pages list what is included when you buy. Features can change when Apex Legends or Easy Anti-Cheat updates.',
           ],
         },
@@ -750,7 +750,7 @@ export const en: Translations = {
         {
           heading: 'Availability and risk',
           paragraphs: [
-            'Third-party tools for Apex Legends can conflict with game updates and anti-hack systems. You use this software at your own risk, including possible account action.',
+            'Third-party tools for Apex Legends can conflict with game updates and anti-cheat systems. You use this software at your own risk, including possible account action.',
             'Check the homepage status banner before every session. Do not queue ranked while modules are offline or misaligned after a patch.',
           ],
         },
