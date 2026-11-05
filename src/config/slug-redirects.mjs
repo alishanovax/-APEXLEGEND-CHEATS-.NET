@@ -3,11 +3,19 @@
  * @type {Record<string, string>}
  */
 export const SLUG_REDIRECTS = {
-  '/r6-hacks/': '/r6-hacks/',
-  '/blog/buy-r6-hacks/': '/blog/buy-r6-hacks/',
-  '/blog/r6-hack-setup/': '/blog/r6-hack-setup/',
+  '/r6-cheats/': '/r6-hacks/',
 
-  // Product hub (shorter canonical)
+  // Legacy product hub paths → canonical /products/r6/
+  '/products/r6-cheats/': '/products/r6/',
+  '/products/r6-cheats/lite/': '/products/r6/lite/',
+  '/products/r6-cheats/pro/': '/products/r6/pro/',
+  '/products/r6-cheats/elite/': '/products/r6/elite/',
+  '/products/r6-cheats/hwid-spoofer/': '/products/r6/hwid-spoofer/',
+  '/products/r6-cheats/ugc/': '/products/r6/ugc/',
+  '/products/r6-cheats/unlock-all/': '/products/r6/unlock-all/',
+  '/products/r6-cheats/utilities/': '/products/r6/utilities/',
+  '/products/r6-cheats/account-recovery/': '/products/r6/ugc/',
+
   '/products/r6-hacks/': '/products/r6/',
   '/products/r6-hacks/lite/': '/products/r6/lite/',
   '/products/r6-hacks/pro/': '/products/r6/pro/',
@@ -17,6 +25,9 @@ export const SLUG_REDIRECTS = {
   '/products/r6-hacks/unlock-all/': '/products/r6/unlock-all/',
   '/products/r6-hacks/utilities/': '/products/r6/utilities/',
   '/products/r6-hacks/account-recovery/': '/products/r6/ugc/',
+
+  '/blog/buy-r6-cheats/': '/blog/buy-r6-hacks/',
+  '/blog/r6-cheat-setup/': '/blog/r6-hack-setup/',
 
   // Blog — old long / inaccurate slugs
   '/blog/r6-hacks-features-guide/': '/blog/r6-features/',
