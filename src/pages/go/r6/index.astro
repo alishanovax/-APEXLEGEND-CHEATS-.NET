@@ -1,0 +1,54 @@
+---
+import CheckoutBridgeLayout from '../../../layouts/CheckoutBridgeLayout.astro';
+import {
+  ZADEYO_R6_CHECKOUT_URL,
+  ZADEYO_R6_PRODUCT_SEO,
+} from '../../../config/zadeyoR6ProductSeo';
+import { productSchema } from '../../../utils/schema';
+import { Button } from '@/components/starwind/button';
+
+const seo = ZADEYO_R6_PRODUCT_SEO;
+---
+
+<CheckoutBridgeLayout
+  title={seo.title}
+  description={seo.description}
+  logoAlt={seo.logoAlt}
+  jsonLd={[
+    productSchema({
+      name: seo.h1,
+      description: seo.description,
+      url: '/go/r6/',
+      offerUrl: ZADEYO_R6_CHECKOUT_URL,
+    }),
+  ]}
+>
+  <article>
+    <header class="space-y-4 text-center">
+      <p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">ZADEYO · PC multiplayer</p>
+      <h1 class="text-3xl font-bold leading-tight md:text-4xl">{seo.h1}</h1>
+      <h2 class="text-xl font-semibold text-foreground">{seo.h2ProductDetails}</h2>
+      <p class="text-lg leading-relaxed text-muted-foreground">{seo.intro}</p>
+      <Button as="a" href={ZADEYO_R6_CHECKOUT_URL} variant="primary" size="lg" class="mt-2">
+        Continue to ZADEYO checkout
+      </Button>
+    </header>
+
+    <section class="mt-10 space-y-4" aria-labelledby="aim-modules-title">
+      <h3 id="aim-modules-title" class="text-lg font-semibold">Aim and combat modules</h3>
+      <ul class="list-disc space-y-2 pl-5 text-muted-foreground">
+        <li>Smooth aim inside a configurable FOV circle with wall checks.</li>
+        <li>Player ESP, 2D radar, triggerbot and recoil settle for rifle profiles.</li>
+        <li>Gadget ESP for attacker and defender tools, plus save/load config profiles.</li>
+      </ul>
+    </section>
+
+    <section class="mt-8 space-y-3" aria-labelledby="checkout-help-title">
+      <h3 id="checkout-help-title" class="text-lg font-semibold">Before you buy</h3>
+      <p class="text-muted-foreground">
+        Compare tiers on <a href="/products/r6/" class="text-primary hover:underline">r6hacks.org products</a>
+        or read the <a href="/faq/" class="text-primary hover:underline">FAQ on loader setup</a>. Checkout completes on ZADEYO.
+      </p>
+    </section>
+  </article>
+</CheckoutBridgeLayout>

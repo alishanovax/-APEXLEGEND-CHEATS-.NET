@@ -1,0 +1,163 @@
+---
+import type { ProductPage } from '../../data/products';
+import {
+  checkoutUrlWithPlan,
+  formatPlanPrice,
+  getDefaultPlan,
+  getProductPlans,
+} from '../../data/productPricing';
+
+interface Props {
+  product: ProductPage;
+}
+
+const { product } = Astro.props;
+const plans = getProductPlans(product.slug);
+const defaultPlan = getDefaultPlan(product.slug);
+const buyHref = checkoutUrlWithPlan(product.buyUrl, defaultPlan.id);
+---
+
+<aside
+  class="product-checkout text-left lg:sticky lg:top-24"
+  aria-labelledby={`checkout-${product.slug}`}
+  data-product-checkout
+  data-buy-url={product.buyUrl}
+  data-plans={JSON.stringify(plans)}
+>
+  <div class="overflow-hidden rounded-2xl border border-[#2a2a2e] bg-[#08080a] shadow-lg">
+    <div class="space-y-4 px-5 py-5">
+      <p
+        id={`checkout-${product.slug}`}
+        class="text-base font-semibold tracking-tight text-white"
+      >
+        Choose Your Duration
+      </p>
+
+      <div class="flex flex-col gap-2.5" role="radiogroup" aria-label="Choose your duration" data-plan-group>
+        {
+          plans.map((plan) => {
+            const selected = plan.id === defaultPlan.id;
+            return (
+              <button
+                type="button"
+                role="radio"
+                aria-checked={selected}
+                data-plan-id={plan.id}
+                data-plan-price={plan.priceUsd}
+                class:list={[
+                  'flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl border px-4 py-3.5 text-left transition-colors',
+                  selected
+                    ? 'border-violet-500 bg-violet-500/10'
+                    : 'border-[#2a2a2e] bg-[#0f0f12] hover:border-[#3a3a42]',
+                ]}
+              >
+                <span class="flex min-w-0 items-center gap-3">
+                  <span
+                    class:list={[
+                      'flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2',
+                      selected ? 'border-violet-500 bg-violet-500' : 'border-[#4a4a52] bg-transparent',
+                    ]}
+                    aria-hidden="true"
+                  >
+                    {selected && (
+                      <svg class="h-3 w-3 text-white" viewBox="0 0 12 12" fill="none">
+                        <path
+                          d="M2.5 6.2 4.8 8.5 9.5 3.5"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    )}
+                  </span>
+                  <span class="min-w-0">
+                    <span class="block text-sm font-semibold text-white">{plan.label}</span>
+                    <span class="mt-0.5 block text-xs text-neutral-400">{plan.duration}</span>
+                  </span>
+                </span>
+                <span class="shrink-0 text-sm font-semibold tabular-nums text-white">
+                  {formatPlanPrice(plan.priceUsd)}
+                </span>
+              </button>
+            );
+          })
+        }
+      </div>
+
+      <a
+        href={buyHref}
+        class="flex w-full items-center justify-center rounded-xl bg-white px-4 py-3.5 text-sm font-semibold text-[#0a0a0a] transition-colors hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        data-checkout-buy
+      >
+        <span data-checkout-buy-label>Buy Now - {formatPlanPrice(defaultPlan.priceUsd)}</span>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<script>
+  const initProductCheckoutPanels = () => {
+    document.querySelectorAll('[data-product-checkout]').forEach((root) => {
+      if (root.hasAttribute('data-checkout-bound')) return;
+      root.setAttribute('data-checkout-bound', '');
+
+      const buyUrl = root.getAttribute('data-buy-url');
+      const plansRaw = root.getAttribute('data-plans');
+      if (!buyUrl || !plansRaw) return;
+
+      type Plan = { id: string; priceUsd: number };
+      let plans: Plan[] = [];
+      try {
+        plans = JSON.parse(plansRaw) as Plan[];
+      } catch {
+        return;
+      }
+
+      const group = root.querySelector('[data-plan-group]');
+      const buyBtn = root.querySelector<HTMLAnchorElement>('[data-checkout-buy]');
+      const buyLabel = root.querySelector('[data-checkout-buy-label]');
+      if (!group || !buyBtn || !buyLabel) return;
+
+      const formatPrice = (usd: number) => (Number.isInteger(usd) ? `$${usd}` : `$${usd.toFixed(2)}`);
+
+      const setSelected = (planId: string) => {
+        const plan = plans.find((p) => p.id === planId) ?? plans[0];
+        if (!plan) return;
+
+        group.querySelectorAll<HTMLButtonElement>('[data-plan-id]').forEach((btn) => {
+          const active = btn.getAttribute('data-plan-id') === planId;
+          btn.setAttribute('aria-checked', active ? 'true' : 'false');
+          btn.classList.toggle('border-violet-500', active);
+          btn.classList.toggle('bg-violet-500/10', active);
+          btn.classList.toggle('border-[#2a2a2e]', !active);
+          btn.classList.toggle('bg-[#0f0f12]', !active);
+
+          const indicator = btn.querySelector('span[aria-hidden="true"]');
+          if (indicator) {
+            indicator.classList.toggle('border-violet-500', active);
+            indicator.classList.toggle('bg-violet-500', active);
+            indicator.classList.toggle('border-[#4a4a52]', !active);
+            indicator.classList.toggle('bg-transparent', !active);
+            indicator.innerHTML = active
+              ? '<svg class="h-3 w-3 text-white" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2 4.8 8.5 9.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+              : '';
+          }
+        });
+
+        buyLabel.textContent = `Buy Now - ${formatPrice(plan.priceUsd)}`;
+        buyBtn.href = buyUrl;
+      };
+
+      group.querySelectorAll<HTMLButtonElement>('[data-plan-id]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const planId = btn.getAttribute('data-plan-id');
+          if (planId) setSelected(planId);
+        });
+      });
+    });
+  };
+
+  initProductCheckoutPanels();
+  document.addEventListener('astro:after-swap', initProductCheckoutPanels);
+</script>

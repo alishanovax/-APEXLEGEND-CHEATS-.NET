@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="R6 Hacks">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c0c12"/>
+      <stop offset="1" stop-color="#111215"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="16" y1="12" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" stroke="#2A333D" stroke-width="1"/>
+  <path d="M32 8 14 16v14c0 12 7.5 20.5 18 26 10.5-5.5 18-14 18-26V16L32 8z" fill="url(#accent)" opacity="0.95"/>
+  <path d="M32 12 18 18.5v11.5c0 9.5 6 14.5 14 21 8-4.5 14-11.5 14-21V18.5L32 12z" fill="#0A0D10" opacity="0.35"/>
+  <text
+    x="32"
+    y="38"
+    text-anchor="middle"
+    font-family="Segoe UI, system-ui, sans-serif"
+    font-size="26"
+    font-weight="700"
+    fill="#F5F7FA"
+  >R</text>
+</svg>

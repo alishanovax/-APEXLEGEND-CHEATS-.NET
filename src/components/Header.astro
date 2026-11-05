@@ -1,0 +1,127 @@
+---
+import { t } from '../i18n';
+import { checkoutPath } from '../config/checkout';
+import AnimatedThemeSwitch from './AnimatedThemeSwitch.astro';
+import Icon from './icons/Icon.astro';
+import SlideRevealButton from './SlideRevealButton.astro';
+import SiteBrandMark from './SiteBrandMark.astro';
+
+import type { IconName } from './icons/types';
+
+const navIcons: Record<string, IconName> = {
+  Products: 'navProducts',
+  Blog: 'navBlog',
+  Forum: 'messageCircle',
+  FAQ: 'navFaq',
+  Support: 'navSupport',
+};
+
+const purchaseUrl = checkoutPath('r6');
+---
+
+<header class="pointer-events-none fixed inset-x-0 top-0 z-50">
+  <div class="flex justify-center px-3 pt-3 sm:px-4 sm:pt-4" data-floating-nav>
+    <div
+      class="pointer-events-auto relative flex h-14 w-full max-w-6xl items-center justify-between gap-3 rounded-2xl border border-border/40 bg-background/35 px-4 text-foreground shadow-md shadow-black/5 backdrop-blur-2xl supports-[backdrop-filter]:bg-background/25 dark:border-white/10 dark:bg-background/20 dark:shadow-black/25 sm:px-5 lg:h-[3.75rem]"
+    >
+      <SiteBrandMark compact class="shrink-0" />
+
+      <nav
+        id="primary-navigation"
+        class="nav-primary absolute left-1/2 top-[calc(100%+0.5rem)] z-50 hidden w-[min(calc(100vw-2rem),20rem)] -translate-x-1/2 flex-col gap-1 rounded-xl border border-border bg-background p-3 shadow-lg lg:top-auto lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
+        aria-label="Primary"
+        data-mobile-nav-panel
+      >
+        {t.nav.map((link) => (
+          <a
+            href={link.href}
+            class="nav-link inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground lg:px-0 lg:py-0 lg:text-foreground lg:hover:bg-transparent lg:hover:text-primary"
+            data-nav-link
+            {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
+          >
+            <Icon
+              name={navIcons[link.label] ?? 'navFeatures'}
+              size={16}
+              class="nav-link__icon shrink-0 text-primary"
+            />
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <div class="hidden items-center sm:flex">
+          <SlideRevealButton href={purchaseUrl} class="hidden lg:inline-flex" ariaLabel={t.ui.checkoutAria}>
+            {t.ui.browseCheats}
+          </SlideRevealButton>
+          <div class="nav-action-divider hidden items-center px-3 lg:flex" aria-hidden="true">
+            <span class="block h-9 w-px bg-border"></span>
+          </div>
+          <AnimatedThemeSwitch size="md" ariaLabel={t.ui.themeLight} class="inline-flex" />
+        </div>
+
+        <button
+          type="button"
+          class="inline-flex size-9 items-center justify-center rounded-lg border border-border/80 bg-background/50 text-foreground transition-colors hover:bg-muted lg:hidden"
+          aria-label={t.ui.menuOpen}
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          data-mobile-nav-toggle
+        >
+          <Icon name="menu" size={20} />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="pointer-events-none fixed inset-0 z-40 bg-background/60 opacity-0 transition-opacity data-[open=true]:pointer-events-auto data-[open=true]:opacity-100 lg:hidden"
+    data-mobile-nav-backdrop
+    hidden
+    aria-hidden="true"
+  ></div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-mobile-nav-toggle]');
+  const panel = document.querySelector<HTMLElement>('[data-mobile-nav-panel]');
+  const backdrop = document.querySelector<HTMLElement>('[data-mobile-nav-backdrop]');
+
+  function setMobileNavOpen(open: boolean) {
+    if (!toggle || !panel || !backdrop) return;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    backdrop.hidden = !open;
+    backdrop.dataset.open = open ? 'true' : 'false';
+    if (window.matchMedia('(min-width: 1024px)').matches) return;
+    if (open) {
+      panel.classList.remove('hidden');
+      panel.classList.add('flex');
+    } else {
+      panel.classList.add('hidden');
+      panel.classList.remove('flex');
+    }
+  }
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    setMobileNavOpen(open);
+  });
+
+  backdrop?.addEventListener('click', () => setMobileNavOpen(false));
+
+  panel?.querySelectorAll('a[data-nav-link]').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 1023px)').matches) setMobileNavOpen(false);
+    });
+  });
+
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (event) => {
+    if (event.matches) {
+      panel?.classList.remove('flex');
+      backdrop?.setAttribute('hidden', '');
+      toggle?.setAttribute('aria-expanded', 'false');
+    } else {
+      setMobileNavOpen(false);
+    }
+  });
+</script>

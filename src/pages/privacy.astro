@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n';
+import { resolvePageSeo } from '../config/seo';
+import LegalPage from '../components/LegalPage.astro';
+import { breadcrumbSchema, webPageSchema } from '../utils/schema';
+
+const content = t.legalPages.privacy;
+const seo = resolvePageSeo('/privacy/');
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  jsonLd={[
+    webPageSchema({
+      name: content.title,
+      description: content.description,
+      url: '/privacy/',
+    }),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Privacy Policy', path: '/privacy/' },
+    ]),
+  ]}
+>
+  <LegalPage
+    title={content.title}
+    description={content.description}
+    breadcrumbLabel="Privacy Policy"
+    keywordSubheading="R6 Hacks — privacy and data use"
+    sectionHeadingLevel="h3"
+    sections={content.sections}
+  />
+</BaseLayout>

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Disallow: /go/
+
+Sitemap: https://r6hacks.org/sitemap.xml
+Sitemap: https://r6hacks.org/sitemap-pages.xml
+Sitemap: https://r6hacks.org/sitemap-products.xml
+Sitemap: https://r6hacks.org/sitemap-blog.xml
+Sitemap: https://r6hacks.org/sitemap-forum.xml
+
+# RSS: https://r6hacks.org/rss.xml

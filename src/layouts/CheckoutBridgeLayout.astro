@@ -1,0 +1,64 @@
+---
+import '@/styles/starwind.css';
+import { canonicalUrl } from '../config/seo';
+import { FAVICON_VERSION } from '../config/site';
+import SocialShare from '../components/SocialShare.astro';
+import JsonLd from '../components/JsonLd.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  logoAlt?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description, logoAlt, jsonLd } = Astro.props;
+const canonical = canonicalUrl(Astro.url.pathname);
+
+const navLinks = [
+  { href: '/', label: 'r6hacks.org home' },
+  { href: '/products/r6/', label: 'Browse R6 product catalog' },
+  { href: '/blog/', label: 'Read R6 setup guides' },
+  { href: '/faq/', label: 'Pre-purchase FAQ' },
+  { href: '/support/', label: 'Checkout support desk' },
+  { href: '/forum/', label: 'R6 community forum' },
+];
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    {jsonLd && <JsonLd data={jsonLd} />}
+    <link rel="icon" type="image/svg+xml" href={`/favicon.svg?v=${FAVICON_VERSION}`} />
+  </head>
+  <body class="min-h-screen bg-background text-foreground">
+    <header class="border-b border-border bg-muted/20">
+      <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-4 px-5 py-4">
+        <a href="/" class="inline-flex items-center gap-2 font-bold">
+          <img src="/logo.svg" width="32" height="32" alt={logoAlt ?? 'R6 Hacks logo'} />
+          <span class="text-sm">R6 Hacks checkout</span>
+        </a>
+        <nav class="flex flex-wrap gap-x-4 gap-y-1 text-sm" aria-label="Checkout bridge">
+          {navLinks.map((link) => (
+            <a href={link.href} class="text-muted-foreground hover:text-primary">
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main id="main-content" class="mx-auto max-w-4xl px-5 py-10">
+      <slot />
+      <SocialShare title={title} class="mt-10 border-t border-border pt-6" />
+    </main>
+    <footer class="border-t border-border py-8 text-center text-sm text-muted-foreground">
+      <p>Partner checkout on ZADEYO · <a href="/privacy/" class="hover:text-primary">Privacy</a> · <a href="/terms/" class="hover:text-primary">Terms</a></p>
+    </footer>
+  </body>
+</html>

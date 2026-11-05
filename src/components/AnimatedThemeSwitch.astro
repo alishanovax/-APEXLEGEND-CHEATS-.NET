@@ -1,0 +1,105 @@
+---
+/**
+ * Day/night toggle — adapted from UIverse.io by RiccardoRapelli
+ * (https://uiverse.io/RiccardoRapelli/jolly-chicken-91), MIT License.
+ */
+interface Props {
+  class?: string;
+  ariaLabel?: string;
+  size?: 'default' | 'sm' | 'md';
+}
+
+const { class: className, ariaLabel = 'Toggle light and dark mode', size = 'default' } = Astro.props;
+---
+
+<label
+  class:list={[
+    'theme-uiverse-switch',
+    size === 'sm' && 'theme-uiverse-switch--sm',
+    size === 'md' && 'theme-uiverse-switch--md',
+    className,
+  ]}
+>
+  <input
+    type="checkbox"
+    class="theme-uiverse-switch__input"
+    aria-label={ariaLabel}
+    data-sw-theme-control
+    data-theme-on="dark"
+    data-theme-off="light"
+  />
+  <div class="theme-uiverse-switch__slider slider round">
+    <div class="sun-moon">
+      <svg class="moon-dot theme-uiverse-switch__moon-dot-1" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50"></circle>
+      </svg>
+      <svg class="moon-dot theme-uiverse-switch__moon-dot-2" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50"></circle>
+      </svg>
+      <svg class="moon-dot theme-uiverse-switch__moon-dot-3" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50"></circle>
+      </svg>
+      <svg class="light-ray theme-uiverse-switch__light-ray-1" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50"></circle>
+      </svg>
+      <svg class="light-ray theme-uiverse-switch__light-ray-2" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50"></circle>
+      </svg>
+      <svg class="light-ray theme-uiverse-switch__light-ray-3" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50"></circle>
+      </svg>
+    </div>
+    <svg class="cloud-dark theme-uiverse-switch__cloud-1" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="50"></circle>
+    </svg>
+    <svg class="cloud-dark theme-uiverse-switch__cloud-2" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="50"></circle>
+    </svg>
+    <svg class="cloud-dark theme-uiverse-switch__cloud-3" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="50"></circle>
+    </svg>
+    <svg class="cloud-light theme-uiverse-switch__cloud-4" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="50"></circle>
+    </svg>
+    <svg class="cloud-light theme-uiverse-switch__cloud-5" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="50"></circle>
+    </svg>
+    <svg class="cloud-light theme-uiverse-switch__cloud-6" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="50"></circle>
+    </svg>
+    <div class="stars" aria-hidden="true">
+      <svg class="star theme-uiverse-switch__star-1" viewBox="0 0 20 20">
+        <path
+          d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+        ></path>
+      </svg>
+      <svg class="star theme-uiverse-switch__star-2" viewBox="0 0 20 20">
+        <path
+          d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+        ></path>
+      </svg>
+      <svg class="star theme-uiverse-switch__star-3" viewBox="0 0 20 20">
+        <path
+          d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+        ></path>
+      </svg>
+      <svg class="star theme-uiverse-switch__star-4" viewBox="0 0 20 20">
+        <path
+          d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</label>
+
+<script>
+  import { initThemeController } from '@starwind-ui/astro/theme';
+
+  const setupThemeController = () => {
+    initThemeController(document, { defaultTheme: 'dark', storageKey: 'colorTheme' });
+  };
+
+  setupThemeController();
+  document.addEventListener('astro:after-swap', setupThemeController);
+  document.addEventListener('starwind:init', setupThemeController);
+</script>

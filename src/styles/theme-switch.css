@@ -1,0 +1,279 @@
+/* Uiverse sun/moon switch — RiccardoRapelli (MIT), scoped for r6hacks.org */
+
+.theme-uiverse-switch {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 60px;
+  height: 34px;
+  line-height: 0;
+}
+
+.theme-uiverse-switch--sm {
+  transform: scale(0.88);
+  transform-origin: center;
+}
+
+.theme-uiverse-switch--md {
+  transform: scale(1);
+  transform-origin: center;
+}
+
+.theme-uiverse-switch__input {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.theme-uiverse-switch__slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  overflow: hidden;
+  background-color: #2196f3;
+  transition: background-color 0.4s;
+  z-index: 0;
+}
+
+.theme-uiverse-switch .sun-moon {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ffeb3b;
+  transition: transform 0.4s, background-color 0.4s;
+}
+
+.theme-uiverse-switch__input:checked + .theme-uiverse-switch__slider {
+  background-color: #0a0a0a;
+}
+
+.theme-uiverse-switch__input:focus-visible + .theme-uiverse-switch__slider {
+  box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 55%, transparent);
+}
+
+.theme-uiverse-switch__input:checked + .theme-uiverse-switch__slider .sun-moon {
+  transform: translateX(26px);
+  background-color: #fff;
+}
+
+.theme-uiverse-switch .moon-dot {
+  opacity: 0;
+  transition: opacity 0.4s;
+  fill: #9ca3af;
+}
+
+.theme-uiverse-switch__input:checked + .theme-uiverse-switch__slider .sun-moon .moon-dot {
+  opacity: 1;
+}
+
+.theme-uiverse-switch .slider.round {
+  border-radius: 34px;
+}
+
+.theme-uiverse-switch .slider.round .sun-moon {
+  border-radius: 50%;
+}
+
+.theme-uiverse-switch__moon-dot-1 {
+  left: 10px;
+  top: 3px;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  z-index: 4;
+}
+
+.theme-uiverse-switch__moon-dot-2 {
+  left: 2px;
+  top: 10px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 4;
+}
+
+.theme-uiverse-switch__moon-dot-3 {
+  left: 16px;
+  top: 18px;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  z-index: 4;
+}
+
+.theme-uiverse-switch__light-ray-1 {
+  left: -8px;
+  top: -8px;
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  z-index: -1;
+  fill: #fff;
+  opacity: 0.1;
+}
+
+.theme-uiverse-switch__light-ray-2 {
+  left: -50%;
+  top: -50%;
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  z-index: -1;
+  fill: #fff;
+  opacity: 0.1;
+}
+
+.theme-uiverse-switch__light-ray-3 {
+  left: -18px;
+  top: -18px;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: -1;
+  fill: #fff;
+  opacity: 0.1;
+}
+
+.theme-uiverse-switch .cloud-light {
+  position: absolute;
+  fill: #eee;
+  animation: theme-uiverse-cloud-move 6s ease-in-out infinite;
+}
+
+.theme-uiverse-switch .cloud-dark {
+  position: absolute;
+  fill: #ccc;
+  animation: theme-uiverse-cloud-move 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.theme-uiverse-switch__cloud-1 {
+  left: 30px;
+  top: 15px;
+  width: 40px;
+}
+
+.theme-uiverse-switch__cloud-2 {
+  left: 44px;
+  top: 10px;
+  width: 20px;
+}
+
+.theme-uiverse-switch__cloud-3 {
+  left: 18px;
+  top: 24px;
+  width: 30px;
+}
+
+.theme-uiverse-switch__cloud-4 {
+  left: 36px;
+  top: 18px;
+  width: 40px;
+}
+
+.theme-uiverse-switch__cloud-5 {
+  left: 48px;
+  top: 14px;
+  width: 20px;
+}
+
+.theme-uiverse-switch__cloud-6 {
+  left: 22px;
+  top: 26px;
+  width: 30px;
+}
+
+@keyframes theme-uiverse-cloud-move {
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(4px);
+  }
+  80% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.theme-uiverse-switch .stars {
+  transform: translateY(-32px);
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.4s;
+  pointer-events: none;
+}
+
+.theme-uiverse-switch .star {
+  fill: #fff;
+  position: absolute;
+  transition: opacity 0.4s;
+  animation: theme-uiverse-star-twinkle 2s ease-in-out infinite;
+}
+
+.theme-uiverse-switch__input:checked + .theme-uiverse-switch__slider .stars {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.theme-uiverse-switch__star-1 {
+  width: 20px;
+  top: 2px;
+  left: 3px;
+  animation-delay: 0.3s;
+}
+
+.theme-uiverse-switch__star-2 {
+  width: 6px;
+  top: 16px;
+  left: 3px;
+}
+
+.theme-uiverse-switch__star-3 {
+  width: 12px;
+  top: 20px;
+  left: 10px;
+  animation-delay: 0.6s;
+}
+
+.theme-uiverse-switch__star-4 {
+  width: 18px;
+  top: 0;
+  left: 18px;
+  animation-delay: 1.3s;
+}
+
+@keyframes theme-uiverse-star-twinkle {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-uiverse-switch .cloud-light,
+  .theme-uiverse-switch .cloud-dark,
+  .theme-uiverse-switch .star {
+    animation: none;
+  }
+
+  .theme-uiverse-switch .sun-moon,
+  .theme-uiverse-switch__slider,
+  .theme-uiverse-switch .stars {
+    transition-duration: 0.01ms;
+  }
+}

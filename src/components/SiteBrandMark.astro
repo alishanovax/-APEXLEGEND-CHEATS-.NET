@@ -1,0 +1,46 @@
+---
+import { t } from '../i18n';
+import { footerLogoAltForPath } from '../config/seoLogoAlt';
+
+interface Props {
+  showIcon?: boolean;
+  /** Header: pill lockup only (R6 white · Hacks blue). Footer: icon + tagline stack. */
+  compact?: boolean;
+  class?: string;
+}
+
+const { showIcon = false, compact = false, class: className } = Astro.props;
+const brandTagline = 'Rainbow Six Siege PC — Aimbot, ESP & Gadget tools';
+---
+
+<a
+  href="/"
+  class:list={['site-brand', compact && 'site-brand--compact', className]}
+  aria-label={showIcon ? 'Return to r6hacks.org homepage' : t.ui.homeAria}
+>
+  {
+    showIcon && (
+      <img
+        src="/logo.svg"
+        alt={footerLogoAltForPath(Astro.url.pathname)}
+        width="32"
+        height="32"
+        class="site-brand__icon shrink-0 rounded-md"
+      />
+    )
+  }
+  {
+    compact ? (
+      <span class="site-brand__pill" aria-hidden="true">
+        R6 <span class="site-brand__pill-accent">Hacks</span>
+      </span>
+    ) : (
+      <span class="site-brand__stack min-w-0" aria-hidden="true">
+        <span class="site-brand__title">
+          R6 <span class="site-brand__title-accent">Hacks</span>
+        </span>
+        <span class="site-brand__tagline">{brandTagline}</span>
+      </span>
+    )
+  }
+</a>
