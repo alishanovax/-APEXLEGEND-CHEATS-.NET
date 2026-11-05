@@ -1,32 +1,37 @@
-/** Approved Rainbow Six Siege media — only these assets are used site-wide. */
+/** Approved Apex Legends media — only these assets are used site-wide. */
 export interface SiteCheatImage {
   src: string;
   alt: string;
 }
 
-const R6_MEDIA_BASE =
-  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/r6';
+const APEX_MEDIA = [
+  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/apex/c7f7b806-cb3e-4eea-8fa1-eca85c479073/1793193958271-ygwhlj-phoenix-apex-xray-s1.webp',
+  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/apex/d668cf71-915f-4d4e-84bc-5ec0cbed3619/1793194360594-vahy1o-phoenix-apex-xray-s2.webp',
+  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/apex/7a5973f7-2cf8-4de3-90ea-2060bf036d16/1793916474479-fq0411-ap4.webp',
+  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/apex/7a5973f7-2cf8-4de3-90ea-2060bf036d16/1793916321918-tnpvv4-ap2.webp',
+  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/apex/7a5973f7-2cf8-4de3-90ea-2060bf036d16/1793916275158-vj28eh-ap1.webp',
+] as const;
 
 export const SITE_CHEAT_IMAGES: SiteCheatImage[] = [
   {
-    src: `${R6_MEDIA_BASE}/f8fb1df6-697d-4d9b-b239-91326d061bf8/1793467017920-wcqjc4-7.webp`,
-    alt: 'Rainbow Six Siege PC ranked match firefight with operators breaching a site',
+    src: APEX_MEDIA[0],
+    alt: 'Apex Legends PC gameplay with Phoenix tactical overlay and enemy visibility preview',
   },
   {
-    src: `${R6_MEDIA_BASE}/f8fb1df6-697d-4d9b-b239-91326d061bf8/1793466989730-wh94c1-1.webp`,
-    alt: 'Rainbow Six Siege gameplay scene showing tactical operator movement on PC',
+    src: APEX_MEDIA[1],
+    alt: 'Apex Legends x-ray style combat scene showing Legend positions on PC',
   },
   {
-    src: `${R6_MEDIA_BASE}/f8fb1df6-697d-4d9b-b239-91326d061bf8/1793466995758-0n86gr-2.webp`,
-    alt: 'Rainbow Six Siege close-quarters gunfight with destructible environment on PC',
+    src: APEX_MEDIA[2],
+    alt: 'Apex Legends ranked firefight with squad combat on PC',
   },
   {
-    src: `${R6_MEDIA_BASE}/05c202fe-8171-4881-bc3a-b25833919850/1793293183726-gopke1-r6s-multihack-s1.webp`,
-    alt: 'Rainbow Six Siege hack menu preview with ESP and aimbot modules on PC',
+    src: APEX_MEDIA[3],
+    alt: 'Apex Legends cheat software menu preview with ESP modules on PC',
   },
   {
-    src: `${R6_MEDIA_BASE}/f8fb1df6-697d-4d9b-b239-91326d061bf8/1793467164902-dhd3cn-9.webp`,
-    alt: 'Rainbow Six Siege operator ESP overlay and gadget awareness on PC',
+    src: APEX_MEDIA[4],
+    alt: 'Apex Legends hack interface showing aimbot and ESP settings on PC',
   },
 ];
 

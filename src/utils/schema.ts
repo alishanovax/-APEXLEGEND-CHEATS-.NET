@@ -25,11 +25,11 @@ export function websiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'R6 Hacks',
+    name: 'Apex Legends Cheats',
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
     description:
-      'R6 hacks with aimbot, ESP, and radar hack, Operator loadout tools and ranked-safe tiers for PC.',
+      'Apex Legends cheats with aimbot, ESP, and radar hack, Legend loadout tools and ranked-safe tiers for PC.',
   };
 }
 
@@ -39,7 +39,7 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'R6 Hacks',
+    name: 'Apex Legends Cheats',
     url: `${SITE_ORIGIN}/`,
     logo: `${SITE_ORIGIN}/logo.svg`,
     email: SUPPORT_EMAIL,
@@ -67,7 +67,7 @@ export function collectionPageSchema(input: { name: string; description: string;
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'R6 Hacks',
+      name: 'Apex Legends Cheats',
       url: `${SITE_ORIGIN}/`,
     },
   };
@@ -83,7 +83,7 @@ export function webPageSchema(input: { name: string; description: string; url: s
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'R6 Hacks',
+      name: 'Apex Legends Cheats',
       url: `${SITE_ORIGIN}/`,
     },
   };
@@ -132,7 +132,7 @@ export function discussionForumPostingSchema(input: {
     url: canonicalUrl(input.url),
     author: { '@type': 'Person', name: input.author },
     commentCount: input.comments,
-    isPartOf: { '@type': 'CollectionPage', name: 'R6 Hacks Forum', url: canonicalUrl('/forum/') },
+    isPartOf: { '@type': 'CollectionPage', name: 'Apex Legends Cheats Forum', url: canonicalUrl('/forum/') },
   };
 }
 
@@ -157,7 +157,7 @@ export function productSchema(input: {
     sku: input.sku ?? input.url.replace(/\//g, '-'),
     brand: {
       '@type': 'Brand',
-      name: 'R6 Hacks',
+      name: 'Apex Legends Cheats',
     },
     ...(input.image ? { image: absoluteAssetUrl(input.image) } : {}),
     offers: {
@@ -170,7 +170,7 @@ export function productSchema(input: {
       availability: 'https://schema.org/InStock',
       seller: {
         '@type': 'Organization',
-        name: 'R6 Hacks',
+        name: 'Apex Legends Cheats',
       },
       offers: getProductPlans().map((plan) => ({
         '@type': 'Offer',
@@ -221,11 +221,11 @@ export function articleSchema(input: {
     inLanguage: 'en-US',
     author: {
       '@type': 'Organization',
-      name: 'R6 Hacks',
+      name: 'Apex Legends Cheats',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'R6 Hacks',
+      name: 'Apex Legends Cheats',
       logo: {
         '@type': 'ImageObject',
         url: `${SITE_ORIGIN}/logo.svg`,

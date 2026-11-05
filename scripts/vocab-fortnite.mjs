@@ -1,5 +1,5 @@
 /**
- * Second-pass vocabulary cleanup: Dota/Steam/VAC leftovers → Rainbow Six Siege.
+ * Second-pass vocabulary cleanup: Dota/Steam/VAC leftovers → Apex Legends.
  * Run: node scripts/vocab-mw4.mjs
  */
 import fs from 'node:fs';
@@ -32,11 +32,11 @@ const REPLACEMENTS = [
   ['Steam platform', 'Steam Games platform'],
   ['Steam overlay', 'Steam overlay'],
   ['Steam restrictions', 'Steam account restrictions'],
-  ['Steam Rainbow Six Siege', 'Rainbow Six Siege on Epic'],
+  ['Steam Apex Legends', 'Apex Legends on Epic'],
   ['through Steam', 'through Steam Games'],
   ['exiting Steam', 'exiting the Steam Games Launcher'],
-  ['Current Rainbow Six Siege client via Steam', 'Current Rainbow Six Siege client via Steam Games Launcher'],
-  ['right-click Rainbow Six Siege → Properties', 'open Rainbow Six Siege settings in the Steam Games Launcher'],
+  ['Current Apex Legends client via Steam', 'Current Apex Legends client via Steam Games Launcher'],
+  ['right-click Apex Legends → Properties', 'open Apex Legends settings in the Steam Games Launcher'],
   ['reqSteam', 'reqEpic'],
   ['compatSteam', 'compatEpic'],
   [' Steam ', ' Steam Games '],
@@ -71,16 +71,16 @@ const REPLACEMENTS = [
   ['MMR.', 'rank.'],
   [' MMR ', ' rank '],
 
-  ['ranked and Turbo', 'Multiplayer and Deathmatch'],
-  ['Ranked, Turbo', 'Multiplayer, Deathmatch'],
-  ['Turbo or bot lobbies', 'Private Servers or Deathmatch lobbies'],
-  ['Turbo lobby', 'Deathmatch lobby'],
-  ['Turbo preset', 'Deathmatch preset'],
-  ['Turbo-friendly', 'Deathmatch-friendly'],
-  ['and Turbo', 'and Deathmatch'],
-  ['or Turbo', 'or Deathmatch'],
-  [' Turbo', ' Deathmatch'],
-  ['Turbo ', 'Deathmatch '],
+  ['ranked and Turbo', 'Multiplayer and Ranked'],
+  ['Ranked, Turbo', 'Multiplayer, Ranked'],
+  ['Turbo or bot lobbies', 'Private Servers or Ranked lobbies'],
+  ['Turbo lobby', 'Ranked lobby'],
+  ['Turbo preset', 'Ranked preset'],
+  ['Turbo-friendly', 'Ranked-friendly'],
+  ['and Turbo', 'and Ranked'],
+  ['or Turbo', 'or Ranked'],
+  [' Turbo', ' Ranked'],
+  ['Turbo ', 'Ranked '],
 
   ['map hack and zoom hack', 'ESP wallhack and radar hack'],
   ['scripts, map hack, and zoom hack', 'aimbot, ESP wallhack, and radar hack'],
@@ -200,7 +200,7 @@ const REPLACEMENTS = [
   ['Fog of war', 'Storm circle'],
   ['fog of war', 'storm circle'],
 
-  ['Rainbow Six Siege Scripts, Map Hack & ESP', 'Rainbow Six Siege Aimbot, ESP & Wallhack'],
+  ['Apex Legends Scripts, Map Hack & ESP', 'Apex Legends Aimbot, ESP & Wallhack'],
   ['humanized scripts', 'humanized aimbot'],
   ['script automation', 'aimbot automation'],
   ['script delays', 'aimbot smoothness'],

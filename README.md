@@ -1,6 +1,6 @@
-# r6hacks.org
+# apexlegendcheats.net
 
-Astro storefront and content site for **R6 Hacks** at r6hacks.org, based on the [levoredirect](https://github.com/Stellarhamza/levoredirect) Astro template.
+Astro storefront and content site for **Apex Legends Cheats** at apexlegendcheats.net, based on the [levoredirect](https://github.com/Stellarhamza/levoredirect) Astro template.
 
 ## Quick start
 
@@ -28,4 +28,4 @@ npm run deploy    # Cloudflare Workers (wrangler.toml)
 | `src/config/pageSeo.ts` | Per-route titles and meta descriptions |
 | `src/i18n/en.ts` | Homepage copy, nav, product UI strings |
 
-Product pages live under `src/pages/products/r6/`.
+Product pages live under `src/pages/products/apex/`.

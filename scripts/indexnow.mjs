@@ -4,7 +4,7 @@ import { resolveDistDir } from './dist-dir.mjs';
 
 const dist = resolveDistDir();
 const key = process.env.INDEXNOW_KEY?.trim();
-const host = process.env.INDEXNOW_HOST?.trim() || 'r6hacks.org';
+const host = process.env.INDEXNOW_HOST?.trim() || 'apexlegendcheats.net';
 
 if (!key) {
   console.log('IndexNow: skipped (INDEXNOW_KEY not set).');

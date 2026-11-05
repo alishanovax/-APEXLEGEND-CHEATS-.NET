@@ -38,9 +38,9 @@ if (!post) {
 
 const postPath = `/blog/${post.slug}/`;
 const blogCrumbLabels: Record<string, string> = {
-  'r6-practice-lobby': 'R6 practice guides (blog hub)',
-  'r6-stream-proof': 'Stream-proof guides (blog hub)',
-  'r6-radar': 'Radar hack guides (blog hub)',
+  'apex-firing-range-practice': 'Apex Firing Range guides (blog hub)',
+  'apex-stream-proof': 'Stream-proof guides (blog hub)',
+  'apex-radar': 'Radar hack guides (blog hub)',
 };
 const blogCrumbLabel = blogCrumbLabels[post.slug] ?? 'Blog';
 const breadcrumbs = [
@@ -57,10 +57,10 @@ function linkify(text: string): string {
       const normalized = normalizeInternalPath(href);
       return `<a href="${normalized}">${label}</a>`;
     })
-    .replace(/(https:\/\/r6hacks\.com[^\s.,;)]*)/g, (_match, url: string) => {
-      const path = url.replace(/^https:\/\/r6hacks\.com/, '');
+    .replace(/(https:\/\/apexlegendcheats\.net[^\s.,;)]*)/g, (_match, url: string) => {
+      const path = url.replace(/^https:\/\/apexlegendcheats\.net/, '');
       const normalized = normalizeInternalPath(path);
-      const href = normalized.startsWith('http') ? normalized : `https://r6hacks.org${normalized}`;
+      const href = normalized.startsWith('http') ? normalized : `https://apexlegendcheats.net${normalized}`;
       return `<a href="${href}">${url}</a>`;
     });
 }
@@ -123,11 +123,11 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
             <ResponsiveImage
               src={post.image}
               alt={
-                post.slug === 'battleye-fix'
-                  ? `${post.title} — BattlEye verification troubleshooting on PC`
-                  : post.slug === 'r6-stream-proof'
+                post.slug === 'eac-troubleshooting'
+                  ? `${post.title} — Easy Anti-Cheat verification troubleshooting on PC`
+                  : post.slug === 'apex-stream-proof'
                     ? `${post.title} — hide wall ESP and script overlays on stream`
-                    : `${post.title} — Rainbow Six Siege hack gameplay screenshot`
+                    : `${post.title} — Apex Legends hack gameplay screenshot`
               }
               width={960}
               height={540}
@@ -188,9 +188,9 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     html={linkify(block.text)}
                     href={resolveCheckoutHref(block.href)}
                     buyLabel={
-                      post.slug === 'r6-practice-lobby'
-                        ? 'Checkout after Shooting Range drills (CTA)'
-                        : post.slug === 'r6-stream-proof'
+                      post.slug === 'apex-firing-range-practice'
+                        ? 'Checkout after Firing Range drills (CTA)'
+                        : post.slug === 'apex-stream-proof'
                           ? 'Buy stream-proof tier (inline CTA)'
                           : undefined
                     }
@@ -202,42 +202,42 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
           </Prose>
 
           <nav class="blog-article__actions" aria-label="Continue reading">
-            <Button as="a" href={checkoutPath('r6')} variant="primary" aria-label={t.ui.checkoutAria}>
+            <Button as="a" href={checkoutPath('apex')} variant="primary" aria-label={t.ui.checkoutAria}>
               {
-                post.slug === 'battleye-fix'
-                  ? 'Checkout after BattlEye fix'
-                  : post.slug === 'r6-stream-proof'
-                    ? 'Buy stream-proof R6 tier'
-                    : post.slug === 'r6-practice-lobby'
-                      ? 'Checkout after Shooting Range drills'
-                      : post.slug === 'r6-radar'
+                post.slug === 'eac-troubleshooting'
+                  ? 'Checkout after Easy Anti-Cheat fix'
+                  : post.slug === 'apex-stream-proof'
+                    ? 'Buy stream-proof Apex tier'
+                    : post.slug === 'apex-firing-range-practice'
+                      ? 'Checkout after Firing Range drills'
+                      : post.slug === 'apex-radar'
                         ? 'Buy Lite radar hack tier'
-                        : 'Buy R6 Hacks'
+                        : 'Buy Apex Legends Cheats'
               }
               <Icon name="arrowRight" size={17} />
             </Button>
             <Button as="a" href={ROUTES.products} variant="outline">
               {
-                post.slug === 'battleye-fix'
-                  ? 'Open R6 product catalog'
-                  : post.slug === 'r6-stream-proof'
+                post.slug === 'eac-troubleshooting'
+                  ? 'Open Apex product catalog'
+                  : post.slug === 'apex-stream-proof'
                     ? 'Open stream-safe product hub'
-                    : post.slug === 'r6-practice-lobby'
+                    : post.slug === 'apex-firing-range-practice'
                       ? 'Compare Lite and Pro tiers'
-                      : post.slug === 'r6-radar'
-                        ? 'Open R6 product catalog (radar)'
+                      : post.slug === 'apex-radar'
+                        ? 'Open Apex product catalog (radar)'
                         : 'View products'
               }
             </Button>
             <Button as="a" href={ROUTES.blog} variant="outline">
               {
-                post.slug === 'battleye-fix'
+                post.slug === 'eac-troubleshooting'
                   ? 'Browse patch-day guides'
-                  : post.slug === 'r6-stream-proof'
+                  : post.slug === 'apex-stream-proof'
                     ? 'More OBS setup guides'
-                    : post.slug === 'r6-practice-lobby'
-                      ? 'More Shooting Range guides'
-                      : post.slug === 'r6-radar'
+                    : post.slug === 'apex-firing-range-practice'
+                      ? 'More Firing Range guides'
+                      : post.slug === 'apex-radar'
                         ? 'More radar and ESP guides'
                         : 'More articles'
               }

@@ -7,34 +7,34 @@ import path from 'node:path';
 const root = process.cwd();
 
 const REPLACEMENTS = [
-  ['/products/r6-hacks/', '/products/r6/'],
-  ['products/r6-hacks/', 'products/r6/'],
+  ['/products/apex-hacks/', '/products/apex/'],
+  ['products/apex-legends-cheats/', 'products/r6/'],
 
-  ['r6-hacks-features-guide', 'r6-features'],
-  ['r6-hack-codes-guide', 'r6-practice-lobby'],
-  ['r6-console-hacks-tips', 'r6-training-tips'],
-  ['how-to-use-r6-hack-codes', 'r6-hack-setup'],
-  ['r6-console-commands-hacks', 'r6-console-commands'],
-  ['how-to-buy-r6-hacks-2026', 'buy-r6-hacks'],
-  ['r6-hwid-spoofer-after-ban', 'r6-hwid-ban'],
-  ['r6-radar-hack-guide', 'r6-radar'],
-  ['r6-external-hack-guide', 'r6-external-loader'],
-  ['r6-esp-wallhack-setup', 'r6-esp-setup'],
-  ['r6-stream-proof-setup', 'r6-stream-proof'],
-  ['r6-aimbot-ranked-guide', 'r6-aimbot-ranked'],
-  ['r6-aimbot-combat-guide', 'r6-aimbot-combat'],
-  ['r6-elite-tier-guide', 'r6-elite'],
-  ['r6-skin-changer-guide', 'r6-loadouts'],
-  ['battleye-patch-day-checklist', 'battleye-patch'],
-  ['battleye-r6-guide', 'battleye-fix'],
+  ['apex-cheat-features', 'apex-cheat-features'],
+  ['apex-practice-settings-guide', 'apex-firing-range-practice'],
+  ['r6-console-hacks-tips', 'apex-training-tips'],
+  ['how-to-use-apex-practice-settings', 'apex-cheat-setup'],
+  ['apex-practice-settings-hacks', 'apex-practice-settings'],
+  ['how-to-buy-apex-legends-cheats-2026', 'buy-apex-legends-cheats'],
+  ['r6-hwid-spoofer-after-ban', 'apex-hwid-ban'],
+  ['apex-radar-hack-guide', 'apex-radar'],
+  ['apex-external-loader', 'apex-external-loader'],
+  ['r6-esp-wallhack-setup', 'apex-esp-setup'],
+  ['apex-stream-proof-setup', 'apex-stream-proof'],
+  ['apex-aimbot-ranked-guide', 'apex-aimbot-ranked'],
+  ['apex-aimbot-combat-guide', 'apex-aimbot-combat'],
+  ['apex-elite-tier-tier-guide', 'apex-elite-tier'],
+  ['r6-skin-changer-guide', 'apex-loadouts'],
+  ['eac-patch-day-day-checklist', 'eac-patch-day'],
+  ['easy-anti-cheat-r6-guide', 'eac-troubleshooting'],
 
   ['can-custom-lobby-hack-codes-be-used-in-ranked', 'lobby-codes-ranked'],
-  ['how-to-enable-the-r6-console', 'enable-r6-console'],
-  ['practice-r6-high-ground-safely', 'r6-high-ground'],
-  ['what-to-check-after-a-r6-patch', 'after-r6-patch'],
+  ['how-to-enable-the-r6-console', 'apex-practice-settings-forum'],
+  ['practice-apex-high-ground-safely', 'apex-high-ground'],
+  ['what-to-check-after-a-r6-patch', 'after-apex-patch'],
   ['r6-lite-or-pro-tier-comparison', 'lite-vs-pro'],
-  ['how-to-learn-weapon-aim-in-creative', 'r6-aim-practice'],
-  ['what-does-r6-map-awareness-include', 'r6-map-awareness'],
+  ['how-to-learn-weapon-aim-in-creative', 'apex-aim-practice'],
+  ['what-does-apex-map-awareness-include', 'apex-map-awareness'],
   ['how-to-set-up-map-overlay', 'map-overlay-setup'],
   ['what-zoom-settings-are-comfortable', 'camera-zoom'],
   ['how-to-tune-script-delay-settings', 'aimbot-delay'],
@@ -42,12 +42,12 @@ const REPLACEMENTS = [
   ['what-is-in-the-elite-tier', 'elite-tier-tools'],
   ['how-do-lite-and-pro-differ', 'lite-pro-diff'],
   ['what-to-know-about-skin-changer', 'loadout-tools'],
-  ['what-to-do-if-eac-cannot-verify', 'battleye-verify'],
+  ['what-to-do-if-eac-cannot-verify', 'eac-verify'],
   ['how-does-an-external-loader-work', 'external-loader'],
   ['how-to-check-stream-proof-capture', 'stream-proof-obs'],
   ['what-to-do-after-hwid-change', 'after-hwid-change'],
   ['what-to-check-before-installing-tools', 'before-install'],
-  ['how-to-choose-r6-product-tier', 'choose-tier'],
+  ['how-to-choose-r6-product-tier', 'choose-apex-tier'],
 ];
 
 const SKIP = new Set(['node_modules', '.git', 'dist']);
@@ -83,7 +83,7 @@ const fromDir = path.join(root, 'src', 'pages', 'products', 'r6-hacks');
 const toDir = path.join(root, 'src', 'pages', 'products', 'r6');
 if (fs.existsSync(fromDir) && !fs.existsSync(toDir)) {
   fs.renameSync(fromDir, toDir);
-  console.log('renamed pages/products/r6-hacks → r6');
+  console.log('renamed pages/products/apex-hacks → r6');
 }
 
 console.log(`Updated ${n} files.`);

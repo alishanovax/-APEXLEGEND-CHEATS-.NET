@@ -18,11 +18,11 @@ import {
 } from '@/components/starwind/table';
 
 const utilities = productPages.filter((p) => p.kind === 'utility');
-const seo = resolvePageSeo('/products/r6/utilities/');
+const seo = resolvePageSeo('/products/apex/utilities/');
 const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Products', path: productHub.path },
-  { name: 'Compare utilities', path: '/products/r6/utilities/' },
+  { name: 'Compare utilities', path: '/products/apex/utilities/' },
 ];
 
 const utilityUseCases: Record<string, string> = {
@@ -37,9 +37,9 @@ const utilityUseCases: Record<string, string> = {
   description={seo.description}
   jsonLd={[
     webPageSchema({
-      name: 'Compare Rainbow Six Siege utilities',
+      name: 'Compare Apex Legends utilities',
       description: seo.description,
-      url: '/products/r6/utilities/',
+      url: '/products/apex/utilities/',
     }),
     breadcrumbSchema(breadcrumbs),
     itemListSchema(
@@ -56,13 +56,13 @@ const utilityUseCases: Record<string, string> = {
 
       <header class="mt-6 max-w-3xl space-y-3">
         <h1 class="text-3xl font-bold normal-case md:text-4xl">
-          Compare utilities — local Operator loadout tools / Pack, HWID spoofer and UGC
+          Compare utilities — local Legend loadout tools / Pack, HWID spoofer and UGC
         </h1>
         <p class="text-lg text-muted-foreground">
-          These Rainbow Six Siege hack utilities solve different problems—HWID Spoofer, UGC, and Operator loadout tools each
+          These Apex Legends hack utilities solve different problems—HWID Spoofer, UGC, and Legend loadout tools each
           target a distinct recovery or cosmetic workflow. Match the tool to your situation before checkout.
         </p>
-        <h2 class="text-xl font-semibold text-foreground">Utilities: R6 Hacks</h2>
+        <h2 class="text-xl font-semibold text-foreground">Utilities: Apex Legends Cheats</h2>
       </header>
 
       <div class="mt-10 rounded-lg border border-border" tabindex="0" aria-label="Utility comparison">
@@ -113,7 +113,7 @@ const utilityUseCases: Record<string, string> = {
       </ul>
 
       <div class="mt-10">
-        <Button as="a" href={productHub.path} variant="outline">Return to R6 products hub</Button>
+        <Button as="a" href={productHub.path} variant="outline">Return to Apex products hub</Button>
       </div>
     </div>
   </section>

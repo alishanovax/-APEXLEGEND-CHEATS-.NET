@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { resolvePageSeo } from '../../config/seo';
 import { PRIMARY_CHEAT_IMAGE } from '../../config/siteImages';
 import { checkoutPath } from '../../config/checkout';
-import { r6HacksLanding } from '../../data/r6HacksLanding';
+import { apexLegendsCheatsLanding } from '../../data/apexLegendsCheatsLanding';
 import ResponsiveImage from '../../components/ResponsiveImage.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { breadcrumbSchema, webPageSchema } from '../../utils/schema';
@@ -11,13 +11,13 @@ import { Button } from '@/components/starwind/button';
 import { Prose } from '@/components/starwind/prose';
 import { ROUTES } from '../../utils/path';
 
-const seo = resolvePageSeo('/r6-hacks/');
+const seo = resolvePageSeo('/apex-legends-cheats/');
 const breadcrumbs = [
   { name: 'Home', path: '/' },
-  { name: 'PC', path: '/r6-hacks/' },
+  { name: 'PC', path: '/apex-legends-cheats/' },
 ];
-const checkout = checkoutPath('r6');
-const copy = r6HacksLanding;
+const checkout = checkoutPath('apex');
+const copy = apexLegendsCheatsLanding;
 
 function linkify(text: string): string {
   return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label: string, href: string) => {
@@ -31,7 +31,7 @@ function linkify(text: string): string {
   title={seo.title}
   description={seo.description}
   jsonLd={[
-    webPageSchema({ name: seo.title, description: seo.description, url: '/r6-hacks/' }),
+    webPageSchema({ name: seo.title, description: seo.description, url: '/apex-legends-cheats/' }),
     breadcrumbSchema(breadcrumbs),
   ]}
 >
