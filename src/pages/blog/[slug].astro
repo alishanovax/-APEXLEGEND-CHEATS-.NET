@@ -40,6 +40,7 @@ const postPath = `/blog/${post.slug}/`;
 const blogCrumbLabels: Record<string, string> = {
   'r6-practice-lobby': 'R6 practice guides (blog hub)',
   'r6-stream-proof': 'Stream-proof guides (blog hub)',
+  'r6-radar': 'Radar hack guides (hub)',
 };
 const blogCrumbLabel = blogCrumbLabels[post.slug] ?? 'Blog';
 const breadcrumbs = [
@@ -191,7 +192,9 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                         ? 'Checkout after Shooting Range drills (CTA)'
                         : post.slug === 'r6-stream-proof'
                           ? 'Buy stream-proof tier (inline CTA)'
-                          : undefined
+                          : post.slug === 'r6-radar'
+                            ? 'Buy Lite radar tier (inline CTA)'
+                            : undefined
                     }
                   />
                 );
@@ -209,7 +212,9 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     ? 'Buy stream-proof R6 tier'
                     : post.slug === 'r6-practice-lobby'
                       ? 'Checkout after Shooting Range drills'
-                      : 'Buy R6 Hacks'
+                      : post.slug === 'r6-radar'
+                        ? 'Buy Lite radar hack tier'
+                        : 'Buy R6 Hacks'
               }
               <Icon name="arrowRight" size={17} />
             </Button>
@@ -221,7 +226,9 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     ? 'Open stream-safe product hub'
                     : post.slug === 'r6-practice-lobby'
                       ? 'Compare Lite and Pro tiers'
-                      : 'View products'
+                      : post.slug === 'r6-radar'
+                        ? 'Open R6 Lite product page (radar)'
+                        : 'View products'
               }
             </Button>
             <Button as="a" href={ROUTES.blog} variant="outline">
@@ -232,7 +239,9 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     ? 'More OBS setup guides'
                     : post.slug === 'r6-practice-lobby'
                       ? 'More Shooting Range guides'
-                      : 'More articles'
+                      : post.slug === 'r6-radar'
+                        ? 'More radar hack guides'
+                        : 'More articles'
               }
               <Icon name="arrowRight" size={17} />
             </Button>

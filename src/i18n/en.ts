@@ -697,7 +697,7 @@ export const en: Translations = {
         {
           heading: 'Third-party checkout',
           paragraphs: [
-            'Purchases from the R6 hacks shop complete on external checkout pages. Those providers have their own privacy policies for payment and license delivery—we link out only after you choose a product tier.',
+            'Purchases from the R6 hacks shop complete on external checkout pages. Those providers publish their own data policies for payment and license delivery—we link out only after you choose a product tier.',
           ],
         },
         {

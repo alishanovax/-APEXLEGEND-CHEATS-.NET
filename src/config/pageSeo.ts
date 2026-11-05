@@ -65,13 +65,13 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     title: 'Rainbow Six Siege Hack Blogs | Aimbot, wall ESP & BattlEye',
     description:
       'Blogs: Read Rainbow Six Siege hack guides on aimbot setup, wall ESP, Lite vs Pro, training grounds practice and BattlEye patch-day checks.',
-    h1: 'Latest Rainbow Six Siege hack guides — aimbot, wall ESP & BattlEye',
+    h1: 'Latest Rainbow Six Siege hack guides — blogs on aimbot, wall ESP & BattlEye',
   },
   '/forum/': {
     title: 'Forum – Most discussed 20 discussions All topics General',
     description:
       'Forum for loader setup, aimbot configs, BattlEye status and product questions. Answers from r6hacks.org guides and community discussions.',
-    h1: 'Forum — configs, status and setup questions for loader help',
+    h1: 'Forum — most discussed discussions on all topics and general loader help',
   },
   '/faq/': {
     title: 'FAQ – R6 tiers, bans, setup and BattlEye loader help',

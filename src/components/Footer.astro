@@ -21,6 +21,7 @@ const onPrivacyPage = normalizedPath === '/privacy';
 const onHomePage = normalizedPath === '/';
 const onAboutPage = normalizedPath === '/about';
 const onBlogPage = normalizedPath === '/blog';
+const onForumPage = normalizedPath === '/forum';
 const onFaqPage = normalizedPath === '/faq';
 const onPracticeLobbyPost = normalizedPath === '/blog/r6-practice-lobby';
 const onStreamProofPost = normalizedPath === '/blog/r6-stream-proof';
@@ -46,7 +47,15 @@ const onStreamProofPost = normalizedPath === '/blog/r6-stream-proof';
                 aria-label={link.ariaLabel}
                 {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
               >
-                {link.label}
+                {
+                  onBlogPage && link.href === '/blog/'
+                    ? 'Published guide archive'
+                    : onForumPage && link.href === '/blog/'
+                      ? 'Guides linked from forum threads'
+                      : onForumPage && link.href === '/forum/'
+                        ? 'Forum home — all discussions'
+                        : link.label
+                }
               </a>
             </li>
           ))}
@@ -66,14 +75,24 @@ const onStreamProofPost = normalizedPath === '/blog/r6-stream-proof';
                     : onAboutPage && link.href === '/support/'
                       ? 'About page — loader and checkout support'
                       : onBlogPage && link.href === '/support/'
-                        ? 'Blog index — setup and loader support'
-                        : onFaqPage && link.href === '/support/'
-                          ? 'FAQ page — loader and checkout support'
-                          : onPracticeLobbyPost && link.href === '/support/'
-                          ? 'Practice lobby guide — loader support'
-                          : onStreamProofPost && link.href === '/support/'
-                            ? 'Stream-proof guide — capture support'
-                            : link.label}
+                        ? 'Guide index — setup and loader support'
+                        : onForumPage && link.href === '/support/'
+                          ? 'Forum page — loader and checkout support'
+                          : onFaqPage && link.href === '/support/'
+                            ? 'FAQ page — loader and checkout support'
+                            : onPracticeLobbyPost && link.href === '/support/'
+                              ? 'Practice lobby guide — loader support'
+                              : onStreamProofPost && link.href === '/support/'
+                                ? 'Stream-proof guide — capture support'
+                                : onForumPage && link.href === '/blog/'
+                                  ? 'Forum sidebar — full guide library'
+                                  : onBlogPage && link.href === '/blog/'
+                                    ? 'Published guide archive (hub)'
+                                    : onForumPage && link.href === '/products/r6/elite/'
+                                      ? 'Forum footer — Elite tier catalog'
+                                      : onForumPage && link.href === '/products/r6/'
+                                        ? 'Forum footer — full product catalog'
+                                        : link.label}
               </a>
             </li>
           ))}
