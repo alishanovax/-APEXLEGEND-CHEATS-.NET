@@ -29,6 +29,23 @@ const faqs = getAllFaqs();
     breadcrumbSchema(breadcrumbs),
   ]}
 >
+  <style slot="head" is:inline>
+    @media (max-width: 639px) {
+      :root {
+        --faq-rbp: phone;
+      }
+    }
+    @media (min-width: 640px) and (max-width: 1023px) {
+      :root {
+        --faq-rbp: tablet;
+      }
+    }
+    @media (min-width: 1024px) {
+      :root {
+        --faq-rbp: desktop;
+      }
+    }
+  </style>
   <section class="border-b border-border bg-muted/10 py-8 md:py-12">
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
