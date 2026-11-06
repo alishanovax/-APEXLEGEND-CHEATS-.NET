@@ -31,7 +31,11 @@ function linkify(text: string): string {
   title={seo.title}
   description={seo.description}
   jsonLd={[
-    webPageSchema({ name: seo.title, description: seo.description, url: '/apex-legends-cheats/' }),
+    webPageSchema({
+      name: copy.h1,
+      description: seo.description,
+      url: '/apex-legends-cheats/',
+    }),
     breadcrumbSchema(breadcrumbs),
   ]}
 >

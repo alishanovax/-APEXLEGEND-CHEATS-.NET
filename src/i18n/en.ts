@@ -24,10 +24,10 @@ export const en: Translations = {
     status: 'Apex Legends · PC',
     eyebrow: 'Apex Legends cheats for PC',
     h1: 'Apex Legends Cheats',
-    h1Accent: 'Apex Legends PC — Aimbot, ESP, Item ESP & Configs',
+    h1Accent: '',
     subtitle:
-      'Apex Legends cheats for PC ranked and unranked play — configurable aimbot FOV, Legend ESP, attacker and defender item ESP, skeleton and box overlays, and save/load config profiles. Check status before you queue after Easy Anti-Cheat updates.',
-    ctaPrimary: 'Buy cheats',
+      'Apex Legends cheats for PC ranked and unranked play — configurable aimbot FOV, Legend ESP, attacker and defender item ESP, skeleton and box overlays, and save/load config profiles.',
+    ctaPrimary: 'Buy hacks',
     ctaDiscord: 'Join Discord',
     modesLabel: 'Game modes',
     modes: ['Ranked', 'Unranked', 'Quick Match', 'Firing Range'],

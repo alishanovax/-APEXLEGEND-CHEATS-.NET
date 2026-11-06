@@ -37,7 +37,7 @@ const utilityUseCases: Record<string, string> = {
   description={seo.description}
   jsonLd={[
     webPageSchema({
-      name: 'Compare Apex Legends utilities',
+      name: seo.h1 ?? seo.title,
       description: seo.description,
       url: '/products/apex/utilities/',
     }),
@@ -55,14 +55,11 @@ const utilityUseCases: Record<string, string> = {
       <Breadcrumbs items={breadcrumbs} />
 
       <header class="mt-6 max-w-3xl space-y-3">
-        <h1 class="text-3xl font-bold normal-case md:text-4xl">
-          Compare utilities — local Legend loadout tools / Pack, HWID spoofer and UGC
-        </h1>
+        <h1 class="text-3xl font-bold normal-case md:text-4xl">{seo.h1}</h1>
         <p class="text-lg text-muted-foreground">
           These Apex Legends cheat utilities solve different problems—HWID Spoofer, UGC, and Legend loadout tools each
           target a distinct recovery or cosmetic workflow. Match the tool to your situation before checkout.
         </p>
-        <h2 class="text-xl font-semibold text-foreground">Utilities: Apex Legends Cheats</h2>
       </header>
 
       <div class="mt-10 rounded-lg border border-border" tabindex="0" aria-label="Utility comparison">

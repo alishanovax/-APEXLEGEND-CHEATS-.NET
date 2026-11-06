@@ -13,13 +13,21 @@ import {
 } from '@/components/starwind/card';
 
 interface Props {
+  /** Visible H1 — defaults to i18n support title. */
+  pageTitle?: string;
   titleId?: string;
   showTicketTips?: boolean;
   class?: string;
 }
 
-const { titleId = 'support-title', showTicketTips = false, class: className } = Astro.props;
+const {
+  pageTitle,
+  titleId = 'support-title',
+  showTicketTips = false,
+  class: className,
+} = Astro.props;
 const c = t.support;
+const heading = pageTitle ?? c.title;
 ---
 
 <section
@@ -30,8 +38,7 @@ const c = t.support;
   <div class="support-section__inner mx-auto max-w-6xl px-5">
     <header class="section-header section-header--wide support-section__header">
       <p class="section-header__eyebrow">{c.eyebrow}</p>
-      <h1 id={titleId} class="section-header__title">{c.title}</h1>
-      <h2 class="mt-2 text-xl font-semibold text-foreground">Support: Apex Legends Cheats</h2>
+      <h1 id={titleId} class="section-header__title">{heading}</h1>
       <p class="section-header__subtitle">{c.subtitle}</p>
     </header>
 

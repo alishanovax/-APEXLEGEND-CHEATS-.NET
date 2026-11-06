@@ -2,8 +2,6 @@ import type { SitemapItem } from '@astrojs/sitemap';
 import { blogPosts } from '../data/blog';
 import { parseBlogDate } from '../utils/schema';
 
-const buildDate = new Date().toISOString();
-
 const blogLastmod = new Map(
   blogPosts.map((post) => [`/blog/${post.slug}/`, parseBlogDate(post.date)] as const),
 );
@@ -20,7 +18,9 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     return undefined;
   }
 
-  item.lastmod = buildDate;
+  // Only blog posts get lastmod (publication date). Omit elsewhere so we do not imply
+  // "everything changed" on every deploy — misleading lastmod hurts crawl trust.
+  delete item.lastmod;
 
   if (path === '/') {
     item.priority = 1;
@@ -49,7 +49,8 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
   if (path.startsWith('/blog/')) {
     item.priority = 0.7;
     item.changefreq = 'monthly';
-    item.lastmod = blogLastmod.get(path) ?? buildDate;
+    const postDate = blogLastmod.get(path);
+    if (postDate) item.lastmod = postDate;
     return item;
   }
 

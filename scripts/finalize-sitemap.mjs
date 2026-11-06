@@ -77,11 +77,11 @@ function normalizeUrl(loc) {
   return `${SITE}${pathname}`;
 }
 
-/** @param {string | undefined} value */
+/** @param {string | undefined} value @returns {string | null} W3C date or omit */
 function formatLastmod(value) {
-  if (!value) return new Date().toISOString().slice(0, 10);
+  if (!value?.trim()) return null;
   const d = new Date(value);
-  if (Number.isNaN(d.getTime())) return new Date().toISOString().slice(0, 10);
+  if (Number.isNaN(d.getTime())) return null;
   return d.toISOString().slice(0, 10);
 }
 
@@ -98,7 +98,9 @@ function bucketFor(loc) {
 function renderUrlset(urls) {
   const body = urls
     .map((u) => {
-      const lines = [`  <url>`, `    <loc>${u.loc}</loc>`, `    <lastmod>${formatLastmod(u.lastmod)}</lastmod>`];
+      const lm = formatLastmod(u.lastmod);
+      const lines = [`  <url>`, `    <loc>${u.loc}</loc>`];
+      if (lm) lines.push(`    <lastmod>${lm}</lastmod>`);
       if (u.changefreq) lines.push(`    <changefreq>${u.changefreq}</changefreq>`);
       if (u.priority) lines.push(`    <priority>${u.priority}</priority>`);
       lines.push(`  </url>`);
@@ -113,15 +115,15 @@ ${body}
 `;
 }
 
-/** @param {{ name: string, lastmod: string }[]} children */
+/** @param {{ name: string, lastmod: string | null }[]} children */
 function renderIndex(children) {
   const body = children
-    .map(
-      (c) => `  <sitemap>
-    <loc>${SITE}/${c.name}</loc>
-    <lastmod>${c.lastmod}</lastmod>
-  </sitemap>`,
-    )
+    .map((c) => {
+      const lmLine = c.lastmod ? `\n    <lastmod>${c.lastmod}</lastmod>` : '';
+      return `  <sitemap>
+    <loc>${SITE}/${c.name}</loc>${lmLine}
+  </sitemap>`;
+    })
     .join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -162,7 +164,6 @@ for (const list of Object.values(byBucket)) {
   list.sort((a, b) => a.loc.localeCompare(b.loc));
 }
 
-const today = new Date().toISOString().slice(0, 10);
 const childFiles = [
   { key: 'pages', name: 'sitemap-pages.xml' },
   { key: 'products', name: 'sitemap-products.xml' },
@@ -174,10 +175,8 @@ const written = [];
 for (const child of childFiles) {
   const urls = byBucket[child.key];
   if (urls.length === 0) continue;
-  const lastmod = urls
-    .map((u) => formatLastmod(u.lastmod))
-    .sort()
-    .at(-1) ?? today;
+  const dated = urls.map((u) => formatLastmod(u.lastmod)).filter(Boolean);
+  const lastmod = dated.length > 0 ? dated.sort().at(-1) : null;
   const xml = renderUrlset(urls);
   fs.writeFileSync(path.join(dist, child.name), xml, 'utf8');
   if (fs.existsSync(publicDir)) {

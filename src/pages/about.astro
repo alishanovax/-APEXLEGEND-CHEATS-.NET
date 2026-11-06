@@ -16,8 +16,8 @@ const content = t.legalPages.about;
   jsonLd={[
     organizationSchema(),
     webPageSchema({
-      name: content.title,
-      description: content.description,
+      name: seo.h1 ?? content.title,
+      description: seo.description,
       url: '/about/',
     }),
     breadcrumbSchema([
@@ -44,7 +44,7 @@ const content = t.legalPages.about;
     }
   </style>
   <LegalPage
-    title={content.title}
+    title={seo.h1 ?? content.title}
     description={content.description}
     breadcrumbLabel="About"
     keywordSubheading="Aimbot Esp: Apex Legends Cheats"

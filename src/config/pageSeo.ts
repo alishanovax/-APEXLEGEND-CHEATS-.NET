@@ -14,18 +14,16 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Apex Legends – Check status before you queue after Easy',
+    title: 'Apex Legends Cheats — PC aimbot, ESP & setup guides',
     description:
-      'Apex Legends cheats for Apex Legends on PC — aimbot, player ESP, item ESP, config profiles, and installation guides at apexlegendcheats.net.',
+      'Compare Apex Legends PC cheat tiers, read setup guides, and check out secure options — aimbot, player ESP, configs and support at apexlegendcheats.net.',
     h1: 'Apex Legends Cheats',
-    h1Accent:
-      'Check status before you queue after Easy Anti-Cheat — Apex Legends PC, Aimbot, ESP, Item ESP & Configs',
   },
   '/products/apex/': {
-    title: 'Apex – UGC recovery and Legend loadout tools checkout at',
+    title: 'Apex Legends PC cheats — Lite, Pro, Elite & utilities',
     description:
-      'Apex shop: Apex Legends PC cheats — Elite aimbot, wall ESP, HWID spoofer, UGC recovery checkout at apexlegendcheats.net.',
-    h1: 'Buy PC hacks — Apex Legends Elite, HWID spoofer, Legend loadout tools cheats shop tiers',
+      'Shop Apex Legends PC cheats: Lite ESP, Pro aimbot, Elite suite, HWID tools and UGC — compare features and checkout at apexlegendcheats.net.',
+    h1: 'Apex Legends PC cheats — compare tiers and utilities',
   },
   '/products/apex/lite/': {
     title: 'Apex Lite Cheats | Player ESP, Radar & Loot Timers',
@@ -40,12 +38,12 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/products/apex/elite/': {
     title: 'Elite Apex Legends Cheats | Aimbot, ESP & Loot Assist',
     description:
-      'Elite tier ships item ESP, triggerbot, full wall ESP, operator loadout tools and priority patch updates for Apex Legends on PC.',
+      'Elite tier includes advanced aim, full ESP, loot assist, Legend-focused tools and priority update notes for Apex Legends on PC.',
   },
   '/products/apex/hwid-spoofer/': {
-    title: 'HWID Spoofer for Apex Legends | Hardware Ban Bypass',
+    title: 'HWID Spoofer for Apex Legends | Hardware Identity Tools',
     description:
-      'Buy a Apex Legends HWID spoofer for PC hardware bans — disk/MAC tools, compatibility scan and post-spoof checks before you launch cheats again.',
+      'HWID tools for Apex Legends on PC — guided steps for hardware identity resets. Read compatibility and risk notes before you buy at apexlegendcheats.net.',
   },
   '/products/apex/ugc/': {
     title: 'UGC Tools | Apex Legends Easy Anti-Cheat & EA Ban Appeals',
@@ -53,58 +51,62 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'UGC (Unban & Governance Control) organizes EA and Easy Anti-Cheat ban appeals, dispute workflows and case tracking for Apex Legends players.',
   },
   '/products/apex/unlock-all/': {
-    title: 'Legend loadout tools – wrap and weapon previews with your Modern',
+    title: 'Legend loadout tools — skins, wraps & weapon previews',
     description:
-      'Legend loadout tools / Loadout Pack — local outfit, wrap and weapon previews with your Apex Legends client; no in-game inventory purchase required.',
+      'Loadout Pack for Apex Legends on PC — local cosmetic and weapon previews with your client. Compare scope and checkout at apexlegendcheats.net.',
   },
   '/products/apex/utilities/': {
-    title: 'Utilities – and local Legend loadout tools / Pack',
+    title: 'Apex cheat utilities — HWID, UGC & loadout tools',
     description:
-      'Compare Apex Legends cheat utilities: HWID spoofer after hardware bans, UGC for EA/Easy Anti-Cheat appeals, and local operator loadout tools.',
+      'Utilities hub: HWID tools, EA and EAC appeal workflows (UGC), and Legend loadout helpers for Apex Legends PC — compare before checkout.',
+    h1: 'Compare Apex utilities — HWID, UGC & Legend loadout tools',
   },
   '/blog/': {
-    title: 'Wall Esp – Read Apex Legends cheat guides on aimbot setup',
+    title: 'Apex Legends guides — aimbot, ESP, tiers & patch days',
     description:
-      'Read Apex Legends cheat guides on aimbot setup, wall ESP, Lite vs Pro, Firing Range practice and Easy Anti-Cheat patch-day checks.',
-    h1: 'Latest Apex Legends cheat guide blogs — aimbot, wall ESP & Easy Anti-Cheat',
+      'Guides for Apex Legends PC cheats: aimbot and ESP setup, Lite vs Pro, firing range drills, and what to check after patches and anti-cheat updates.',
+    h1: 'Apex Legends cheat guides — setup, tiers and patch checks',
   },
   '/forum/': {
-    title: 'Forum – Most discussed 20 discussions All topics General',
+    title: 'Apex forum — loader, configs & product discussion',
     description:
-      'Forum for loader setup, aimbot configs, Easy Anti-Cheat status and product questions. Answers from apexlegendcheats.net guides and community discussions.',
-    h1: 'Forum — most discussed topics, general discussions and loader setup help',
+      'Community threads on loader setup, aim configs, product questions and patch-day checks — backed by guides on apexlegendcheats.net.',
+    h1: 'Forum — loader help, configs and Apex cheat discussion',
   },
   '/faq/': {
-    title: 'Faq – Apex tiers, bans, setup and Easy Anti-Cheat loader',
+    title: 'FAQ — Apex tiers, bans, loader & checkout | apexlegendcheats',
     description:
       'FAQ on Lite, Pro and Elite tiers, aimbot, wall ESP, radar, HWID spoofer, Legend loadout tools, bans and loader setup at apexlegendcheats.net.',
     h1: 'FAQ — Apex Legends Cheats tiers, bans, Easy Anti-Cheat setup, loader help and checkout',
   },
   '/terms/': {
-    title: 'Terms – org — license use, delivery, refunds and account',
+    title: 'Terms — licenses, delivery, refunds & account risk',
     description:
-      'Terms for buying Apex Legends cheats on apexlegendcheats.net — license use, delivery, refunds and account risk when you checkout Apex Legends cheat products.',
+      'Terms for buying digital Apex Legends software on apexlegendcheats.net: license use, delivery, refunds, and risks when using third-party tools with EA titles.',
+    h1: 'Terms — licenses, delivery, refunds & account risk',
   },
   '/privacy/': {
-    title: 'Analytics Cookies – and contact data for checkout',
+    title: 'Privacy — analytics, cookies & checkout data',
     description:
-      'Privacy: How the apexlegendcheats.net shop uses analytics, cookies and contact data for checkout referrals, support tickets, and shop data use.',
-    h1: 'Privacy Policy — apexlegendcheats.net analytics, cookies, checkout and contact data',
+      'How apexlegendcheats.net uses analytics, cookies, and contact or checkout-related data for support and referrals. Read the full policy before you buy.',
+    h1: 'Privacy — analytics, cookies, checkout and contact data',
   },
   '/about/': {
-    title: 'Aimbot Esp – We publish tier comparisons, setup guides and',
+    title: 'About — Apex tier guides, loader help & updates',
     description:
-      'About aimbot ESP and PC Apex Legends tools — tier comparisons, loader setup and support at apexlegendcheats.net for EA Connect players.',
+      'Who we are: Apex Legends PC cheat tier comparisons, setup guides, and support channels at apexlegendcheats.net — independent of EA and publishers.',
+    h1: 'About — Apex tier guides, loader help & updates',
   },
   '/support/': {
-    title: 'Support – loader, HWID and checkout help on apexlegendcheats.net',
+    title: 'Support — loader, HWID & checkout help | apexlegendcheats',
     description:
-      'Apex Legends cheats support for loader setup, aimbot/ESP configs, HWID spoofing and checkout help — 24/7 Discord and FAQ on apexlegendcheats.net.',
+      'Get help with the loader, aim and ESP configs, HWID resets, and checkout — Discord and FAQ linked from apexlegendcheats.net.',
+    h1: 'Support — loader, HWID, checkout & config help',
   },
   '/apex-legends-cheats/': {
-    title: 'Apex Legends Cheats — patch utilities for PC trainer & loader',
+    title: 'Apex Legends cheats hub — PC tiers, features & checkout',
     description:
-      'Apex Legends Cheats patch utilities for aimbot, wall ESP, item ESP and loader updates on PC. Compare tiers and checkout at apexlegendcheats.net.',
+      'Overview of Apex Legends PC cheat tiers, core features, and loader-focused notes. Compare options and checkout at apexlegendcheats.net.',
   },
 };
 
@@ -122,22 +124,22 @@ export function getPageSeoEntry(pathname: string): PageSeoEntry | undefined {
 /** Blog post `<title>` / meta description overrides (exact audit phrases). */
 export const BLOG_POST_SEO: Record<string, Partial<PageSeoEntry>> = {
   'apex-radar': {
-    title: 'Guide – FOV awareness and safe distance caps for Team',
+    title: 'Apex radar guide — FOV, spacing & team callouts',
     description:
-      'Radar Cheat: Apex Legends cheats guide: Mini-radar, FOV awareness and safe distance caps for Battle Royale and Ranked on apexlegendcheats.net.',
+      'Use radar overlays safely in Apex Legends: FOV habits, spacing, and squad callouts for Battle Royale and ranked — guide at apexlegendcheats.net.',
   },
   'apex-stream-proof': {
-    title: 'Stream Proof – Hide wall ESP and script overlays from OBS',
+    title: 'Stream-safe overlays — hiding ESP from OBS & capture',
     description:
-      'Stream Proof: Apex Legends cheats guide: Hide wall ESP and script overlays from OBS, Game Bar and capture cards—test workflow for content creators.',
+      'Test OBS, Game Bar, and capture-card setups so stream viewers do not see overlays — practical checklist for Apex Legends creators on apexlegendcheats.net.',
   },
   'apex-aimbot-ranked': {
-    title: 'Ranked – net ships Bone Priority, Prediction, Smoothness',
+    title: 'Ranked aimbot — bone priority, prediction & smoothness',
   },
   'eac-troubleshooting': {
-    title: 'Eac – What the error means “Easy Anti-Cheat was unable to',
+    title: 'EAC errors on Apex PC — verify, repair & recovery',
     description:
-      'Apex Legends cheats guide: Fix verification errors, file integrity checks and when to use Account Recovery after eac issues on apexlegendcheats.net.',
+      'When Easy Anti-Cheat fails to verify Apex Legends on PC: file checks, repairs, reinstall paths, and when account recovery applies — guide at apexlegendcheats.net.',
   },
 };
 
@@ -148,8 +150,7 @@ export const BLOG_POST_PAGE_H1: Record<string, string> = {
   'apex-stream-proof':
     'Stream-Proof Overlay Setup — hide wall ESP and script overlays from OBS (Apex Legends cheats)',
   'apex-firing-range-practice': 'Firing Range Practice: Aim Drills Before Ranked (Apex Legends cheats)',
-  'apex-radar':
-    'Apex Legends Radar cheat Guide — FOV awareness, safe distance caps for Team',
+  'apex-radar': 'Apex radar on PC — FOV habits, spacing and team callouts',
 };
 
 export function getBlogPostSeo(slug: string, fallback: PageSeoEntry): PageSeoEntry {

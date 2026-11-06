@@ -1,3 +1,6 @@
+# Copied from dist by scripts/finalize-sitemap.mjs (regenerated each build)
+public/sitemap*.xml
+
 # build output
 dist/
 # generated types

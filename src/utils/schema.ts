@@ -21,15 +21,17 @@ export function breadcrumbSchema(items: BreadcrumbItem[]) {
   };
 }
 
-export function websiteSchema() {
+export function websiteSchema(input?: { description?: string }) {
+  const description =
+    input?.description?.trim() ||
+    'Apex Legends cheats for PC — aimbot, player ESP, guides and tier comparisons on apexlegendcheats.net.';
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Apex Legends Cheats',
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
-    description:
-      'Apex Legends cheats with aimbot, ESP, and radar cheat, Legend loadout tools and ranked-safe tiers for PC.',
+    description,
   };
 }
 
